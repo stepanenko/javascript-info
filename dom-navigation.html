@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Walking the DOM</title>
+<style>
+table {
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid grey;
+  padding: 5px
+}
+</style>
+</head>
+<body>
+
+  <div id="box">Box</div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum molestiae at nobis necessitatibus odit reiciendis voluptate quibusdam sapiente vitae, deserunt enim rem cupiditate nam? Maxime dolores beatae culpa tempora facilis. Nihil earum nisi, facere itaque corporis molestiae ut cum illo qui deleniti facilis molestias asperiores optio dolorem repellat mollitia. Excepturi.</p>
+  <div id="box2">
+    <div id="innerBox"></div>
+  </div>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>name</th>
+      <th>surname</th>
+      <th>city</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Ser</td>
+      <td>Step</td>
+      <td>Lviv</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Vik</td>
+      <td>Step</td>
+      <td>Kyiv</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Evely</td>
+      <td>Dorn</td>
+      <td>NYC</td>
+    </tr>
+  </table>
+
+<script>
+// === DOM navigation ===
+
+//console.log(document.documentElement)
+//console.log(document)
+//console.dir(document)                               // DIR
+//console.log(document.body)
+//In the DOM world null means “doesn’t exist”
+//console.log( "From BODY: " + document.body )
+//console.log(document.body.childNodes)         // DOM collections are read-only
+
+for (let node of document.body.childNodes) {  // Don’t use for..in to loop over collections
+  //console.log(node);
+}
+const DOMarray = Array.from(document.body.childNodes); // making array from DOM collection
+//console.log(DOMarray)  
+
+//console.log(document.body.children);
+
+const bodyChil = Array.from(document.body.children);
+//console.log(bodyChil);
+
+for (let el in bodyChil) {    // Using the for...in on converted DOM collection
+  //console.log(`Index ${el}: Element: ${bodyChil[el]}`)
+}
+
+//console.log(document.head.nextElementSibling);
+const first = document.body.firstElementChild;
+//console.log(first.parentElement);
+
+// === TABLE PROPs ===
+
+const table = document.body.children[3];
+//console.log(table.rows);
+const row = table.firstElementChild.children[0];
+//console.log(row.cells);   // the collection of <td> and <th> cells
+//console.log(row.rowIndex);    // the number of the <tr> in the table as a whole
+//console.log(row.sectionRowIndex); // the position (index) of the given <tr> inside the enclosing <thead>/<tbody>
+
+//console.log(table.rows[1].cells[1].innerHTML)  // get the content of the second row, second cell
+
+// === TASKS ===
+// === 1 ===
+//how to access el with id="box"
+//console.log(document.body.firstElementChild);    // <div id="box">Box</div>
+//console.log(document.body.childNodes[1]);     // <div id="box">Box</div>
+//console.log(document.body.children[0]);       // <div id="box">Box</div>
+
+// === 2 ===
+const elem = document.body.children[2];
+//console.log(elem.lastChild.nextSibling);    // Null
+//console.log(elem.children[0].previousSibling);    // #text
+
+// === 3 ===
+// paint all diagonal table cells in red:
+// table.rows[0].cells[0].style.backgroundColor = 'red';
+// table.rows[1].cells[1].style.backgroundColor = 'red';
+// table.rows[2].cells[2].style.backgroundColor = 'red';
+// table.rows[3].cells[3].style.backgroundColor = 'red';
+
+//solution with loop:
+//console.log(table)
+for (let i = 0; i < 4; i++) {
+  table.rows[i].cells[i].style.backgroundColor = 'red';
+}
+
+// for (let rows of table.rows) {
+//   rows.style.backgroundColor = 'green'     // all table will get green
+// }
+
+
+
+
+</script>
+</body>
+</html>

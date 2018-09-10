@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+.second {
+  background: green;
+  width: 200px;
+  height: 50px;
+}
+.second:hover {
+  background: red;
+}
+  </style>
+</head>
+<body>
+  <div id="box">DIV
+    <div id="innerbox">Inner Div 1
+      <li class="chapter">Chapter 1</li>
+      <li class="chapter">Chapter 1</li>
+    </div>
+    <div id="inner-box" name="indiv">Inner Div 2</div>
+  </div>
+  <div class="second">Second Div</div>
+
+  <table id="table" name="mytable">
+    <tr>
+      <td>Your age:</td>
+      <td>
+        <label>
+          <input type="radio" name="age" value="young" checked> less than 18
+        </label>
+        <label>
+          <input type="radio" name="age" value="mature"> from 18 to 50
+        </label>
+        <label>
+          <input type="radio" name="age" value="senior"> more than 60
+        </label>
+      </td>
+    </tr>
+  </table>
+
+  <form name="search">
+    <input type="text">
+    <input type="email">
+  </form>
+
+  <ul>
+    <li>The</li>
+    <li>test</li>
+  </ul>
+  <ul>
+    <li>has</li>
+    <li>passed</li>
+  </ul>
+
+  <ul id="animals">
+    <li>Animals
+      <ul>
+        <li>Mammals
+          <ul>
+            <li>Cows</li>
+            <li>Donkeys</li>
+            <li>Dogs</li>
+            <li>Tigers</li>
+          </ul>
+        </li>
+        <li>Other
+          <ul>
+            <li>Snakes</li>
+            <li>Birds</li>
+            <li>Lizards</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>Fishes
+      <ul>
+        <li>Aquarium
+          <ul>
+            <li>Gruppy</li>
+            <li>Angelfish</li>
+          </ul>
+        </li>
+        <li>Sea
+          <ul>
+            <li>Sea trout</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+
+<script>
+// === ID ===
+//console.log(box);      // DOM-element with id="box"
+// console.log(innerbox);
+// console.log(window.innerbox);   // the same as above
+// console.log(window['inner-box'])  // use [''] if the id has dashes
+
+//const box = 5;      // the variable overrides the element above
+//console.log(box);   
+
+// === getElementBy* ===
+// In real life document.getElementById is the preferred method.
+const box = document.getElementById('box');
+//box.innerText = 'Hello';
+//box.innerHTML = 'Hell';
+//console.log(box)
+
+const divs = document.getElementsByTagName('div');
+//console.log(divs)
+
+const inputs = table.getElementsByTagName('input');
+//console.log(inputs)
+
+//There are also other rarely used methods of this kind:
+const clas = document.getElementsByClassName('second');
+//console.log(clas);
+const name = document.getElementsByName('indiv');
+//console.log(name);
+
+
+// === querySelectorAll ===
+// That’s the most often used and powerful method.
+const lis = document.querySelectorAll('ul>li:last-child');
+//console.log(lis);
+for (let li of lis) {
+  //console.log(li);
+  //console.log(li.innerHTML);
+}
+
+// Can use pseudo-classes as well
+
+// === querySelector ===
+const one = document.querySelector('#box>#inner-box');
+//console.log(one);
+
+
+// === matches ===
+// Checks if elem matches the given CSS-selector and returns true or false.
+
+for (let elem of document.body.children) {
+  if (elem.matches('.second')) {
+    //console.log(elem)
+  }
+}
+
+// === closest ===
+// Looks the nearest ancestor that matches the CSS-selector and returns it
+const chapter = document.querySelector('.chapter');
+//console.log(chapter.closest('div'))
+const ancestor = chapter.closest('#box');
+//console.log(ancestor)
+
+
+// === contains ===
+// checks for the child-parent relationship
+const label = document.querySelectorAll('label')[1];
+//console.log(label)
+const cont = table.contains(label);
+//console.log(cont)
+
+
+// ===There are 6 main methods to search for nodes in DOM ===
+// METHOD                   Searches by...	     Can call on an element?	    Live?
+// getElementById	             id	                          -	                    -
+// getElementsByName	         name	                        -	                    ✔
+// getElementsByTagName	       tag or '*'	                  ✔	                   ✔
+// getElementsByClassName	     class	                      ✔	                   ✔
+// querySelector	             CSS-selector	                ✔	                   -
+// querySelectorAll	           CSS-selector	                ✔	                   -
+
+// === TASKS ===
+// === 1 ===
+const to = document.querySelectorAll('table')[0];
+const t = document.querySelector('#table');
+const ta = document.getElementById('table');
+const tab = document.getElementsByTagName('table')[0];
+const tabl = document.body.children[2];
+const mytable = document.getElementsByName('mytable')[0];
+//console.log(to);
+
+const lab = mytable.querySelectorAll('label');
+const lab2 = document.querySelectorAll('#table label')
+//console.log(lab, lab2);
+
+const td = to.querySelector('td');
+let td2 = t.querySelectorAll('td')[0];
+let td3 = t.rows[0].cells[0];
+//console.log(td3);
+
+let form = document.getElementsByName('search')[0];
+let form2 = document.querySelector('form[name="search"]')
+//console.log(form2);
+
+let inp = form.querySelector('input');
+let inp2 = form.firstElementChild;
+let inp3 = form.children[0];
+let inp4 = form.getElementsByTagName('input')[0];
+//console.log(inp4);
+
+let inpu = form.lastElementChild;
+let inpu2 = form.children[1];
+let inpu3 = form.querySelectorAll('input')[1];
+let inpList = form.querySelectorAll('input');
+let inpu4 = inpList[inpList.length - 1]
+//console.log(inpu4);
+
+// === 2 ===
+const zoo = animals.querySelectorAll('li');
+
+for (let li of zoo) {
+  let title = li.firstChild.data;
+  title = title.trim();
+  let count = li.getElementsByTagName('li').length;
+  console.log(`${title}: ${count}`);
+}
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
