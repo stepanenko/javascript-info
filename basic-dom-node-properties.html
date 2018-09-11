@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic-dom-node-properties</title>
+</head>
+<body><!-- comment -->
+  <input type="text" id="inp" value="value">
+  <a href="#" name="some link" id="link">Some cool link</a>
+  <!-- Some comments here -->
+  <div>Hello World!</div>
+  Wasuuup!
+  <div id="elem1"></div>
+  <div id="elem2"></div>
+
+  <div hidden>This div is hidden from HTML</div>
+  <div id="hide">This div is hidden from JS</div>
+  <br>
+  <div id="blink"><b>A blinking element (JS hidden property)</b></div>
+<script>
+
+// =========== DOM node classes ==============
+let body = document.body.constructor.name;
+//console.log(body);  // HTMLBodyElement
+let input = document.querySelector('input').constructor.name;
+//console.log(input);  // HTMLInputElement
+let link = document.querySelector('a').constructor.name;
+//console.log(link);   // HTMLAnchorElement
+let lin = document.querySelector('a').name;
+//console.log(lin);   // some link
+ 
+//console.dir(document.body) //shows the element as a DOM object
+//console.log(document.body) //shows the element DOM tree
+
+// =============== The “nodeType” property ========================
+// The nodeType property provides an old-fashioned way to get the “type” of a DOM node. It has a numeric value:
+
+// console.log(document.body.nodeType) // 1 for element nodes
+// console.log(document.nodeType) // 9 for the document object
+// console.log(document.body.firstChild.nodeType) // 3 for text nodes
+// console.log(document.body.firstChild.nodeType) // 8 for comments
+
+// console.log(document.body.childNodes); // list of nodes
+
+// ============== Tag: nodeName and tagName ============================
+//For elements, tag name (uppercased). For non-element nodes nodeName describes what it is. Read-only.
+// FOR comment:
+//console.log(document.body.firstChild.tagName) // undefined   only for Element nodes
+//console.log(document.body.firstChild.nodeName) // #comment   is defined for any Node
+
+// FOR document:
+//console.log(document.tagName) // undefined
+//console.log(document.nodeName) // #document
+
+// If we only deal with elements, then tagName is the only thing we should use.
+// The tag name is always uppercase :
+
+//console.log(document.body.children[1].tagName) // A
+//console.log(document.body.children[0].tagName) // INPUT
+
+// ================ innerHTML: the contents =============================
+// allows to get the HTML inside the element as a string:
+// one of most powerful ways to change the page.
+
+let bod = document.body;
+//console.log(bod); // show whole body content
+//bod.innerHTML = "new body"; // replace whole body content with "new body" text
+
+const li = document.getElementById('link');
+li.innerHTML = "my link";
+
+// ============= outerHTML: full HTML of the element =================
+// That’s like innerHTML plus the element itself.
+// The outerHTML assignment does not modify the DOM element
+//console.log(li.outerHTML)
+const div = document.querySelector('div');
+div.outerHTML = '<p>Hello</p>';
+//console.log(div)
+
+// =========== nodeValue/data: text node content ==============
+// The content of a non-element node (text, comment). These two are almost the same, usually we use data. Can be modified.
+
+let text = document.body.firstChild; // its a comment
+//console.log(text)     // <!-- comment -->
+//console.log(text.data)    // comment 
+let com = document.body.childNodes[9];
+//console.log(com.data) // Wasuuup!
+
+// ========= textContent: pure text ==========
+// text inside the element, basically HTML minus all <tags>
+// Can safely insert user-generated text and protect from unwanted HTML insertions.
+
+let all = document.body.textContent; // All text inside body
+//console.log(all); 
+
+//  it allows to write text the “safe way” :
+
+let name = '<b>Winnie the Pooh</b>';
+
+elem1.textContent = name;  // <b>Winnie the booh</b>
+elem2.innerHTML = name;  // Winnie the Pooh (and will be bold)
+
+// ============== The “hidden” property ==============
+// specifies whether the element is visible or not.
+// We can use it in HTML or assign using JavaScript, like this:
+
+hide.hidden = true;
+// When set to true, does the same as CSS display:none.
+
+// blinking element:
+setInterval(() => blink.hidden = !blink.hidden, 1000)
+
+// ========== More properties ===============
+// value – the value for <input>, <select> and <textarea> (HTMLInputElement, HTMLSelectElement…).
+// href – the “href” for <a href="..."> (HTMLAnchorElement).
+// id – the value of “id” attribute, for all elements (HTMLElement).
+// …and much more…
+
+// console.log(inp.type);   // text
+// console.log(inp.id);    // inp
+// console.log(inp.value);   // value
+
+// Most standard HTML attributes have the corresponding DOM property, and we can access it like that.
+// We can always output the element using console.dir(elem) and read the properties.
+//console.dir(inp)
+
+// ====== TASKS ==========
+// === 1 ===
+const task1 = document.body.lastChild;
+const pageall = document.body.childNodes;
+// console.log(pageall);
+// console.log(task1.nodeType); // script - 1 (element node)
+// At the time of <script> execution the last DOM node is exactly <script>, because the browser did not process the rest of the page yet.
+
+// === 2 ===
+// BODY
+
+// ===3 ===
+//console.log(document.constructor.name); // HTMLDocument
+//As we know, methods of a class are in the prototype of the constructor. For instance, HTMLDocument.prototype has methods for documents.
+//Also, there’s a reference to the constructor function inside the prototype :
+const doc = (HTMLDocument.prototype.constructor === HTMLDocument);
+//console.log(doc);    //true
+
+const p = HTMLDocument.prototype.constructor.name;
+console.log(p); // HTMLDocument
+const pr = HTMLDocument.prototype.__proto__.constructor.name;
+console.log(pr); // Document
+const pro = HTMLDocument.prototype.__proto__.__proto__.constructor.name;
+console.log(pro); // Node
+const prot = HTMLDocument.prototype.__proto__.__proto__.__proto__.constructor.name;
+console.log(prot); // EventTarget
+const proto = HTMLDocument.prototype.__proto__.__proto__.__proto__.__proto__.constructor.name;
+console.log(proto); // Object
+
+// We also could examine the object using console.dir(document) and see these names by opening __proto__.
+
+</script>
+</body>
+</html>
