@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Objects</title>
+    </head>
+
+<body>
+<script>
+
+const user = {
+    name: "Serg",
+    age: 28
+}
+//console.log(Object.keys(user)) // show a keys only as an array
+
+let descr = Object.getOwnPropertyDescriptor(Math, 'PI');
+//console.log(descr)
+//console.log(JSON.stringify(descr))
+//console.log(JSON.stringify(descr, null, 2)) // will look better in console log
+
+Object.defineProperty(user, 'name', {
+    value: 'Viktor',
+    writable: false
+})
+user.name = "Sergio";   //  wont work, and will be ignored by JS
+console.log(user);
+
+// ======= GETTERS and SETTERS ========
+const me = {
+    name: "Serg",
+    surname: 'Stepanenko',
+    age: 28,
+
+    get fullname() {
+        return `${this.name} ${this.surname}`;
+    },
+    set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
+  }
+}
+me.fullName = "Viktor Steps"
+console.log(me.fullname);
+
+</script>
+</body>
+</html>
