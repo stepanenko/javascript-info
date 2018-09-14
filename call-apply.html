@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply and Call</title>
+</head>
+<body>
+<script>
+
+let person = {
+  firstName : "Igor",
+  surName : "Petrov",
+  middle : 'Andreevich'
+}
+
+function getFullName(a, b) {
+  console.log(`That is ${this[a]} ${this[b]}`)
+}
+
+getFullName.call(person, 'firstName', 'surName');
+getFullName.call(person, 'firstName', 'middle');
+
+
+
+</script>
+</body>
+</html>
