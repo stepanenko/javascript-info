@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-
+// ======= CALL =======
 let person = {
   firstName : "Igor",
   surName : "Petrov",
@@ -16,9 +16,43 @@ let person = {
 function getFullName(a, b) {
   console.log(`That is ${this[a]} ${this[b]}`)
 }
-
+getFullName.call(person); // will print 'That is undefined undefined'
 getFullName.call(person, 'firstName', 'surName');
 getFullName.call(person, 'firstName', 'middle');
+
+// ==== method borrowing =====
+
+function getArgs () {
+  arguments.join = [].join;   // we created an empty array and copying his built-in method 'join' into arguments and name it the same -  'join' :)
+  const args = arguments.join(' : '); // run just created join as if it was always there
+  console.log(args);
+}
+
+getArgs(1,4,7,'fuck',true)
+// Здесь метод join массива скопирован и вызван в контексте arguments.
+
+// === how 'join' looks inside ====
+// function myJoin(separator) {
+//   if (!this.length) return '';
+//   let str = this[0];
+//   for (let i=1; i<this.length; i++) {
+//     str = str + separator + this[i];
+//   }
+//   return str;
+// }
+
+// В качестве this подойдёт даже обычный объект:
+
+const user = {
+  0: 'Chris',
+  1: 'Nicholson',
+  2: 57,
+  length: 3
+}
+
+user.myjoin = [].join;
+
+console.log(user.myjoin(' - ')); // gives 'Chris - Nicholson - 57'
 
 
 
