@@ -29,10 +29,21 @@ let name = 'Tom';
 
 let work = makeWorker();
 
-work(); // What will it show?
+//work(); // What will it show?
+
 // A variable is a property of a special internal object, associated with the currently executing block/function/script.
 // Working with variables is actually working with the properties of that object.
   
+
+let phrase = 'says hello';
+
+function say(name) {
+  console.log(`${name}, ${phrase}`);
+}
+
+say('John');
+
+
 </script>
 </body>
 </html>
