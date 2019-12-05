@@ -44,5 +44,6 @@ setTimeout(function() {
     noSuchVar;
   } catch (err) {
     console.log(`Error name: '${err.name}', error message: '${err.message}'`);
+    console.log(`Call stack: '${err.stack}'`) // Shows an error as a whole
   }
 }, 1000);
