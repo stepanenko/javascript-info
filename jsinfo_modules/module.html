@@ -3,19 +3,26 @@
   <title>Modules</title>
 </head>
 <body>
-  <h1>MODULES</h1>
+  
+  <h1><a href="https://javascript.info/modules-intro">MODULES</a></h1>
+
   <p>If the same module is imported into multiple other places, its code is executed only the first time, then exports are given to all importers.</p>
+
+  <p>So, let’s reiterate – the module is executed only once. Exports are generated, and then they are shared between importers, so if something changes the admin object, other modules will see that.</p>
+
   <h2 class='h2'></h2>
+  <script type="module" src="./init.js"></script>
   <script type="module">
-    import { sayHi, admin } from './module.js';
+    import { sayHi, admin } from './admin.js';
     const h2 = document.querySelector('.h2');
-    h2.innerHTML = sayHi('John');
+    h2.innerHTML = sayHi();
 
     let user = 'Vasya';
 
-    console.log(admin)
+    console.log(admin.name)
   </script>
   <script type="module">
     // console.log(user); // ReferenceError: user is not defined
   </script>
+
 </body>
