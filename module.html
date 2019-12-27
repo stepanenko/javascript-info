@@ -3,9 +3,19 @@
   <title>Modules</title>
 </head>
 <body>
+  <h1>MODULES</h1>
+  <p>If the same module is imported into multiple other places, its code is executed only the first time, then exports are given to all importers.</p>
+  <h2 class='h2'></h2>
   <script type="module">
-    import { sayHi } from './module.js';
-  
-    document.body.innerHTML = sayHi('John');
+    import { sayHi, admin } from './module.js';
+    const h2 = document.querySelector('.h2');
+    h2.innerHTML = sayHi('John');
+
+    let user = 'Vasya';
+
+    console.log(admin)
+  </script>
+  <script type="module">
+    // console.log(user); // ReferenceError: user is not defined
   </script>
 </body>

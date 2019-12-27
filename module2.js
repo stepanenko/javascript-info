@@ -1,4 +1,6 @@
 
 import { sayHi } from './module';
+import { admin } from './module';
 
-sayHi('Tom');
+export const greet = sayHi('Tom');
+export const adm = admin.name;
