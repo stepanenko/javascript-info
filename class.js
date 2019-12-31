@@ -18,3 +18,23 @@ console.log(User.prototype.sayHi); // [Function: sayHi]
 console.log(Object.getOwnPropertyNames(User.prototype)); // [ 'constructor', 'sayHi' ]
 
 // Class is not just a syntactic suger:
+// rewriting class User in pure functions:
+
+function User2(name) {
+  this.name = name;
+}
+
+User2.prototype.greet = function() {
+  console.log('Hello,', this.name);
+}
+
+let tom = new User2('Tom');
+tom.greet();
+
+for (let prop in jack) {
+  console.log(`${prop}: ${jack[prop]}`); // name
+}
+
+for (let prop in tom) {
+  console.log(prop); // name, greet
+}
