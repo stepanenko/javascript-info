@@ -67,13 +67,22 @@ new myClass().log(); // Hello class
 
 class User4 {
   constructor(name) {
-    this.name = name;
+    this._name = name;
   }
 
-  get getName() {
-    return console.log(this.name);
+  get name() {
+    return console.log(this._name);
+  }
+
+  set name(str) {
+    if (str.length < 3) {
+      return console.log('The name is too short.');
+    }
+    this._name = str;
   }
 }
 
 let usr4 = new User4('Harry');
-usr4.getName; // Harry
+usr4.name; // Harry
+usr4.name = 'George';
+usr4.name; // George
