@@ -49,7 +49,7 @@ let User3 = class MyClass {
 }
 
 new User3().msg(); // [Function: MyClass]
-// console.log(MyClass); error
+// console.log(MyClass); <- error
 
 // we can create a class dynamically:
 function createClass(text) {
@@ -62,3 +62,18 @@ function createClass(text) {
 
 let myClass = createClass('Hello class');
 new myClass().log(); // Hello class
+
+// Getters and setters in a class:
+
+class User4 {
+  constructor(name) {
+    this.name = name;
+  }
+
+  get getName() {
+    return console.log(this.name);
+  }
+}
+
+let usr4 = new User4('Harry');
+usr4.getName; // Harry
