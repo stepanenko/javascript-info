@@ -3,7 +3,7 @@ class User {
   constructor(name) { this.name = name; }
   sayHi() { console.log(this.name); }
 }
-let jack = new User.prototype.constructor('Jack'); // same as 'new User('Jack')'
+const jack = new User.prototype.constructor('Jack'); // same as 'new User('Jack')'
 console.log(jack);
 
 // class is a function:
@@ -30,7 +30,7 @@ User2.prototype.greet = function() {
   console.log('Hello,', this.name);
 }
 
-let tom = new User2('Tom');
+const tom = new User2('Tom');
 tom.greet();
 
 for (let prop in jack) {
@@ -42,7 +42,7 @@ for (let prop in tom) {
 }
 
 // if a class expression has a name, it’s visible inside the class only:
-let User3 = class MyClass {
+const User3 = class MyClass {
   msg() {
     console.log(MyClass);
   }
@@ -60,7 +60,7 @@ function createClass(text) {
   }
 }
 
-let myClass = createClass('Hello class');
+const myClass = createClass('Hello class');
 new myClass().log(); // Hello class
 
 // Getters and setters in a class:
@@ -82,7 +82,30 @@ class User4 {
   }
 }
 
-let usr4 = new User4('Harry');
+const usr4 = new User4('Harry');
 usr4.name; // Harry
 usr4.name = 'George';
 usr4.name; // George
+
+// Using computed property in a getter and setter:
+
+const ch = 'change';
+const sh = 'show';
+const name = 'Name';
+
+const obj = {
+  first: 'Bill',
+
+  get [sh + name]() {
+    console.log(this.first);
+  },
+
+  set [ch + name](value) {
+    this.first = value;
+  }
+}
+
+obj.first = 'Chris';
+console.log(obj.first); // Chris
+obj.changeName = 'William';
+obj.showName; // William
