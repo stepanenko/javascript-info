@@ -109,3 +109,16 @@ obj.first = 'Chris';
 console.log(obj.first); // Chris
 obj.changeName = 'William';
 obj.showName; // William
+
+// TASK:
+
+class Clock {
+  constructor() {
+    let tick = 0;
+    setInterval(() => {
+      console.log(tick++);
+    }, 1000);
+  }
+}
+
+const clock = new Clock();
