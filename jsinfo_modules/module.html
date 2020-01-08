@@ -10,6 +10,10 @@
 
   <p>So, let’s reiterate – the module is executed only once. Exports are generated, and then they are shared between importers, so if something changes the admin object, other modules will see that.</p>
 
+  <p>The object import.meta contains the information about the current module. In the browser, it contains the url of the script, if inside HTML - current webpage url.</p>
+
+  <p>In a module, top-level <code>this</code> is undefined.</p>
+
   <h2 class='h2'></h2>
   <script type="module" src="./init.js"></script>
   <script type="module">
@@ -19,7 +23,8 @@
 
     let user = 'Vasya';
 
-    console.log(admin.name)
+    console.log(admin.name);
+    console.log(import.meta);
   </script>
   <script type="module">
     // console.log(user); // ReferenceError: user is not defined
