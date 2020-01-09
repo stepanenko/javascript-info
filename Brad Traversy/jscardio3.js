@@ -10,4 +10,4 @@ const revInt2 = (num) => {
     parseInt(num.toString().split('').reverse('').join(''));
 }
 
-console.log(revInt(159));
+console.log(revInt(-159));
