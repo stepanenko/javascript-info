@@ -16,6 +16,8 @@
 
   <p>The defer attribute tells the browser that it should go on working with the page, and load the script “in background”, then run the script when it loads.</p>
 
+  <p>In practice, defer is used for scripts that need the whole DOM and/or their relative execution order is important. And async is used for independent scripts, like counters or ads. And their relative execution order does not matter.</p>
+
   <h2 class='h2'></h2>
   <script type="module" src="./init.js"></script>
   <script type="module">
