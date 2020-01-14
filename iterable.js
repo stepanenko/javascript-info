@@ -59,4 +59,3 @@ for(let letter of 'hello') {
 let str = 'world';
 
 let iterator = str[Symbol.iterator](); // returns Object [String Iterator] {}
-
