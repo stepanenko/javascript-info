@@ -48,3 +48,15 @@ let obj2 = {
 for(let n of obj2) {
   console.log(n);
 }
+
+
+// String is iterable:
+for(let letter of 'hello') {
+  console.log(letter);
+}
+
+// Calling an iterator explicitly:
+let str = 'world';
+
+let iterator = str[Symbol.iterator](); // returns Object [String Iterator] {}
+
