@@ -17,3 +17,4 @@ function sum(a, b) {
 let curriedSum = curry(sum);
 
 console.log(curriedSum(1)(2)); // 3
+
