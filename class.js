@@ -4,13 +4,13 @@ class User {
   sayHi() { console.log(this.name); }
 }
 const jack = new User.prototype.constructor('Jack'); // same as 'new User('Jack')'
-console.log(jack);
+console.log(jack);   // User { name: 'Jack' }
 
 // class is a function:
-console.log(typeof User); // function
+console.log(typeof User);   // function
 
 // ... more precisely a constructor method:
-console.log(User === User.prototype.constructor); // true
+console.log(User === User.prototype.constructor);   // true
 
 // methods are in User.prototype:
 console.log(User.prototype.sayHi); // [Function: sayHi]
@@ -27,18 +27,18 @@ function User2(name) {
 }
 
 User2.prototype.greet = function() {
-  console.log('Hello,', this.name);
+  console.log('Hello,', this.name);   // Hello, Tom
 }
 
 const tom = new User2('Tom');
 tom.greet();
 
 for (let prop in jack) {
-  console.log(`${prop}: ${jack[prop]}`); // name
+  console.log(`${prop}: ${jack[prop]}`); //   name: Jack
 }
 
 for (let prop in tom) {
-  console.log(prop); // name, greet
+  console.log(prop);   // name, greet
 }
 
 // if a class expression has a name, it’s visible inside the class only:
@@ -48,7 +48,7 @@ const User3 = class MyClass {
   }
 }
 
-new User3().msg(); // [Function: MyClass]
+new User3().msg();   // [Function: MyClass]
 // console.log(MyClass); <- error
 
 // we can create a class dynamically:
@@ -60,11 +60,11 @@ function createClass(text) {
   }
 }
 
-const myClass = createClass('Hello class');
-new myClass().log(); // Hello class
+const myClass = createClass('Hello dynamical class');
+new myClass().log();   // Hello dynamical class
+
 
 // Getters and setters in a class:
-
 class User4 {
   constructor(name) {
     this._name = name;
@@ -83,32 +83,32 @@ class User4 {
 }
 
 const usr4 = new User4('Harry');
-usr4.name; // Harry
+usr4.name;   // Harry
 usr4.name = 'George';
-usr4.name; // George
+usr4.name;   // George
+
 
 // Using computed property in a getter and setter:
-
 const ch = 'change';
 const sh = 'show';
-const name = 'Name';
+const nm = 'Name';
 
 const obj = {
   first: 'Bill',
 
-  get [sh + name]() {
+  get [sh + nm]() {
     console.log(this.first);
   },
 
-  set [ch + name](value) {
+  set [ch + nm](value) {
     this.first = value;
   }
 }
 
 obj.first = 'Chris';
-console.log(obj.first); // Chris
+console.log(obj.first);   // Chris
 obj.changeName = 'William';
-obj.showName; // William
+obj.showName;   // William
 
 // TASK:
 
@@ -121,4 +121,4 @@ class Clock {
   }
 }
 
-const clock = new Clock();
+// const clock = new Clock();   // 0 1 2 3 4 ...
