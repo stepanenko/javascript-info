@@ -60,3 +60,9 @@ function prom() {
 const res = prom().then(data => {
   console.log(data);
 });
+
+const delay = (ms) => new Promise(
+  (resolve) => setTimeout(resolve('Delayed'), ms)
+);
+
+delay(4000).then(console.log);
