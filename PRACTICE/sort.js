@@ -18,7 +18,6 @@ let sorted = array.sort((a, b) => {
       return -1;
   }
   return b.rank - a.rank; 
-
 });
 
 let sorted2 = array.sort((a, b) => {
