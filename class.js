@@ -27,11 +27,11 @@ function User2(name) {
 }
 
 User2.prototype.greet = function() {
-  console.log('Hello,', this.name);   // Hello, Tom
+  console.log('Hello,', this.name);
 }
 
 const tom = new User2('Tom');
-tom.greet();
+tom.greet();   // Hello, Tom
 
 for (let prop in jack) {
   console.log(`${prop}: ${jack[prop]}`); //   name: Jack
