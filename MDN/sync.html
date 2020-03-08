@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>General asynchronous programming concepts</h1>
+      <h2>Blocking code</h2>
+    </header>
+
+    <p class="info">
+      The paragraph does not appear until after the dates have finished
+      being calculated and the console message has been logged. <br>
+      The code runs in the order it appears in the source, and the
+      later operation doesn't run till the earlier operation has finished running.
+    </p>
+
+    <button>
+      Click Me!
+    </button>
+
+    <footer>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts">
+          Continue learning at MDN...
+        </a>
+    </footer>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        height: 100vh;
+      }
+      button {
+        padding: 10px 48px;
+      }
+      footer {
+        font-size: 26px;
+        position: absolute;
+        bottom: 100px;
+      }
+      .info, button, .message {
+        font-size: 18px;
+      }
+      .message {
+        color: red;
+        font-weight: 600;
+      }
+    </style>
+    <script type="text/javascript" src="./sync.js"></script>
+  </body>
+</html>
