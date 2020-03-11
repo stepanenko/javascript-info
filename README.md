@@ -14,3 +14,4 @@ https://github.com/getify/You-Dont-Know-JS
 
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 - **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
+- **[You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)**
