@@ -11,3 +11,4 @@ https://www.youtube.com/watch?v=M2bJBuaOeOQ
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 - **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
 - **[You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)**
+- **[JavaScript Allonge](https://leanpub.com/javascriptallongesix/read)**
