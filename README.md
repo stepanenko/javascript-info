@@ -12,4 +12,4 @@ https://github.com/getify/You-Dont-Know-JS
 
 ## Books to Read
 
-**- [Eloquent JavaScript](https://eloquentjavascript.net/)**
+- **[Eloquent JavaScript](https://eloquentjavascript.net/)**
