@@ -2,13 +2,9 @@
 
 https://javascript.info/
 
-## Brad Traversy JS Cardio #1
+## Brad Traversy JS Cardio #1 VIDEO
 
 https://www.youtube.com/watch?v=M2bJBuaOeOQ
-
-## The Kyle Simpson's book
-
-https://github.com/getify/You-Dont-Know-JS
 
 ## BOOKS
 
