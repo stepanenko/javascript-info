@@ -10,6 +10,7 @@ https://www.youtube.com/watch?v=M2bJBuaOeOQ
 
 https://github.com/getify/You-Dont-Know-JS
 
-## Books to Read
+## BOOKS
 
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
+- **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
