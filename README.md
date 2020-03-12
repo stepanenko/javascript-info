@@ -4,8 +4,8 @@
 - **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
 - **[You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)**
 - **[JavaScript Allonge](https://leanpub.com/javascriptallongesix/read)**
-- **[JavaScript Allonge](https://leanpub.com/javascriptallongesix/read)**
 - **[Speaking JavaScript](http://speakingjs.com/es5/index.html)**
+
 
 ## [Books by Dr. Axel Rauschmayer:](https://exploringjs.com/)
 
