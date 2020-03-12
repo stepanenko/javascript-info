@@ -2,12 +2,13 @@
 
 https://javascript.info/
 
-How it's done now. From the basics to advanced topics with simple, but detailed explanations.
-
-## Brad Traversy JS Cardio #1
+## Brad Traversy JS Cardio #1 VIDEO
 
 https://www.youtube.com/watch?v=M2bJBuaOeOQ
 
-## The Kyle Simpson's book
+## BOOKS
 
-https://github.com/getify/You-Dont-Know-JS
+- **[Eloquent JavaScript](https://eloquentjavascript.net/)**
+- **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
+- **[You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)**
+- **[JavaScript Allonge](https://leanpub.com/javascriptallongesix/read)**
