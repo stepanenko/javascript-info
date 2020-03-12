@@ -1,12 +1,4 @@
-## The Modern Javascript Tutorial
-
-https://javascript.info/
-
-## Brad Traversy JS Cardio #1 VIDEO
-
-https://www.youtube.com/watch?v=M2bJBuaOeOQ
-
-## BOOKS
+# BOOKS
 
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 - **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
@@ -24,3 +16,11 @@ https://www.youtube.com/watch?v=M2bJBuaOeOQ
 - Exploring ES6
 - Speaking JavaScript (ES1–ES5)
 - Setting up ES6
+
+### The Modern Javascript Tutorial
+
+https://javascript.info/
+
+### Brad Traversy JS Cardio #1 VIDEO
+
+https://www.youtube.com/watch?v=M2bJBuaOeOQ
