@@ -6,7 +6,7 @@
 - **[JavaScript Allonge](https://leanpub.com/javascriptallongesix/read)**
 - **[JavaScript Allonge](https://leanpub.com/javascriptallongesix/read)**
 - **[Speaking JavaScript](http://speakingjs.com/es5/index.html)**
-
+#
 ## [Books by Dr. Axel Rauschmayer:](https://exploringjs.com/)
 
 - JavaScript for impatient programmers (ES1–ES2019)
@@ -16,9 +16,7 @@
 - Exploring ES6
 - Speaking JavaScript (ES1–ES5)
 - Setting up ES6
-
-##
-
+#
 ### The Modern Javascript Tutorial
 
 https://javascript.info/
