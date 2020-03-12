@@ -1,5 +1,4 @@
 
-// TASK FOR LASOFT INTERVIEW:
 // Write a function that accepts two parameters.
 // First parameter is the target number, and second parameter is an array.
 // Function will try to find the first numbers that correctly multiplies to the first parameter.
@@ -21,7 +20,6 @@ function test(target, numbers = []) {
 
 let arr2 = [3, 3, 5, 8];
 let arr = [5, 2];
-let target = 9;
 
 let output = test(9, arr);
 console.log(output);
