@@ -6,7 +6,7 @@ let group = {
   showGroup() {
     this.students.forEach(function(student) {
       return console.log(this.title + ': ' + student);
-    })
+    });
   }
 }
 
