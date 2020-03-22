@@ -11,8 +11,8 @@ Abstract Factory | Adapter | Chain of Resp
 Builder | Bridge | Command
 Factory Method | Composite | Interpreter
 Prototype | Decorator | Iterator
-Singleton | Facade
-   | Flyweight
-   | Proxy
+Singleton | Facade | Mediator
+ --- | Flyweight | Memento
+   | Proxy | Observer
 
 **Beau Carnes** [Videos List](https://www.youtube.com/playlist?list=PLWKjhJtqVAbnZtkAI3BqcYxKnfWn_C704)
