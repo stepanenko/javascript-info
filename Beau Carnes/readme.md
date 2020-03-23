@@ -20,3 +20,5 @@ Singleton | Facade | Mediator
  --- | --- | Visitor
 
 **Beau Carnes** [Videos List](https://www.youtube.com/playlist?list=PLWKjhJtqVAbnZtkAI3BqcYxKnfWn_C704)
+
+**Christopher Okhravi** [Video List](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
