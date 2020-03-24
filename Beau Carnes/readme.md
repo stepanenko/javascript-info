@@ -19,6 +19,6 @@ Singleton | Facade | Mediator
  --- | --- | Template Method
  --- | --- | Visitor
 
-**Beau Carnes** [Videos List](https://www.youtube.com/playlist?list=PLWKjhJtqVAbnZtkAI3BqcYxKnfWn_C704)
+**Beau Carnes** [Videos List: Design Patterns](https://www.youtube.com/playlist?list=PLWKjhJtqVAbnZtkAI3BqcYxKnfWn_C704)
 
-**Christopher Okhravi** [Video List](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
+**Christopher Okhravi** [Video List: Design Patterns in OOP](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
