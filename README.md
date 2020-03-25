@@ -20,7 +20,7 @@
 
 #
 ### [Modern Javascript Tutorial](https://javascript.info/)
-
-### [JS Cardio #1](https://www.youtube.com/watch?v=M2bJBuaOeOQ) by Brad Traversy
+#
+### [Brad Traversy's JS Cardio #1](https://www.youtube.com/watch?v=M2bJBuaOeOQ) 
 
 
