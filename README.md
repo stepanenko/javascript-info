@@ -19,10 +19,8 @@
 - Setting up ES6 (2016)
 
 #
-### The Modern Javascript Tutorial
+### [Modern Javascript Tutorial](https://javascript.info/)
 
-https://javascript.info/
+### [JS Cardio #1](https://www.youtube.com/watch?v=M2bJBuaOeOQ) by Brad Traversy
 
-### Brad Traversy JS Cardio #1 VIDEO
 
-https://www.youtube.com/watch?v=M2bJBuaOeOQ
