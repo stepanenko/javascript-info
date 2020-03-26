@@ -3,7 +3,7 @@
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 - **[Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/)**
 - **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
-- **[You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)**
+- **[You Dont Know JS Yet "2nd Edition"](https://github.com/getify/You-Dont-Know-JS)**
 - **[JavaScript Allonge "The 6 Edition"](https://leanpub.com/javascriptallongesix/read)**
 - **[Speaking JavaScript](http://speakingjs.com/es5/index.html)**
 
