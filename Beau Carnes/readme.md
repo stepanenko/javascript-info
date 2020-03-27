@@ -19,6 +19,7 @@ Singleton | Facade | Mediator
  --- | --- | Template Method
  --- | --- | Visitor
 
-**Beau Carnes** [Videos List](https://www.youtube.com/playlist?list=PLWKjhJtqVAbnZtkAI3BqcYxKnfWn_C704)
+**Beau Carnes** [Article: JS Design Patterns](https://www.dofactory.com/javascript/design-patterns) | 
+[Videos: Design Patterns](https://www.youtube.com/playlist?list=PLWKjhJtqVAbnZtkAI3BqcYxKnfWn_C704)
 
-**Christopher Okhravi** [Video List](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
+**Christopher Okhravi** [Videos: Design Patterns in OOP](https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)

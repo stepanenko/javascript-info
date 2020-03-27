@@ -3,8 +3,8 @@
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 - **[Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/)**
 - **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
-- **[You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)**
-- **[JavaScript Allonge](https://leanpub.com/javascriptallongesix/read)**
+- **[You Dont Know JS Yet "2nd Edition"](https://github.com/getify/You-Dont-Know-JS)**
+- **[JavaScript Allonge "The 6 Edition"](https://leanpub.com/javascriptallongesix/read)**
 - **[Speaking JavaScript](http://speakingjs.com/es5/index.html)**
 
 
@@ -19,10 +19,8 @@
 - Setting up ES6 (2016)
 
 #
-### The Modern Javascript Tutorial
+### [Modern Javascript Tutorial](https://javascript.info/)
+#
+### [Brad Traversy's JS Cardio 1](https://www.youtube.com/watch?v=M2bJBuaOeOQ) 
 
-https://javascript.info/
 
-### Brad Traversy JS Cardio #1 VIDEO
-
-https://www.youtube.com/watch?v=M2bJBuaOeOQ
