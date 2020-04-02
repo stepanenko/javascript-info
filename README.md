@@ -25,6 +25,7 @@
 - [Single page apps in depth (By Mikito Takada)](http://singlepageappbook.com/index.html)
 - [Data Structures and Algorithms in JavaScript](https://github.com/amejiarosario/dsa.js-data-structures-algorithms-javascript)
 - [Javascript Challenges](http://tcorral.github.io/javascript-challenges-book/)
+- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
 
 ## [Books by Dr. Axel Rauschmayer:](https://exploringjs.com/)
 
