@@ -1,8 +1,9 @@
 # BOOKS
 
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
+- **[Human JavaScript](http://read.humanjavascript.com/)**
 - **[Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/)**
-- **[If Hemingway Wrote Javascript](https://pepa.holla.cz/wp-content/uploads/2015/11/If-Hemingway-Wrote-JavaScript.pdf)
+- **[If Hemingway Wrote Javascript](https://pepa.holla.cz/wp-content/uploads/2015/11/If-Hemingway-Wrote-JavaScript.pdf)**
 - **[You Dont Know JS Yet "2nd Edition"](https://github.com/getify/You-Dont-Know-JS)**
 - **[JavaScript Allonge "The 6 Edition"](https://leanpub.com/javascriptallongesix/read)**
 - **[Speaking JavaScript](http://speakingjs.com/es5/index.html)**
