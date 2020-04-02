@@ -28,6 +28,9 @@
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
 
 ## [Books by Nicolás Bevacqua](https://ponyfoo.com/books)
+- JavaScript Application Design
+- Practical Modern JavaScript
+- Mastering Modular JavaScript
 
 ## [Books by Dr. Axel Rauschmayer:](https://exploringjs.com/)
 
@@ -41,7 +44,6 @@
 
 ## [List of Free JS Books](https://jsbooks.revolunet.com/)
 
-#
 ### [Modern Javascript Tutorial](https://javascript.info/)
 #
 ### [Brad Traversy's JS Cardio 1](https://www.youtube.com/watch?v=M2bJBuaOeOQ) 
