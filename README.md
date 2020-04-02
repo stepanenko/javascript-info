@@ -13,10 +13,15 @@
 ## Other Books:
 - [JavaScript Application Design](https://manning-content.s3.amazonaws.com/download/3/ea9e2c0-901f-4165-a7fb-195a6eec57ce/JSAD_CH05.pdf)
 - [JavaScript (ES2015+) Enlightenment](https://frontendmasters.com/books/javascript-enlightenment/)
+- [DOM Enlightenment](http://domenlightenment.com/)
 - [The Codeless Code](http://thecodelesscode.com/contents)
 - [Building Front-End Web Apps with Plain JavaScript](https://oxygen.informatik.tu-cottbus.de/webeng/JsFrontendApp/complete-tutorial.pdf)
 - [Oh My JS - The Best JavaScript Articles](https://pepa.holla.cz/wp-content/uploads/2016/07/ohmyjs.pdf)
 - JavaScript: The Good Parts (By Douglas Crockford)
+- Object-Oriented JavaScript (By Stoyan Stefanov)
+- JavaScript Patterns (By Stoyan Stefanov)
+- Pro JavaScript Design Patterns (By 
+- Single page apps in depth (By Mikito Takada)
 
 ## [Books by Dr. Axel Rauschmayer:](https://exploringjs.com/)
 
