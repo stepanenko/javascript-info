@@ -19,6 +19,9 @@
 - Speaking JavaScript (ES1–ES5) (2014)
 - Setting up ES6 (2016)
 
+## Other Books:
+[JavaScript Application Design](https://manning-content.s3.amazonaws.com/download/3/ea9e2c0-901f-4165-a7fb-195a6eec57ce/JSAD_CH05.pdf)
+
 #
 ### [Modern Javascript Tutorial](https://javascript.info/)
 #
