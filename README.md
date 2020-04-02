@@ -2,11 +2,11 @@
 
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 - **[Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/)**
-- **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
+- **[If Hemingway Wrote Javascript](https://pepa.holla.cz/wp-content/uploads/2015/11/If-Hemingway-Wrote-JavaScript.pdf)
 - **[You Dont Know JS Yet "2nd Edition"](https://github.com/getify/You-Dont-Know-JS)**
 - **[JavaScript Allonge "The 6 Edition"](https://leanpub.com/javascriptallongesix/read)**
 - **[Speaking JavaScript](http://speakingjs.com/es5/index.html)**
-
+- **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
 
 ## [Books by Dr. Axel Rauschmayer:](https://exploringjs.com/)
 
