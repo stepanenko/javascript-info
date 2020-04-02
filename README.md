@@ -27,6 +27,8 @@
 - [Javascript Challenges](http://tcorral.github.io/javascript-challenges-book/)
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
 
+## [Books by Nicolás Bevacqua](https://ponyfoo.com/books)
+
 ## [Books by Dr. Axel Rauschmayer:](https://exploringjs.com/)
 
 - JavaScript for impatient programmers (ES1–ES2019) (2019)
