@@ -26,6 +26,8 @@
 - [Data Structures and Algorithms in JavaScript](https://github.com/amejiarosario/dsa.js-data-structures-algorithms-javascript)
 - [Javascript Challenges](http://tcorral.github.io/javascript-challenges-book/)
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
+- Javascript: Novice to Ninja, 2nd Edition (By Darren Jones)
+- Beginning Functional JS: Uncover the Concepts of Functional Programming with EcmaScript 8, 2nd Edition (By Anto Aravinth and Srikanth Machiraju)
 
 ## [Books by Nicolás Bevacqua](https://ponyfoo.com/books)
 - JavaScript Application Design
