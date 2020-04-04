@@ -2,10 +2,10 @@
 
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 - **[Human JavaScript](http://read.humanjavascript.com/)**
-- **[Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/)**
 - **[If Hemingway Wrote Javascript](https://pepa.holla.cz/wp-content/uploads/2015/11/If-Hemingway-Wrote-JavaScript.pdf)**
 - **[You Dont Know JS Yet "2nd Edition"](https://github.com/getify/You-Dont-Know-JS)**
 - **[Functional-Light JavaScript](https://github.com/getify/Functional-Light-JS)**
+- **[Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/)**
 - **[JavaScript Allonge "The 6 Edition"](https://leanpub.com/javascriptallongesix/read)**
 - **[Speaking JavaScript](http://speakingjs.com/es5/index.html)**
 - **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
