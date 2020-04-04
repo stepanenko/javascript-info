@@ -1,5 +1,7 @@
 
-# [JavaScript Design Patterns](https://www.dofactory.com/javascript/design-patterns)
+## Learning from Beau Carnes
+
+## [JavaScript Design Patterns](https://www.dofactory.com/javascript/design-patterns)
 
 > Design patterns are advanced object-oriented solutions to commonly occurring software problems.
 > Patterns are about reusable designs and interactions of objects.
