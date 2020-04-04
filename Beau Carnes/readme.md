@@ -1,5 +1,5 @@
 
-## Learning from Beau Carnes
+# Learn from Beau Carnes
 
 ## [JavaScript Design Patterns](https://www.dofactory.com/javascript/design-patterns)
 
