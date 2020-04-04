@@ -49,8 +49,6 @@
 
 ## [List of Free JS Books](https://jsbooks.revolunet.com/)
 
-### [Modern Javascript Tutorial](https://javascript.info/)
-#
 ### [Brad Traversy's JS Cardio 1](https://www.youtube.com/watch?v=M2bJBuaOeOQ) 
 
 
