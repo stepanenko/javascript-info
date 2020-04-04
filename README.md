@@ -47,4 +47,7 @@
 - Speaking JavaScript (ES1–ES5) (2014)
 - Setting up ES6 (2016)
 
-## [List of Free JS Books](https://jsbooks.revolunet.com/)
+## Websites with JS Books
+
+- [jsbooks.revolunet.com](https://jsbooks.revolunet.com/)
+- [twirpx.com](https://www.twirpx.com/search/)
