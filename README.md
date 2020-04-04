@@ -48,7 +48,3 @@
 - Setting up ES6 (2016)
 
 ## [List of Free JS Books](https://jsbooks.revolunet.com/)
-
-### [Brad Traversy's JS Cardio 1](https://www.youtube.com/watch?v=M2bJBuaOeOQ) 
-
-
