@@ -1,7 +1,7 @@
 
-# Data Structures and Algorithms in JavaScript
+## Data Structures and Algorithms in JavaScript
 
-By: **Beau Carnes**
+**By Beau Carnes**
 
 [Video](https://www.youtube.com/watch?v=t2CEgPsws3U&list=PLWKjhJtqVAbkso-IbgiiP48n-O-JQA9PJ&index=14&t=0s)
 
