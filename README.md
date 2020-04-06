@@ -50,4 +50,3 @@
 ## Websites with JS Books
 
 - [jsbooks.revolunet.com](https://jsbooks.revolunet.com/)
-- [twirpx.com](https://www.twirpx.com/files/applied/comp/client/?ff=pdf&sorting=title)
