@@ -1,5 +1,5 @@
 
-class BrandPerformance {
+class Performance {
   constructor() {
     this.bgEnabled = { ics: false, ae: true, mop: true, loyalty: false };
     this.bgExisting = [
@@ -26,7 +26,7 @@ class BrandPerformance {
   }
 }
 
-let view = new BrandPerformance();
+let view = new Performance();
 view.validateBattlegrounds();
 
 console.log(view);
