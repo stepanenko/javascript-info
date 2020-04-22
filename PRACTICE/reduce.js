@@ -8,7 +8,10 @@ const foo = {
 let newObj = {};
 let myNewObj = {};
 
+// ==== Option with forEach ====
 Object.keys(foo).forEach(prop => newObj[prop] = null);
+
+// ==== Option with Reduce ====
 let bar = Object.keys(foo).reduce((myNewObj, prop) => {
   myNewObj[prop] = null;
   return myNewObj;
@@ -20,7 +23,7 @@ console.log(bar);      // { foo: null, bar: null, baz: null }
 
 const nums = [5, 9, 7];
 
-let check = nums.forEach((num, index) => nums[index] = num + 1);
+let check = nums.forEach((num, index) => nums[index] = num + 1);   // forEach returns nothing
 let added = nums.map(num => num + 1);
 
 console.log(check);   // undefined

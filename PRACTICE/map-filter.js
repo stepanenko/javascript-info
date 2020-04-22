@@ -12,17 +12,17 @@ class Performance {
   }
 
   validateBattlegrounds() {
-    const battlegroundsToValidate = this.bgExisting
+    const existing = this.bgExisting
       .map(battleground => ({
         metadata: battleground.metadata.toLowerCase(),
         value: battleground.value
       }));
 
-    const enabledBattlegrounds = Object.keys(this.bgEnabled)
+    const enabled = Object.keys(this.bgEnabled)
       .filter(battlegroundName => this.bgEnabled[battlegroundName] === true);
 
-    this.chartBattlegrounds = battlegroundsToValidate
-      .filter(battleground => enabledBattlegrounds.includes(battleground.metadata));
+    this.chartBattlegrounds = existing
+      .filter(battleground => enabled.includes(battleground.metadata));
   }
 }
 
