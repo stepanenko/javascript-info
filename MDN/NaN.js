@@ -16,5 +16,6 @@ console.log(sanitise('NotANumber'));
 function valueIsNaN(v) {
   return v !== v;
 }
+
 console.log(valueIsNaN(1));          // false
 console.log(valueIsNaN(NaN));        // true
