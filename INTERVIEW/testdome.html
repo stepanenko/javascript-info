@@ -15,16 +15,23 @@
   <a href="//www.google.com">Google</a><br />
 
   <script>
-    // === 4 task
-    // function registerHandlers() {
-      var as = document.getElementsByTagName('a');
-      console.log(as);
-      for (let i = 0; i < as.length; i++) {   // changed var to let and thats it
-        as[i].onclick = function () {
-          alert(i);
-          return false;
-        }
+    // === 4 task ===
+    // Fix the bugs in the registerHandlers function. An alert should display anchor's zero-based index within a document instead of following the link.
+
+    // For example, in the document below, the alert should display "2" when Google anchor
+    // is clicked since it is the third anchor element in the document and its zero-based index is 2.
+
+    // function registerHandlers() {    // open in browser and test by clicking the links
+
+    var as = document.getElementsByTagName('a');
+    console.log(as);
+    for (let i = 0; i < as.length; i++) {   // changed var to let and thats it
+      as[i].onclick = function () {
+        alert(i);
+        return false;
       }
+    }
+
     // }
 
   </script>
