@@ -22,3 +22,18 @@ entries.forEach(([key, value]) => {
 
 console.log(newObject);   // { a: 2, b: 4, c: 6 }
 console.log(newObject2);   // { a: 2, b: 4, c: 6 }
+
+
+const object1 = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+// Now suppose you want to change the value of b to 22, you can do this by:
+// Object.assign(target, ...sources)
+
+const object2 = Object.assign({}, object1, { b: 22 });
+
+console.log(object1);  // { a: 1, b: 2, c: 3 } 
+console.log(object2);  // { a: 1, b: 22, c: 3 } 
