@@ -16,10 +16,21 @@ const newArray2 = originalArray.map(number => {
   return number === 10 ? number + 1 : number;
 });
 
-console.log(newArray2); // [5, 11, 15, 20]
-
+// console.log(newArray2); // [5, 11, 15, 20]
 
 // Map Method for 2-dimensional Arrays:   https://www.robinwieruch.de/javascript-map-array
 
+const someArr = [
+  { id: 1, data: 21 },
+  { id: 2, data: 12 },
+  { id: 3, data: 26 }
+];
 
+let resArr = someArr.map(obj => {
+  return {
+    ...obj,
+    data: obj.data * 2
+  }
+});
 
+console.log(resArr);
