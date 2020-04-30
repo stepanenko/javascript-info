@@ -1,5 +1,9 @@
 
-const range = {1: "581", 2: "1852", 3: "442", 4: "1072", 5: "627", 6: "974", 7: "907", 8: "1044", 9: "439", 10: "324", 11: "635", 12: "88", 13: "65", 14: "1654", 15: "857", 16: "930", 17: "539", 18: "643", 19: "359", 20: "444", 21: "556", 22: "469", 23: "245", 24: "154", 25: "571", 26: "269"};
+let range = { 1: "581", 2: "1852", 3: "442", 4: "1072", 5: "627", 6: "974",
+7: "907", 8: "1044", 9: "439", 10: "324", 11: "635", 12: "88", 13: "65",
+14: "1654", 15: "857", 16: "930", 17: "539", 18: "643", 19: "359",
+20: "444", 21: "556", 22: "469", 23: "245", 24: "154", 25: "571", 26: "269" };
+range = null;   // for testing !
 const lowSize = 900;
 
 
@@ -19,21 +23,20 @@ console.log('Correct result:', inSizeRange);   // [ 1, 4, 5 ] correct
 
 // ____ Reduce ____
 console.time('reduce');
-let res = Object.keys(range).reduce((arr, key) => {
-  return range[key] > lowSize ? arr.concat(Number(key)) : arr;
-}, []);
+let res = Object.keys(range || {}).reduce((arr, key) => range[key] > lowSize ? arr.concat(Number(key)) : arr, []);
+// ... added default [] in case range is null or undefined
 console.timeEnd('reduce');   // 0.2 - 0.4 ms
 
 // ... add console.log() and || for debugging:
-// Object.keys(range).reduce((arr, key) => {
-//   return console.log(range[key]) || range[key] > lowSize ? arr.concat(Number(key)) : arr;
-// }, []);
+Object.keys(range || {}).reduce((arr, key) => {
+  // return console.log(range[key]) || range[key] > lowSize ? arr.concat(Number(key)) : arr;
+}, []);
 
 console.log('Reduce result:', res);
 
 // ____ Map ____
 // With map() we cant skip the unwanted value so reduce wins here !!!
-let resMap = Object.keys(range).map(key => {
+let resMap = Object.keys(range || {}).map(key => {
   // if (range[key] > lowSize) return Number(key);  // => [ 1, undefined, 3, 4, undefined ]
   return range[key] > lowSize && Number(key);  // => [ 1, false, 3, 4, false ]
 });
