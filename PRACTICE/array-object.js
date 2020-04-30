@@ -20,7 +20,7 @@ const error = bgExisting.filter(el => bgEnabled[el.metadata.toLowerCase()]);
 // }
 const res = [{ max: 6 }];
 
-let option1 = [...Array(res[0].max)].map((el, index) => ({ name: `Top ${index} Box`, value: index + 1 }));
+let option1 = [...Array(res[0].max)].map((el, index) => ({ name: `Top ${index + 1} Box`, value: index + 1 }));
 
 let option2 = Array.from({ length: res[0].max }, (elem, index) => ({ name: `Top ${index + 1} Box`, value: index + 1 }));
 
@@ -28,7 +28,7 @@ let option2 = Array.from({ length: res[0].max }, (elem, index) => ({ name: `Top 
 
 const allLevels = [
   { name: 'Average', value: 0 },
-  ...option2,
+  ...option1,
   { name: 'Bottom 1 Box', value: -1 },
   { name: 'Bottom 2 Box', value: -2 }
 ];

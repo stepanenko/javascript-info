@@ -7,4 +7,6 @@ console.log(copy);
 let objA = { a: '3' };
 let objB = { x: '3' };
 let both = Object.assign(objA, objB);
-console.table([objA, objB, copy]);
+
+console.log([objA, objB, copy]);
+console.table([objA, objB, copy]);   // console.table takes an Array as an argument

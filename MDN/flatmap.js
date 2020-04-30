@@ -2,12 +2,25 @@
 // The flatMap() method is identical to a map followed by a call to flat() of depth 1
 // !!! To work in NodeJS REQUIRES version 11.15+ or better 12.4+ but well supported in Chrome Browser
 
-let arr1 = ["it's Sunny in", "", "California"];
+let arr1 = [1, 2, 3, 4];
 
-arr1.map(x => x.split(" "));
+arr1.map(x => [x * 2]);
+// [[2], [4], [6], [8]]
+
+arr1.flatMap(x => [x * 2]);
+// [2, 4, 6, 8]
+
+// only one level is flattened
+arr1.flatMap(x => [[x * 2]]);
+// [[2], [4], [6], [8]]
+
+
+let arr2 = ["it's Sunny in", "", "California"];
+
+arr2.map(x => x.split(" "));
 // => [["it's","Sunny","in"],[""],["California"]]
 
-let res1 = arr1.flatMap(x => x.split(" "));
+let res1 = arr2.flatMap(x => x.split(" "));
 // => ["it's","Sunny","in", "", "California"]
 
 
