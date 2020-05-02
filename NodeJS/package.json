@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-start",
+  "version": "1.0.0",
+  "description": "nodejs official quick start guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "stepanenco",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "progress": "^2.0.3"
+  }
+}
