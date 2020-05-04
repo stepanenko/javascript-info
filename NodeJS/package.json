@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-start",
+  "name": "nodejs-intro",
   "version": "1.1.1",
   "description": "nodejs official quick start guide",
   "main": "app.js",
