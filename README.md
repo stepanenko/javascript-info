@@ -32,7 +32,7 @@
 - Simply JavaScript: Everything You Need to Learn Javascript From Scratch (Kevin Yank, Cameron Adams)
 
 
-## [Books by Nicolás Bevacqua](https://ponyfoo.com/books)
+## [Books by Nicolás Bevacqua:](https://ponyfoo.com/books)
 - JavaScript Application Design
 - Practical Modern JavaScript
 - Mastering Modular JavaScript
@@ -47,6 +47,6 @@
 - Speaking JavaScript (ES1–ES5) (2014)
 - Setting up ES6 (2016)
 
-## Websites with JS Books
+## Websites with JS Books:
 
 - [jsbooks.revolunet.com](https://jsbooks.revolunet.com/)
