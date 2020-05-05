@@ -1,0 +1,5 @@
+[
+  { "id": 1, "title": "buy milk", "completed": true },
+  { "id": 2, "title": "buy coffee", "completed": false },
+  { "id": 3, "title": "take garbage", "completed": true }
+]
