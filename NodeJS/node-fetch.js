@@ -1,53 +1,6 @@
 
 const fetch = require('node-fetch');
-let todos = require('./todos.json');
 
-
-let done = true;
-const isItDoneYet = new Promise((resolve, reject) => {
-  if (done) {
-    const workDone = todos.filter(todo => todo.completed);
-    resolve(workDone);
-  } else {
-    const why = 'Still working on something else...';
-    reject(why);
-  }
-});
-
-const checkIfItsDone = () => {
-  isItDoneYet
-    .then(data => {
-      console.log(data);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-}
-
-checkIfItsDone();
-
-// ____ Promisifying ____
-// ...is a way to be able to use a classic JavaScript function that takes a callback, and have it return a promise:
-const fs = require('fs');
-
-const getFile = (fileName) => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(fileName, (err, data) => {
-      if (err) {
-        reject(err);  // calling `reject` will cause the promise to fail with or without the error passed as an argument
-        return;        // and we don't want to go any further
-      }
-      resolve(data);
-    });
-  });
-}
-
-getFile('/etc/passwd')
-  .then(data => console.log(data))
-  .catch(err => console.error(err));
-
-
-// ___ Chaining Promises ____
 // The Fetch API is a promise-based mechanism, and calling fetch() is
 // equivalent to defining our own promise using new Promise().
 const url = 'https://jsonplaceholder.typicode.com/posts?_limit=5';

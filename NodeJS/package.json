@@ -9,6 +9,7 @@
   "author": "stepanenco",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "chalk": "^4.0.0",
     "node-fetch": "^2.6.0",
     "progress": "^2.0.3"
