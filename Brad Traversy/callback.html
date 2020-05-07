@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Traversy Callback</title>
+</head>
+
+<body>
+
+  <script>
+    const posts = [
+      { title: 'Post One', body: 'Some text here from post one' },
+      { title: 'Post Two', body: 'Some text here from post two' }
+    ];
+
+    // function createPost(post){
+    //     setTimeout(function() {
+    //         posts.push(post);
+
+    //     }, 2000);
+    // }
+
+    // function getPosts(){
+    //     setTimeout(function() {
+    //         let output = '';
+    //         posts.forEach(function(post) {
+    //             output += `<li>${post.title}</li>`;
+    //         });
+    //         document.body.innerHTML = output;
+    //     }, 1000);
+    // }
+
+    // createPost({title: 'Post Three', body: 'Text of post Three'});
+    // getPosts();
+
+
+    // function createPost(post, callback){
+    //     setTimeout(function() {
+    //         posts.push(post);
+    //         callback();
+    //     }, 2000);
+
+    // }
+
+    // function getPosts(){
+    //     setTimeout(function() {
+    //         let output = '';
+    //         posts.forEach(function(post) {
+    //             output += `<li>${post.title}</li>`;
+    //         });
+    //         document.body.innerHTML = output;
+    //     }, 1000);
+    // }
+
+    // createPost({title: 'Post Three', body: 'Text of post Three'}, getPosts);
+
+    function getPosts() {
+      let output = '';
+      posts.forEach(function (post) {
+        output += `<li>${post.title}: ${post.body}</li>`;
+      });
+      document.body.innerHTML = output;
+    }
+    function createPost(post, callback) {
+      callback();
+      posts.push(post);
+      // callback();
+
+    }
+
+    createPost({ title: 'Post Three', body: 'Text of post Three' }, getPosts);
+
+  </script>
+</body>
+
+</html>

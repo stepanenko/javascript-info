@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background: #b16161
+    }
+
+    .small {
+      height: 30px;
+      width: 60px;
+      position: relative;
+      top: 100px;
+      left: 200px;
+      background: #216ed3
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <button id="btn">PUSH</button>
+    <div class="small"></div>
+  </div>
+
+  <script>
+    const box = document.querySelector('.box');
+
+    const p = document.createElement('p');
+    const span = document.createElement('span');
+    const span2 = document.createElement('span2');
+
+    p.innerText = 'Coords: ';
+    span.innerText = 'move over the box'
+    p.appendChild(span);
+    p.appendChild(span2);
+    box.appendChild(p)
+
+    box.onmousemove = function (e) {
+      span.innerText = `X: ${e.offsetX}`;
+      span2.innerText = ` Y: ${e.offsetY}`;
+    }
+
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('click', action);
+
+    function action(e) {
+      console.log(e.target)
+    }
+
+    document.body.addEventListener('click', push);
+    function push(e) {
+      if (e.target.classList.contains('small')) {
+        console.log('removed')
+        e.target.remove()
+
+      }
+    }
+
+    console.log(btn)
+
+  </script>
+</body>
+
+</html>

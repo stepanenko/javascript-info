@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello React</title>
+  <script src="https://fb.me/react-15.0.2.js"></script>
+  <script src="https://fb.me/react-dom-15.0.2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+
+    var itemsList = (
+      <ul className='list'>
+        <li className='item' key={1}>Item 1</li>
+        <li className='item' key={2}>Item 2</li>
+      </ul>
+    );
+
+    ReactDOM.render(
+      itemsList,
+      document.getElementById('example')
+    );
+
+  </script>
+</body>
+
+</html>
