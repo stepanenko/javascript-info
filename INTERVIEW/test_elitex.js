@@ -14,7 +14,7 @@ function removeProperty(obj, prop) {
   } else return false;
 }
 
-let obj = { name: 'ser '};
+let obj = { name: 'ser ' };
 let output = removeProperty(obj, 'name');
 // console.log(output);
 // console.log(obj);
@@ -47,7 +47,7 @@ console.log(formatDate("1/31/2014"));   // passed only 50%
 function registerHandlers() {
   var as = document.getElementsByTagName('a');
   for (var i = 0; i < as.length; i++) {
-    as[i].onclick = function() {
+    as[i].onclick = function () {
       alert(i);
       return false;
     }
@@ -56,3 +56,29 @@ function registerHandlers() {
 
 // You can get different certificates on their website
 // Tests screenshots and video are captured
+
+// task example
+// [1,2,3, [4,5, [7,8,9]]]  =>  [1,2,3,4,5,7,8,9]
+
+let array = [1, 2, 3, [4, 5, [7, 8, 9]]];
+
+function doFlat(array) {
+  return array.reduce((acc, value) => {
+
+    if (typeof value === 'number') {
+      acc.push(value);
+    }
+
+    if (Array.isArray(value)) {
+      var returnedArray = doFlat(value); // if let is used returnedArray will be scoped
+    }
+
+    if (returnedArray) {
+      return acc.concat(returnedArray);
+    }
+
+    return acc;
+  }, []);
+}
+
+console.log(doFlat(array));
