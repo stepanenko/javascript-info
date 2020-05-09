@@ -6,6 +6,7 @@ const values = [3, 4, 1, 1, 4, 5, 5];
 const unique = [...new Set(values)];
 // => [ 3, 4, 1, 5 ]
 
+
 // 2. A simple search (case-sensitive)
 const users = [
   { id: 11, name: 'Adam', age: 23, group: 'editor' },
@@ -17,13 +18,26 @@ const users = [
 const find = users.filter(user => user.name.includes('oli'));
 // => []
 
+
 // 3. A simple search (case-insensitive)
 const find2 = users.filter(it => new RegExp('oli', "i").test(it.name));
 // => [ { id: 97, name: 'Oliver', age: 28, group: 'admin' } ]
+
 
 // 4. Check if any of the users have admin rights
 const hasAdmin = users.some(user => user.group === 'admin');
 // => true
 
 
-console.log(hasAdmin);
+// 5. Flattening an array of arrays
+const nested = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+let flat = nested.reduce((acc, el) => [...acc, ...el], []);
+
+// we can omit an empty array [] as the second argument the first
+// value of the nested will be used as the initial acc value.
+let flat2 = nested.reduce((acc, el) => [...acc, ...el]);
+// => [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+
+console.log(flat2);
+
+
