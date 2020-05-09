@@ -17,8 +17,13 @@ const users = [
 const find = users.filter(user => user.name.includes('oli'));
 // => []
 
+// 3. A simple search (case-insensitive)
+const find2 = users.filter(it => new RegExp('oli', "i").test(it.name));
+// => [ { id: 97, name: 'Oliver', age: 28, group: 'admin' } ]
+
+// 4. Check if any of the users have admin rights
+const hasAdmin = users.some(user => user.group === 'admin');
+// => true
 
 
-
-
-console.log(find);
+console.log(hasAdmin);
