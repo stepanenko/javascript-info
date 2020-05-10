@@ -32,5 +32,4 @@ function doSmth() {
 }
 
 let someStuff = void doSmth();
-
-console.log(someStuff);
+// someStuff => undefined
