@@ -70,3 +70,40 @@ const getFile = (fileName) => {
 getFile('/etc/passwd')
   .then(data => console.log(data))
   .catch(err => console.error(err));
+
+// ___ Promise.all() ___
+// helps you define a list of promises, and execute something when they are all resolved.
+
+async function fetch(url) {
+  return url;
+}
+
+const f1 = fetch('/something.json');
+const f2 = fetch('/something2.json');
+
+Promise.all([f1, f2])
+  .then(res => {
+    console.log('Array of results', res);
+  })
+  .catch(err => {
+    console.error(err);
+  });
+
+// or new way:
+Promise.all([f1, f2]).then(([res1, res2]) => {
+  console.log('Res:', res1, res2);
+});
+
+// ___ Promise.race() ___
+// runs when the first of the promises you pass to it resolves, and it runs
+// the attached callback just once, with the result of the first promise resolved.
+
+const first = new Promise((resolve, _reject) => {
+  setTimeout(resolve, 500, 'first');
+});
+const second = new Promise((resolve, _reject) => {
+  setTimeout(resolve, 1000, 'second');
+});
+
+Promise.race([first, second]).then(res => console.log(res));
+
