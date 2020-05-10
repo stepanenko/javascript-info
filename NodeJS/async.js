@@ -72,3 +72,5 @@ watchOverSomeoneWatchingSomeoneDoingSomething().then(res => {
   console.log(res);
 });
 
+
+// Async/await makes this very easy because to the compiler it's just like synchronous code.
