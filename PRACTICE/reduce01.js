@@ -59,7 +59,7 @@ const lowSize = 500;
 
 // console.timeEnd('reduce with spread');      // 0.28 - 0.3 ms
 
-console.log(resSpr2);
+// console.log(resSpr2);
 
 // ____ forEach ____
 // console.time('forEach with concat');

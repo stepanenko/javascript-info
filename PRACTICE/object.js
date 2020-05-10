@@ -35,5 +35,21 @@ const object1 = {
 
 const object2 = Object.assign({}, object1, { b: 22 });
 
-console.log(object1);  // { a: 1, b: 2, c: 3 } 
-console.log(object2);  // { a: 1, b: 22, c: 3 } 
+console.log(object1);  // { a: 1, b: 2, c: 3 } not mutated
+console.log(object2);  // { a: 1, b: 22, c: 3 }
+
+// Airbnb's JavaScript Style Guide() {} says that:
+// Prefer the object spread operator over Object.assign to shallow-copy objects.
+
+// very bad
+const original = { a: 1, b: 2 };
+const copy = Object.assign(original, { c: 3 }); // this mutates `original` 
+delete copy.a; // so does this
+
+// bad
+const original2 = { a: 1, b: 2 };
+const copy2 = Object.assign({}, original2, { c: 3 }); // copy => { a: 1, b: 2, c: 3 }
+
+// good
+const original3 = { a: 1, b: 2 };
+const copy3 = { ...original3, c: 3 }; // copy => { a: 1, b: 2, c: 3 }
