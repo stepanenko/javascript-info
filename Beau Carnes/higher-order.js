@@ -30,14 +30,20 @@ const hasAdmin = users.some(user => user.group === 'admin');
 
 
 // 5. Flattening an array of arrays
+// using the spread operator inside a reduce is not great for performance. 
 const nested = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 let flat = nested.reduce((acc, el) => [...acc, ...el], []);
-
-// we can omit an empty array [] as the second argument the first
-// value of the nested will be used as the initial acc value.
+// we can omit an empty array [] as the second argument
+// the first value of the nested will be used as the initial acc value.
 let flat2 = nested.reduce((acc, el) => [...acc, ...el]);
 // => [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+let flat3 = [].concat.apply([], nested);
+// => [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+let flat4 = [].concat(...nested);
+// => [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+let conc = [3].concat(4, 5, 6, [7, [7.5], 8])
+// => [ 3, 4, 5, 6, 7, [ 7.5 ], 8 ]
 
-console.log(flat2);
+console.log(flat4);
 
 
