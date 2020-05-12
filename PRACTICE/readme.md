@@ -1,1 +1,1 @@
-## Pacticing different JS methods
+## Practicing different JS methods
