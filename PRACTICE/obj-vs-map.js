@@ -40,4 +40,5 @@ isExist = 'id' in obj;  // which will apply for inherited property as well.
 
 
 
+
 // https://medium.com/front-end-weekly/es6-map-vs-object-what-and-when-b80621932373

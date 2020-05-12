@@ -44,6 +44,25 @@ let flat4 = [].concat(...nested);
 let conc = [3].concat(4, 5, 6, [7, [7.5], 8])
 // => [ 3, 4, 5, 6, 7, [ 7.5 ], 8 ]
 
-console.log(flat4);
+
+// 6. Create an object that contains the frequency of the specified key
+const groupByAge = users.reduce((acc, it) => {
+  acc[it.age] = acc[it.age] + 1 || 1;
+  return acc;
+}, {});
+
+// => { 23: 1, 28: 2, 34: 1 }
+
+// 7. Indexing an array of objects (lookup table)
+const uTable = users.reduce((acc, it) => (acc[it.id] = it, acc), {});
+// or ...
+const uTable2 = users.reduce((acc, it) => {
+  acc[it.id] = it;
+  return acc;
+}, {});
+// => { '11': { id: 11, name: 'Adam', age: 23, group: 'editor' },
+//   ... }
+
+console.log(uTable2);
 
 

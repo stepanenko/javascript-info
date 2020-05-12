@@ -24,26 +24,26 @@ const lowSize = 500;
 
 
 // ____ Reduce ____
-// console.time('reduce with concat');
+console.time('reduce with concat');
 // cancat() behaves strage here but will work
-// let res = Object.keys(range || {}).reduce((arr, key) => range[key] > lowSize ? arr.concat(Number(key)) : arr, []);
+let res = Object.keys(range || {}).reduce((arr, key) => range[key] > lowSize ? arr.concat(Number(key)) : arr, []);
 
 // ... added {} in case range is null or undefined
 // if initial [] is missing the result will be wrong !!!
-// console.timeEnd('reduce with concat');   // 0.25 ms
+console.timeEnd('reduce with concat');   // 0.25 ms
 
 
-// console.time('reduce with push');
-// let inRange = [];
-// Object.keys(range).reduce((arr, key) => {
-//   // for push() to work we need to define an initial array first (inRange)  !!
-//   // otherwise we get TypeError: Cannot read property 'push' of undefined   !!
-//   // but then it doesn't make a sense to use reduce() at all                !!
-//   if (range[key] > lowSize) inRange.push(Number(key));
-//   // or ...
-//   // range[key] > lowSize && inRange.push(Number(key));
-// }, []);   // if initial [] is missing the result will be wrong !!!
-// console.timeEnd('reduce with push');   // 0.24 ms
+console.time('reduce with push');
+let inRange = [];
+Object.keys(range).reduce((arr, key) => {
+  // for push() to work we need to define an initial array first (inRange)  !!
+  // otherwise we get TypeError: Cannot read property 'push' of undefined   !!
+  // but then it doesn't make a sense to use reduce() at all                !!
+  if (range[key] > lowSize) inRange.push(Number(key));
+  // or ...
+  // range[key] > lowSize && inRange.push(Number(key));
+}, []);   // if initial [] is missing the result will be wrong !!!
+console.timeEnd('reduce with push');   // 0.24 ms
 
 // ... add console.log() and || for debugging:
 // Object.keys(range).reduce((arr, key) => {
@@ -54,20 +54,20 @@ const lowSize = 500;
 // console.log('Reduce result with push:', inRange);
 
 // ____ Spread ____
-// console.time('reduce with spread');
-// let resSpr = Object.keys(range).reduce((arr, key) => range[key] > lowSize ? [...arr, Number(key)] : arr, []);
+console.time('reduce with spread');
+let resSpr = Object.keys(range).reduce((arr, key) => range[key] > lowSize ? [...arr, Number(key)] : arr, []);
 
-// console.timeEnd('reduce with spread');      // 0.28 - 0.3 ms
+console.timeEnd('reduce with spread');      // 0.28 - 0.3 ms
 
 // console.log(resSpr2);
 
 // ____ forEach ____
-// console.time('forEach with concat');
-// let inRange2 = [];
-// Object.keys(range).forEach(key => {
-//   range[key] > lowSize ? inRange2 = inRange2.concat(Number(key)) : inRange2;
-// });
-// console.timeEnd('forEach with concat');   // 0.22 ms
+console.time('forEach with concat');
+let inRange2 = [];
+Object.keys(range).forEach(key => {
+  range[key] > lowSize ? inRange2 = inRange2.concat(Number(key)) : inRange2;
+});
+console.timeEnd('forEach with concat');   // 0.22 ms
 
 console.time('forEach with push');
 let inRange3 = [];
