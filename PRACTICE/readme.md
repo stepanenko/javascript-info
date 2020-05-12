@@ -1,0 +1,1 @@
+## Practicing different JS methods
