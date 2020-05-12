@@ -1,0 +1,1 @@
+## Pacticing different JS methods
