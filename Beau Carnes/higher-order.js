@@ -63,6 +63,16 @@ const uTable2 = users.reduce((acc, it) => {
 // => { '11': { id: 11, name: 'Adam', age: 23, group: 'editor' },
 //   ... }
 
-console.log(uTable2);
+
+// 8. Extract the unique values for the given key of each item in the array
+
+const uniques = new Set([1, 1, 2, 3, 3]); // => Set { 1, 2, 3 }
+const listOfUserGroups = [...new Set(users.map(u => u.group))];
+// => [ 'editor', 'admin' ]
+
+
+
+
+console.log(listOfUserGroups);
 
 
