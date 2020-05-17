@@ -71,8 +71,30 @@ const listOfUserGroups = [...new Set(users.map(u => u.group))];
 // => [ 'editor', 'admin' ]
 
 
+// 9. Object key-value map reversal
+const cities = {
+  Lyon: 'France',
+  Berlin: 'Germany',
+  Paris: 'France'
+};
+
+let countries = Object.keys(cities)
+  .reduce((acc, city) => (acc[cities[city]] = [...(acc[cities[city]] || []), city], acc), {});
+// => { France: [ 'Lyon', 'Paris' ], Germany: [ 'Berlin' ] }
+
+// We use the comma operator here, and it means we return the last value in parenthesis — acc.
+// Let’s rewrite this example in a more production-ready and performant way:
+let countries2 = Object.keys(cities).reduce((acc, city) => {
+  let country = cities[city];
+  acc[country] = acc[country] || [];
+  acc[country].push(city);
+  return acc;
+}, {});
+// Here we don’t use spread operator — it creates a new array on each reduce() call,
+// which leads to a big performance penalty: O(n²). Instead the old good push() method.
 
 
-console.log(listOfUserGroups);
+
+console.log(countries2);
 
 
