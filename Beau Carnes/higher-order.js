@@ -103,7 +103,7 @@ const queryString = Object.entries(params)
 
 
 // 12. Print a table of users as a readable string only with specified keys:
-const specify = users.map(({id, age, group}) => `\n${id} ${age} ${group}`).join('');
+const specify = users.map(({ id, age, group }) => `\n${id} ${age} ${group}`).join('');
 // specify is:
 // 11 23 editor
 // 47 28 admin
@@ -121,6 +121,24 @@ const specify2 = JSON.stringify(users, ['id', 'name', 'group'], 2);
 //   },
 //   { ...
 
-console.log(specify2);
+// 13. Find and replace a key-value pair in an array of objects
+// If you know the index, you can write this line: users[1].age = 29.
+// However, let’s take a look at another way of doing it:
+const updatedUsers = users
+  .map(user => user.id !== 47 ? user : { ...user, age: user.age + 1 });
 
 
+// 14. Union (A ∪ B) of arrays
+const arrA = [1, 4, 3, 2];
+const arrB = [5, 2, 6, 7, 1];
+const union = [...new Set([...arrA, ...arrB])];
+// => [ 1, 4, 3, 2, 5, 6, 7 ]
+
+
+// 15. Intersection (A ∩ B) of arrays
+const inter = arrA.filter(number => arrB.includes(number));
+// => [ 1, 2 ]
+
+
+
+// https://www.freecodecamp.org/news/15-useful-javascript-examples-of-map-reduce-and-filter-74cbbb5e0a1f/
