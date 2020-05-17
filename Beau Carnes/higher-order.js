@@ -94,7 +94,33 @@ let countries2 = Object.keys(cities).reduce((acc, city) => {
 // which leads to a big performance penalty: O(n²). Instead the old good push() method.
 
 
+// 11. Encode an object into a query string:
+const params = { lat: 45, lng: 6, alt: 1000 };
 
-console.log(countries2);
+const queryString = Object.entries(params)
+  .map(p => encodeURIComponent(p[0]) + '=' + encodeURIComponent(p[1])).join('&');
+// => "lat=45&lng=6&alt=1000"
+
+
+// 12. Print a table of users as a readable string only with specified keys:
+const specify = users.map(({id, age, group}) => `\n${id} ${age} ${group}`).join('');
+// specify is:
+// 11 23 editor
+// 47 28 admin
+// 85 34 editor
+// 97 28 admin
+
+// JSON.stringify can make the string output more readable, but not as a table:
+const specify2 = JSON.stringify(users, ['id', 'name', 'group'], 2);
+// specify2 is:
+// [
+//   {
+//     "id": 11,
+//     "name": "Adam",
+//     "group": "editor"
+//   },
+//   { ...
+
+console.log(specify2);
 
 
