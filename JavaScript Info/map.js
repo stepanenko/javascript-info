@@ -8,7 +8,7 @@ map.set('ok', 234, 45); // third arg is skipped
 
 // Regular Object would convert keys to string but Map keeps the type
 
-let john = { name: 'John' }
+let john = { name: 'John' };
 
 let visitsMap = new Map();
 
@@ -50,8 +50,14 @@ for (let entry of recipeMap) { // the same as of recipeMap.entries()
 // Besides that, Map has a built-in forEach method, similar to Array:
 // runs the function for each (key, value) pair
 recipeMap.forEach((value, key, map) => {
+  // console.log(map);   // logs entire Map
   console.log(`${key}: ${value}`);   // cucumber: 500 etc
 });
 
 // The iteration goes in the same order as the values were inserted.
 // Map preserves this order, unlike a regular Object.
+
+let saraObj = { name: 'Sara', job: 'coder' };
+
+let mapSara = new Map(Object.entries(saraObj));
+// => Map { 'name' => 'Sara', 'job' => 'coder' }
