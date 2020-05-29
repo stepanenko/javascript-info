@@ -61,3 +61,6 @@ let saraObj = { name: 'Sara', job: 'coder' };
 
 let mapSara = new Map(Object.entries(saraObj));
 // => Map { 'name' => 'Sara', 'job' => 'coder' }
+
+// let prices = Object.fromEntries([['banana', 1], ['orange', 2], ['meat', 4]]); // needs nodejs v.12.4+
+
