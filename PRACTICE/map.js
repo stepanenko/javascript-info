@@ -1,5 +1,5 @@
 
-// ____ Conditional Map: Changing Items in an Array: ____
+//// ____ Conditional Map: Changing Items in an Array: ____
 
 const originalArray = [5, 10, 15, 20];
 
@@ -50,7 +50,7 @@ let pure2 = someArr.map(ob => {
 console.log(pure2);
 // pure2 => [ { id: 1, data: 7 }, { id: 2, data: 22 }, { id: 3, data: 12 } ]
 
-// ____ map() for 2-dimensional Arrays: ____
+//// ____ map() for 2-dimensional Arrays: ____
 
 const myArray3 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 const newArray3 = myArray3.map(value => value.map(number => number * 2));
@@ -63,10 +63,10 @@ const newArray3 = myArray3.map(value => value.map(number => number * 2));
 // you can recreate your own flatMap function by using reduce.
 
 
-// ...... flatMap() to be tried here ......
+//// ...... flatMap() to be tried here ......
 
 
-// _____ DEBUGGING THE MAP METHOD: _____
+//// _____ DEBUGGING THE MAP METHOD: _____
 // The most common bug that you might encounter is: map is not a function
 
 // originArray could either be [1, 2, 3, 4] or null

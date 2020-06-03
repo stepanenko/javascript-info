@@ -9,7 +9,7 @@ let range = {
 const lowSize = 500;
 
 
-// Improve this code with reduce, forEach or map:
+// Improve this code with reduce / forEach / map:
 // console.time('for in loop');
 // let inSizeRange = [];
 // for (let key in range) {
@@ -23,7 +23,7 @@ const lowSize = 500;
 // console.log('Result with For In Loop:', inSizeRange);
 
 
-// ____ Reduce ____
+//// ____ Reduce ____
 console.time('reduce with concat');
 // cancat() behaves strage here but will work
 let res = Object.keys(range || {}).reduce((arr, key) => range[key] > lowSize ? arr.concat(Number(key)) : arr, []);
@@ -53,7 +53,7 @@ console.timeEnd('reduce with push');   // 0.24 ms
 // console.log('Reduce result with concat:', res);
 // console.log('Reduce result with push:', inRange);
 
-// ____ Spread ____
+//// ____ Spread ____
 console.time('reduce with spread');
 let resSpr = Object.keys(range).reduce((arr, key) => range[key] > lowSize ? [...arr, Number(key)] : arr, []);
 
@@ -61,7 +61,7 @@ console.timeEnd('reduce with spread');      // 0.28 - 0.3 ms
 
 // console.log(resSpr2);
 
-// ____ forEach ____
+//// ____ forEach ____
 console.time('forEach with concat');
 let inRange2 = [];
 Object.keys(range).forEach(key => {
@@ -77,7 +77,7 @@ console.timeEnd('forEach with push');   // 0.21 ms fastest !
 // console.log('ForEach results with concat:', inRange2);
 // console.log('ForEach results with push:', inRange3);
 
-// ____ Map ____
+//// ____ Map ____
 // With map() we CAN'T skip the unwanted values so reduce or forEach are better here !!!
 // let resMap = Object.keys(range).map(key => {
 //   // if (range[key] > lowSize) return Number(key);  // => [ 1, undefined, 3, 4, undefined ]

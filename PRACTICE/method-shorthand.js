@@ -15,6 +15,7 @@ const ob = {
   }
 }
 
+let stuff = 'global'; // won't help
 const ob2 = {
   stuff: 'rainbow',
   method: () => {
@@ -27,3 +28,4 @@ let short = Obj();
 console.log(short.method()); // candy
 console.log(ob.method()); // rainbow
 console.log(ob2.method()); // undefined
+
