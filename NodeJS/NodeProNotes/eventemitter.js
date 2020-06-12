@@ -13,8 +13,10 @@ myDog.on('chew', (item) => {
     console.log(`Time to buy another ${item}`);
   }
 });
-myDog.emit('chew', 'shoe'); // Will result in console.log('Time to buy another shoe') const bacon = new Food();
+myDog.emit('chew', 'shoe'); // Will result in console.log('Time to buy another shoe')
+const bacon = new Food();
 myDog.emit('chew', bacon); // Will result in console.log('Good dog')
+
 // In the above example, the dog is the publisher / EventEmitter, while the function
 // that checks the item was the subscriber / listener.You can make more listeners too:
 // There can also be multiple listeners for a single event, and even remove listeners:
