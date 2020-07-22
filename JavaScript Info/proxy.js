@@ -1,7 +1,8 @@
 
 // let proxy = new Proxy(target, handler);
 // target – is an object to wrap, can be anything, including functions.
-// handler – proxy configuration: an object with “traps”, methods that intercept operations. – e.g. get trap for reading a property of target, set trap for writing a property into target, and so on.
+// handler – proxy configuration: an object with “traps”, methods that intercept operations:
+// – e.g. get trap for reading a property of target, set trap for writing a property into target, and so on.
 
 // let’s create a proxy without any traps:
 let target = {};
