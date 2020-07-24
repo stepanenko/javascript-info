@@ -14,10 +14,10 @@ console.log(proxy2.test); // 5, we can read it from proxy too
 for (let key in proxy2) console.log(key); // test, iteration works
 
 
-// example:
-const numbers = ['a', 'b', 'c'];
+// example 1:
+const letters = ['a', 'b', 'c'];
 
-const proxy3 = new Proxy(numbers, {
+const proxy3 = new Proxy(letters, {
   get(target, prop) {
     if (prop in target) {
       return target[prop];
@@ -29,6 +29,22 @@ const proxy3 = new Proxy(numbers, {
 
 console.log(proxy3[4]);   // no such letter
 console.log(proxy3[1]);   // b
+
+// example 2:
+let numbers = [3, 5, 2];
+
+numbers = new Proxy(numbers, {
+  get(target, prop) {
+    if (prop in target) {
+      return target[prop];
+    } else {
+      return 0;
+    }
+  }
+});
+
+console.log(numbers[1]);   // 5
+console.log(numbers[6]);   // 0
 
 //   Internal Method  	 |    Handler Method      |     Triggers when…
 // ----------------------------------------------------------------
