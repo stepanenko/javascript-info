@@ -46,6 +46,27 @@ numbers = new Proxy(numbers, {
 console.log(numbers[1]);   // 5
 console.log(numbers[6]);   // 0
 
+// example 3:
+let dictionary = {
+  'Hello': 'Hola',
+  'Bye': 'Adiós'
+};
+
+dictionary = new Proxy(dictionary, {
+  get(target, phrase) { // intercept reading a property from dictionary
+    if (phrase in target) { // if we have it in the dictionary
+      return target[phrase]; // return the translation
+    } else {
+      // otherwise, return the non-translated phrase
+      return phrase;
+    }
+  }
+});
+
+// Look up arbitrary phrases in the dictionary! At worst, they're not translated.
+console.log(dictionary['Hello']);   // Hola
+console.log(dictionary['Welcome to Proxy']);   // Welcome to Proxy (no translation)
+
 //   Internal Method  	 |    Handler Method      |     Triggers when…
 // ----------------------------------------------------------------
 // [[Get]]               	    get	                      reading a property
