@@ -29,9 +29,12 @@ console.log(weak.get(john));   // undefined
 
 // Now where do we need such data structure? ... https://javascript.info/weakmap-weakset
 // ##### 1. Additional Data Storage: #####
-weak.set(john, "secret documents");
-console.log(weak.get(john));   // secret documents
-// if john dies, secret documents will be destroyed automatically
+let secretStorage = new WeakMap();
+let agent = { name: 'James Bond', id: 007 };
+secretStorage.set(agent, "MI6 Secret documents");
+console.log(secretStorage.get(agent));   // secret documents
+// if agent dies, secret documents will be destroyed automatically
+
 let visitsCountMap = new WeakMap();
 function countUser(user) {
   let count = visitsCountMap.get(user) || 0;
