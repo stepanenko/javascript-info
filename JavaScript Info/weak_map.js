@@ -43,7 +43,19 @@ function countUser(user) {
 let jack = { name: 'Jack' };
 countUser(jack);
 console.log(visitsCountMap.get(jack));   // 1
-// After john object becomes unreachable by all means except as a key of WeakMap,
+// After jack object becomes unreachable by all means except as a key of WeakMap,
 // it gets removed from memory, along with the information by that key from WeakMap.
 
 // ##### 2. Caching #####
+let cache = new WeakMap();
+
+function heavyCalc(data) {
+  if (!cache.has(data)) {
+    const result = data.price * 3;
+    cache.set(data, result);
+  }
+  return cache.get(data);
+}
+
+const res = heavyCalc({ title: 'car', price: 12 });
+console.log('res', res);   // 36
