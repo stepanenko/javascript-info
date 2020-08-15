@@ -49,13 +49,22 @@ console.log(visitsCountMap.get(jack));   // 1
 // ##### 2. Caching #####
 let cache = new WeakMap();
 
-function heavyCalc(data) {
+function heavyCalc(data) {   // calculate and remember the result
   if (!cache.has(data)) {
     const result = data.price * 3;
     cache.set(data, result);
+    console.log('Caching result...');
   }
   return cache.get(data);
 }
 
-const res = heavyCalc({ title: 'car', price: 12 });
+let renault = { title: 'Renault', price: 12 };
+const res = heavyCalc(renault);
 console.log('res', res);   // 36
+renault.price = 22;   // in cache the old price is stored
+renault = null;
+console.log('res', res);   // 36 saved in cache
+// const res2 = heavyCalc(renault);
+// console.log('res2', res2);   // 36 from chache
+
+// console.log(cache.size);
