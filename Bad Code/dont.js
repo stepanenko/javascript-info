@@ -21,3 +21,13 @@ var a = 1;
 var b = 2;
 a++;
 b = 10;
+
+// Bad
+number = !!number;
+
+// Good
+number = Boolean(number); // converts a truthy or falsy value to true or false
+
+
+
+// More at https://heyjavascript.com/9-cool-javascript-expressions-you-should-never-use/
