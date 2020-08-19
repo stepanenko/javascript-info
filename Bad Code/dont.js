@@ -28,6 +28,42 @@ number = !!number;
 // Good
 number = Boolean(number); // converts a truthy or falsy value to true or false
 
+// Bad
+getUserInfo();
+getClientData();
+getCustomerRecord();
+
+// Good
+getUser();
+
+// Bad
+setTimeout(blastOff, 86400000);
+
+// Good
+// Declare them as capitalized named constants.
+const MILLISECONDS_IN_A_DAY = 86_400_000;  // accepts as 86400000
+setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
+
+// Bad 
+locations.forEach(l => l + '...');
+
+// Good
+locations.forEach(location => location + '...');
+
+// Bad 
+let Car = {
+  carMake: "Honda",
+  carModel: "Accord",
+  carColor: "Blue"
+};
+
+// Good
+let Car = {
+  make: "Honda",
+  model: "Accord",
+  color: "Blue"
+};
 
 
-// More at https://heyjavascript.com/9-cool-javascript-expressions-you-should-never-use/
+
+// https://github.com/ryanmcdermott/clean-code-javascript
