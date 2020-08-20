@@ -64,6 +64,16 @@ let Car = {
   color: "Blue"
 };
 
+// Bad
+function createUser(name) {
+  const userName = name || "Jerome";
+  // ...
+}
+
+// Good
+function createUser(name = "Jerome") {
+  // ...
+}
 
 
 // https://github.com/ryanmcdermott/clean-code-javascript
