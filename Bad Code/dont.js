@@ -97,6 +97,22 @@ function isActiveClient(client) {
   return clientRecord.isActive();
 }
 
+// Split out your functions if they are following different code paths based on a boolean
+// Bad
+function createFile(name, temp) {
+  if (temp) {
+    fs.create(`./temp/${name}`);
+  } else {
+    fs.create(name);
+  }
+}
 
+// Good
+function createFile(name) {
+  fs.create(name);
+}
+function createTempFile(name) {
+  createFile(`./temp/${name}`);
+}
 
 // https://github.com/ryanmcdermott/clean-code-javascript
