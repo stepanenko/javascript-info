@@ -10,9 +10,10 @@
     "chai": "3.5.0"
   },
   "scripts": {
-    "test": "mocha cats.test"
+    "test": "mocha cats.test",
+    "testall": "mocha --timeout 30000 ./*.js --exit" 
   },
   "keywords": [],
-  "author": "",
+  "author": "stepanenco",
   "license": "ISC"
 }
