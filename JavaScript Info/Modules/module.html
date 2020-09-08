@@ -1,22 +1,30 @@
 <!DOCTYPE html>
+
 <head>
   <title>Modules</title>
 </head>
+
 <body>
-  
+
   <h1><a href="https://javascript.info/modules-intro">MODULES</a></h1>
 
-  <p>If the same module is imported into multiple other places, its code is executed only the first time, then exports are given to all importers.</p>
+  <p>If the same module is imported into multiple other places, its code is executed only the first time, then exports
+    are given to all importers.</p>
 
-  <p>So, let’s reiterate – the module is executed only once. Exports are generated, and then they are shared between importers, so if something changes the admin object, other modules will see that.</p>
+  <p>So, let’s reiterate – the module is executed only once. Exports are generated, and then they are shared between
+    importers, so if something changes the admin object, other modules will see that.</p>
 
-  <p>The object import.meta contains the information about the current module. In the browser, it contains the url of the script, if inside HTML - current webpage url.</p>
+  <p>The object import.meta contains the information about the current module. In the browser, it contains the url of
+    the script, if inside HTML - current webpage url.</p>
 
   <p>In a module, top-level <code>this</code> is undefined.</p>
 
-  <p>The defer attribute tells the browser that it should go on working with the page, and load the script “in background”, then run the script when it loads.</p>
+  <p>The defer attribute tells the browser that it should go on working with the page, and load the script “in
+    background”, then run the script when it loads.</p>
 
-  <p>In practice, defer is used for scripts that need the whole DOM and/or their relative execution order is important. And async is used for independent scripts, like counters or ads. And their relative execution order does not matter.</p>
+  <p>In practice, defer is used for scripts that need the whole DOM and/or their relative execution order is important.
+    And async is used for independent scripts, like counters or ads. And their relative execution order does not matter.
+  </p>
 
   <h2 class='h2'></h2>
   <script type="module" src="./init.js"></script>
@@ -28,7 +36,8 @@
     let user = 'Vasya';
 
     console.log(admin.name);
-    console.log(import.meta);
+    console.log(import.meta); // { url: "http:/.../module.html" }
+
   </script>
   <script type="module">
     // console.log(user); // ReferenceError: user is not defined
