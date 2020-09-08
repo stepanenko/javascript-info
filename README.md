@@ -50,3 +50,12 @@
 ## Websites with JS Books:
 
 - [jsbooks.revolunet.com](https://jsbooks.revolunet.com/)
+
+## Updating the **package.json**:
+
+- `npm install -g npm-check-updates`
+- `ncu -u`
+
+Or without a global install:
+
+- `npx npm-check-updates -u`
