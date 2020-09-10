@@ -56,7 +56,7 @@
 - `npm install -g npm-check-updates`
 - `ncu -u`
 
-> `-u` stands for update, it ommited with list all outdated packages
+> `-u` stands for update, if ommited will show all outdated packages
 
 Or without a global install:
 
