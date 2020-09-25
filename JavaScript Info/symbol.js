@@ -3,6 +3,8 @@ let user = {
   name: 'Serhiy'
 };
 let id = Symbol('id');
+let id2 = Symbol('id');
+console.log(id === id2); // false
 
 user[id] = 'some id';
 
@@ -16,4 +18,12 @@ console.log(clone);    // { name: 'Serhiy', [Symbol(id)]: 'some id' }
 // Other types are converted to strings.
 let ex = {
   0: 'test'    // same as "0": "test"
-}
+};
+
+/// Global Symbols:
+let gls = Symbol.for('myKey'); // if not exist will be created
+
+let gls2 = Symbol.for('myKey'); // will be retrieved from Global Symbol registry
+
+console.log(gls === gls2); // true
+
