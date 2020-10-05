@@ -46,3 +46,30 @@ const mapWith = (array, callback) => {
 
 let mywith = mapWith([1, 2, 3], multBy2); // [ 2, 4, 6 ]
 console.log(mywith);
+
+// Challenge 6:
+// Build reduce function
+const reduce = (array, callback, initialValue) => {
+  for (let elem of array) {
+    initialValue = callback(initialValue, elem);
+  }
+  return initialValue;
+};
+
+const nums = [4, 3, 0, 2];
+const add = (a, b) => a + b; 
+let myRed = reduce(nums, add, 0);
+console.log(myRed); // 9
+
+// Challenge 7:
+// Construct a function intersection that compares input arrays and
+// returns a new array with elements found in all of the inputs. Use reduce!
+const intersection = (...arrays) => {
+  let res = [];
+  return arrays
+
+};
+console.log(intersection([1], [4], ['6']))
+
+// console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
+// should log: [5, 15]
