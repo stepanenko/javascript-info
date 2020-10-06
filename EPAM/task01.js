@@ -16,7 +16,7 @@ function groupCities(arr) {
         i++;
       }
     }
-    result.push(group)
+    result.push(group);
   }
   return result;
 }
