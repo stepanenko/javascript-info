@@ -14,4 +14,7 @@ function prefill(fn, prefilledValue) {
 const multBy2 = prefill(multiply, 2);
 
 let res = multBy2(6);
-console.log(res);
+console.log(res); // 12
+
+const multByTen = prefill(multiply, 10);
+console.log(multByTen(4)); // 40
