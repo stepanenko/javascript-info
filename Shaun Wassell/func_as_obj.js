@@ -11,7 +11,7 @@ console.log(add.length); // 3
 
 const mult = (x, y, z) => x * y * z;
 
-const mu = mult.bind(null, 2);
+const mu = mult.bind(null, 2, 3);
 
 console.log(mu); // [Function: bound mult]
 console.log(mu(2, 2)); // 8
