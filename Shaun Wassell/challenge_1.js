@@ -30,15 +30,12 @@ const tallyVotes3 = votes => {
   }), {});
 };
 
-// Recursion solution, not finished:
-const tallyVotes = (votes, i = 0) => {
-  let res = {};
-  if (i > votes.length) return res;
+// Recursion solution:
+const tallyVotes = (votes, i = 0, res = {}) => {
+  if (i > votes.length - 1) return res;
   console.log(i);
-  return {
-    [votes[i]]: res[votes[i]] ? res[votes[i]] + 1 : 1,
-    ...tallyVotes(votes, i + 1)
-  };
+  res[votes[i]] = res[votes[i]] ? res[votes[i]] + 1 : 1;
+  return tallyVotes(votes, i + 1, res);
 };
 
 console.log(tallyVotes(electionVotes));
