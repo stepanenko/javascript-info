@@ -1,5 +1,5 @@
 
-const words = ['Cristina', "Ray Adverb", 'cinema', 'incema'];
+const words = ['Cristina', 'rinatics', "Ray Adverb", 'cinema', 'anemic'];
 
 const findAnagrams = (word, allWords) => {
   let res = [];
@@ -20,9 +20,16 @@ const findAnagrams2 = (word, allWords) => {
   }, []);
 }
 
+const findAnagrams3 = (word, allWords) => {
+  return allWords.reduce((acc, w) => {
+    return word.toLowerCase().split('').sort().join('') === w.toLowerCase().split('').sort().join('')
+      ? [...acc, w]
+      : acc;
+  }, []);
+}
 
-console.log(findAnagrams2("iceman", words));
-console.log(findAnagrams2("cristian", words));
-console.log(findAnagrams2("Dave Barry", words));
-console.log(findAnagrams2("Dave", words));
 
+console.log(findAnagrams3("iceman", words));
+console.log(findAnagrams3("cristian", words));
+console.log(findAnagrams3("Dave Barry", words));
+console.log(findAnagrams3("Dave", words));
