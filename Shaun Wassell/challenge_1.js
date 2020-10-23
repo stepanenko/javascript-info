@@ -30,12 +30,16 @@ const tallyVotes3 = votes => {
   }), {});
 };
 
-// const tallyVotes = votes => {
-//   return {
-//     [votes[0]]: votes[0] ? votes[0] + 1 : 1,
-//     ...tallyVotes(votes.slice(1))
-//   };
-// };
+// Recursion solution, not finished:
+const tallyVotes = (votes, i = 0) => {
+  let res = {};
+  if (i > votes.length) return res;
+  console.log(i);
+  return {
+    [votes[i]]: res[votes[i]] ? res[votes[i]] + 1 : 1,
+    ...tallyVotes(votes, i + 1)
+  };
+};
 
 console.log(tallyVotes(electionVotes));
 
