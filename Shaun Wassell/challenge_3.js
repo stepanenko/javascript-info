@@ -32,7 +32,15 @@ const getErrorMessages2 = (inputs, criteria) => {
   }, []);
 }
 
-console.log(getErrorMessages2(currentInputValues, inputCriteria));
+// Not finished
+const getErrorMessages3 = (inputs, criteria) => {
+  return Object.keys(inputs).reduce((acc, key) => [
+    ...acc,
+    ...criteria[key](inputs[key]).filter(m => m)
+  ], []);
+}
+
+console.log(getErrorMessages3(currentInputValues, inputCriteria));
 
 /*
 Expected Output: [
