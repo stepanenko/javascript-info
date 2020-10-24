@@ -1,7 +1,7 @@
 
 const currentInputValues = {
   firstName: 'S', // Must be at least 2 characters
-  lastName: 'S', // Must be at least 2 characters
+  lastName: 'Ste', // Must be at least 2 characters
   zipCode: '34242', // Must be exactly 5 characters
   state: 'F', // Must be exactly 2 characters
 };
@@ -15,7 +15,7 @@ const inputCriteria = {
 
 const getErrorMessages = (inputs, criteria) => {
   let errors = [];
-  
+
   Object.keys(inputs).forEach(field => {
     const [isError, message] = criteria[field](inputs[field]);
     isError && errors.push(message);
@@ -32,12 +32,12 @@ const getErrorMessages2 = (inputs, criteria) => {
   }, []);
 }
 
-// Not finished
+// Strage solution
 const getErrorMessages3 = (inputs, criteria) => {
   return Object.keys(inputs).reduce((acc, key) => [
     ...acc,
-    ...criteria[key](inputs[key]).filter(m => m)
-  ], []);
+    criteria[key](inputs[key])
+  ].filter(arr => arr[0]), []).map(el => el[1]);
 }
 
 console.log(getErrorMessages3(currentInputValues, inputCriteria));
