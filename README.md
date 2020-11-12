@@ -1,4 +1,5 @@
-# BOOKS
+
+# MY FAVOURITE BOOKS
 
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 - **[Human JavaScript](http://read.humanjavascript.com/)**
@@ -9,7 +10,8 @@
 - **[Speaking JavaScript](http://speakingjs.com/es5/index.html)**
 - **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
 
-## Other Books:
+## Other Books
+
 - [JavaScript Application Design](https://manning-content.s3.amazonaws.com/download/3/ea9e2c0-901f-4165-a7fb-195a6eec57ce/JSAD_CH05.pdf)
 - [JavaScript (ES2015+) Enlightenment](https://frontendmasters.com/books/javascript-enlightenment/)
 - [DOM Enlightenment](http://domenlightenment.com/)
@@ -33,6 +35,7 @@
 
 
 ## [Books by Nicolás Bevacqua:](https://ponyfoo.com/books)
+
 - JavaScript Application Design
 - Practical Modern JavaScript
 - Mastering Modular JavaScript
@@ -52,12 +55,13 @@
 
 - [jsbooks.revolunet.com](https://jsbooks.revolunet.com/)
 
-## Updating the **package.json**:
+
+### Updating the **package.json**:
 
 - `npm install -g npm-check-updates`
 - `ncu -u`
 
-> `-u` stands for update, if ommited will show all outdated packages
+> `-u` means update, if ommited will display old packages
 
 Or without a global install:
 
