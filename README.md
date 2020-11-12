@@ -2,7 +2,6 @@
 
 - **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 - **[Human JavaScript](http://read.humanjavascript.com/)**
-- **[If Hemingway Wrote Javascript](https://pepa.holla.cz/wp-content/uploads/2015/11/If-Hemingway-Wrote-JavaScript.pdf)**
 - **[You Dont Know JS Yet "2nd Edition"](https://github.com/getify/You-Dont-Know-JS)**
 - **[Functional-Light JavaScript](https://github.com/getify/Functional-Light-JS)**
 - **[Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/)**
@@ -18,6 +17,7 @@
 - [The Codeless Code](http://thecodelesscode.com/contents)
 - [Building Front-End Web Apps with Plain JavaScript](https://oxygen.informatik.tu-cottbus.de/webeng/JsFrontendApp/complete-tutorial.pdf)
 - [Oh My JS - The Best JavaScript Articles](https://pepa.holla.cz/wp-content/uploads/2016/07/ohmyjs.pdf)
+- [If Hemingway Wrote Javascript](https://pepa.holla.cz/wp-content/uploads/2015/11/If-Hemingway-Wrote-JavaScript.pdf)
 - JavaScript: The Good Parts (Douglas Crockford)
 - Object-Oriented JavaScript (Stoyan Stefanov)
 - JavaScript Patterns (Stoyan Stefanov)
