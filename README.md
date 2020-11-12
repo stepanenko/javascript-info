@@ -17,15 +17,15 @@
 - [The Codeless Code](http://thecodelesscode.com/contents)
 - [Building Front-End Web Apps with Plain JavaScript](https://oxygen.informatik.tu-cottbus.de/webeng/JsFrontendApp/complete-tutorial.pdf)
 - [Oh My JS - The Best JavaScript Articles](https://pepa.holla.cz/wp-content/uploads/2016/07/ohmyjs.pdf)
+- [Single page apps in depth (By Mikito Takada)](http://singlepageappbook.com/index.html)
+- [Data Structures and Algorithms in JavaScript](https://github.com/amejiarosario/dsa.js-data-structures-algorithms-javascript)
+- [Javascript Challenges](http://tcorral.github.io/javascript-challenges-book/)
+- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
 - [If Hemingway Wrote Javascript](https://pepa.holla.cz/wp-content/uploads/2015/11/If-Hemingway-Wrote-JavaScript.pdf)
 - JavaScript: The Good Parts (Douglas Crockford)
 - Object-Oriented JavaScript (Stoyan Stefanov)
 - JavaScript Patterns (Stoyan Stefanov)
 - Pro JavaScript Design Patterns (Ross Harmes, Dustin Diaz)
-- [Single page apps in depth (By Mikito Takada)](http://singlepageappbook.com/index.html)
-- [Data Structures and Algorithms in JavaScript](https://github.com/amejiarosario/dsa.js-data-structures-algorithms-javascript)
-- [Javascript Challenges](http://tcorral.github.io/javascript-challenges-book/)
-- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
 - Secrets of the Javascript Ninja, 2nd Edition (John Resig, Bear Bibeault, Josip Maras)
 - Javascript: Novice to Ninja, 2nd Edition (Darren Jones)
 - Beginning Functional JS: Uncover the Concepts of Functional Programming with EcmaScript 8, 2nd Edition (Anto Aravinth and Srikanth Machiraju)
@@ -39,8 +39,9 @@
 
 ## [Books by Dr. Axel Rauschmayer:](https://exploringjs.com/)
 
-- JavaScript for impatient programmers (ES1–ES2019) (2019)
-- Deep JavaScript: Theory and techniques (ES1–ES2019) (2019)
+- JavaScript for impatient programmers (ES1–ES2020) (2020)
+- Deep JavaScript: Theory and techniques (ES1–ES2020) (2020)
+- Tackling TypeScript: Upgrading from JavaScript (2020)
 - Exploring ES2018 and ES2019
 - Exploring ES2016 and ES2017
 - Exploring ES6
