@@ -1,14 +1,13 @@
 
 # MY FAVOURITE BOOKS
 
-- **[Eloquent JavaScript](https://eloquentjavascript.net/)**
-- **[Human JavaScript](http://read.humanjavascript.com/)**
 - **[You Dont Know JS Yet "2nd Edition"](https://github.com/getify/You-Dont-Know-JS)**
 - **[Functional-Light JavaScript](https://github.com/getify/Functional-Light-JS)**
 - **[Understanding ECMAScript 6](https://leanpub.com/understandinges6/read/)**
-- **[JavaScript Allonge "The 6 Edition"](https://leanpub.com/javascriptallongesix/read)**
 - **[Speaking JavaScript](http://speakingjs.com/es5/index.html)**
+- **[JavaScript Allonge "The 6 Edition"](https://leanpub.com/javascriptallongesix/read)**
 - **[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)**
+- **[Eloquent JavaScript](https://eloquentjavascript.net/)**
 
 ## Other Books
 
@@ -23,6 +22,7 @@
 - [Data Structures and Algorithms in JavaScript](https://github.com/amejiarosario/dsa.js-data-structures-algorithms-javascript)
 - [Javascript Challenges](http://tcorral.github.io/javascript-challenges-book/)
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
+- [Human JavaScript](http://read.humanjavascript.com/)
 - [If Hemingway Wrote Javascript](https://pepa.holla.cz/wp-content/uploads/2015/11/If-Hemingway-Wrote-JavaScript.pdf)
 - JavaScript: The Good Parts (Douglas Crockford)
 - Object-Oriented JavaScript (Stoyan Stefanov)
@@ -34,13 +34,13 @@
 - Simply JavaScript: Everything You Need to Learn Javascript From Scratch (Kevin Yank, Cameron Adams)
 
 
-## [Books by Nicolás Bevacqua:](https://ponyfoo.com/books)
+## [Books by Nicolás Bevacqua](https://ponyfoo.com/books)
 
 - JavaScript Application Design
 - Practical Modern JavaScript
 - Mastering Modular JavaScript
 
-## [Books by Dr. Axel Rauschmayer:](https://exploringjs.com/)
+## [Books by Dr. Axel Rauschmayer](https://exploringjs.com/)
 
 - JavaScript for impatient programmers (ES1–ES2020) (2020)
 - Deep JavaScript: Theory and techniques (ES1–ES2020) (2020)
@@ -51,12 +51,12 @@
 - Speaking JavaScript (ES1–ES5) (2014)
 - Setting up ES6 (2016)
 
-## Websites with JS Books:
+## Websites with JS Books
 
 - [jsbooks.revolunet.com](https://jsbooks.revolunet.com/)
 
 
-### Updating the **package.json**:
+### Updating the **package.json**
 
 - `npm install -g npm-check-updates`
 - `ncu -u`
