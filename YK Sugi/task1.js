@@ -1,8 +1,10 @@
 
-// const arr = [1, 3, 4, 5, 0, 2]; // should return 4
+const arr = [1, 3, 4, 5, 0, 2]; // should return 4
 // const arr = [2, 2, 1]; // should return 2
 // const arr = [-2, -1]; // should return -2
-const arr = [1, 2, 2, 1]; // should return 2
+// const arr = [1, 2, 2, 1]; // should return 2
+// const arr = [1]; // should return 2
+// const arr = []; // should return 2
 
 function secondLargest(arr) {
   if (arr.length < 2) return null;
