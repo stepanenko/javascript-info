@@ -9,5 +9,7 @@ function isGreater(s1, s2) {
   return false;
 }
 
-let result = isGreater('023', '125');
+// let result = isGreater('223', '125'); // should be true
+let result = isGreater('11', '0'); // should be true
+// let result = isGreater('1', '1'); // should be false
 console.log(result);
