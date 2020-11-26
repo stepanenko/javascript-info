@@ -60,9 +60,11 @@
 
 - `npm install -g npm-check-updates`
 - `ncu -u`
+- `ncu -x "package_to_not_update" -u`
 
 > `-u` means update, if ommited will display old packages
+> `-x` means exclude, keep a package's version as it is
 
 Or without a global install:
 
-- `npx npm-check-updates -u`
+- `npx npm-check-updates -u` (sometimes doesn't work)
