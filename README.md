@@ -62,7 +62,7 @@
 - `ncu -u`
 - `ncu -x "package_to_not_update" -u`
 
-> `-u` means update, if ommited will display old packages
+> `-u` means update, if ommited will display old packages\
 > `-x` means exclude, keep a package's version as it is
 
 Or without a global install:
