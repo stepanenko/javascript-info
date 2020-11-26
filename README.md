@@ -1,5 +1,5 @@
 
-# MY FAVOURITE BOOKS
+# Favourite JS Books
 
 - **[You Dont Know JS Yet "2nd Edition"](https://github.com/getify/You-Dont-Know-JS)**
 - **[Functional-Light JavaScript](https://github.com/getify/Functional-Light-JS)**
