@@ -1,6 +1,6 @@
 
 ## JavaScript: Patterns
 
-Author: **Emmanuel Henri**
+Teacher: **Emmanuel Henri**
 
 LinkedIn Course

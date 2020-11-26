@@ -1,8 +1,6 @@
 
 ## Reasoning about Asynchronous JS
 
-Author: **Wes Higbee**
-
-Duration:
+Teacher: **Wes Higbee**
 
 Progress: **11/28**
