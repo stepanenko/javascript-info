@@ -1,13 +1,44 @@
 
 const Redux = require('redux');
+import './style.css';
+import { CounterButton } from './components/Button';
+import TitleComponent from './components/Title';
 
-console.log(Redux);
+const initialState = { value: 0 };
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { ...state, value: state.value + 1 };
+    case 'DECREMENT':
+      return { ...state, value: state.value - 1 };
+    default:
+      return state;
+  }
+};
+// Create a Redux store holding the state of your app.
+// Its API is { subscribe, dispatch, getState }.
+const store = Redux.createStore(reducer);
 
-function component() {
-  const element = document.createElement('h2');
-  element.innerHTML = 'Hello Redux';
-  return element;
+const RenderCounter = () => {
+  const box = document.createElement('div');
+  box.innerHTML = store.getState().value;
+
+  store.subscribe(() => {
+    const state = store.getState();
+    box.innerHTML = state.value;
+  });
+  return box;
+};
+
+function increment() {
+  store.dispatch({ type: 'INCREMENT' });
+}
+function decrement() {
+  store.dispatch({ type: 'DECREMENT' });
 }
 
 const root = document.getElementById('root');
-root.appendChild(component());
+root.appendChild(TitleComponent());
+root.appendChild(RenderCounter());
+root.appendChild(CounterButton('INCREMENT', increment));
+root.appendChild(CounterButton('DECREMENT', decrement));
