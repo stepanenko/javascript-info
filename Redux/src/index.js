@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
 const store = Redux.createStore(reducer);
 
 const RenderCounter = () => {
-  const box = document.createElement('div');
+  const box = document.createElement('p');
   box.innerHTML = store.getState().value;
 
   store.subscribe(() => {
