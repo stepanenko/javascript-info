@@ -7,7 +7,6 @@ Finished on: https://webpack.js.org/guides/development/
 
 To Do:
 - cases from Eve Porcello course: "Learning webpack 4"
-- add React manually (not CRA e.g. from [here](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658))
 - create a Docker container
 - deploy to AWS
 

@@ -15,7 +15,7 @@ class Header extends Component {
         <header className="App-header">
           <h1>Hello React App</h1>
           <ul style={{ 'text-align': 'start' }}>
-            <li>I would like to add Redux here. From Mosh Redux course.</li>
+            <li>Redux was added. Follow Mosh Redux course...</li>
             <li>Maybe add SASS and Typescript later</li>
             <li>I will use Twitter API to add my tweets to the store.</li>
           </ul>

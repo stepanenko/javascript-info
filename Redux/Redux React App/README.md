@@ -1,4 +1,6 @@
 
 # Redux + Create React App
 
-This project was bootstrapped with Create React App
+Redux Store contents:
+- tweets from Twitter API
+- life priorities/focuses
