@@ -15,6 +15,7 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
 // Create a Redux store holding the state of your app.
 // Its API is { subscribe, dispatch, getState }.
 const store = Redux.createStore(reducer);
@@ -33,6 +34,7 @@ const RenderCounter = () => {
 function increment() {
   store.dispatch({ type: 'INCREMENT' });
 }
+
 function decrement() {
   store.dispatch({ type: 'DECREMENT' });
 }
