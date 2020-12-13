@@ -4,9 +4,14 @@ import StoreContext from '../storeContext';
 
 class Header extends Component {
   static contextType = StoreContext;
+  state = {
+    tweets: []
+  }
 
   componentDidMount() {
-    console.log('context', this.context);
+    this.context.dispatch({ type: 'ADD_TWEET' });
+    console.log('state', this.context.getState());
+    this.setState(this.context.getState());
   }
 
   render() {
@@ -14,13 +19,14 @@ class Header extends Component {
       <div className="App">
         <header className="App-header">
           <h1>Hello React App</h1>
-          <ul style={{ 'text-align': 'start' }}>
+          <ul style={{ 'textAlign': 'start' }}>
             <li>Redux was added. Follow Mosh Redux course...</li>
             <li>Maybe add SASS and Typescript later</li>
             <li>I will use Twitter API to add my tweets to the store.</li>
           </ul>
           <span>Fake tweets:</span>
-          {this.context.tweets.map(tweet => <span key={tweet}>{tweet}</span>)}
+          {this.state.tweets.map(tweet =>
+            <span key={tweet.id}>{tweet.text}</span>)}
         </header>
       </div >
     );
