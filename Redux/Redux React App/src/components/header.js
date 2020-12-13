@@ -9,7 +9,7 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    this.context.dispatch({ type: 'ADD_TWEET' });
+    this.context.dispatch({ type: 'ADD_TWEET', payload: { text: 'My tweet' } });
     console.log('state', this.context.getState());
     this.setState(this.context.getState());
   }
