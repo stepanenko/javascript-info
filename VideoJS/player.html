@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+  <link href="./main.css" rel="stylesheet" />
+
+  <title>VideoJS Player</title>
+</head>
+
+<body>
+  <div class="container">
+    <video id="my-video" class="video-js" controls preload="auto" width="700" height="400" poster="MY_VIDEO_POSTER.jpg"
+      data-setup="{}">
+      <source src="MY_VIDEO.mp4" type="video/mp4" />
+      <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
+    </video>
+  </div>
+
+  <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+</body>
+
+</html>
