@@ -1,0 +1,14 @@
+{
+  "name": "videjs-advanced",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stepanenco",
+  "license": "ISC",
+  "dependencies": {
+    "video.js": "^7.10.2"
+  }
+}
