@@ -9,6 +9,7 @@
 // Functional programmers write a lot of small functions, and the arrow function syntax makes that much easier.
 
 // Since functions are variables, we can add them to objects:
+
 const obj = {
   message: "They can be added to objects like variables",
   log(message) {
@@ -17,16 +18,19 @@ const obj = {
 };
 
 // We can also add functions to arrays in JavaScript:
+
 const messages = [
   "They can be inserted into arrays",
   message => console.log(message),
   "like variables",
   message => console.log(message)
 ];
+
 messages[1](messages[0]); // They can be inserted into arrays
 messages[3](messages[2]); // like variables
 
 // If you see more than one arrow used during a function declaration, this means that you’re using a higher-order function:
+
 const createScream = logger => message => {
   logger(message.toUpperCase() + "!!!");
 };
