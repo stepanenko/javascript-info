@@ -6,6 +6,7 @@
 // Both `export` and `export default` can be used on any JavaScript type:
 // primitives, objects, arrays, and functions.
 
+export const print = (message) => log(message, new Date());
 export default new Expedition("Mt. Freel", 2, ["water", "snack"]);
 
 import { print, log } from "./text-helpers";
