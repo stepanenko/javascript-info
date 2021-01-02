@@ -13,7 +13,6 @@ import freel from "./mt-freel";
 import { print as p, log as l } from "./text-helpers";
 import * as fns from './text-helpers';
 
-
 // This import and export syntax is not yet fully supported by all browsers or by Node.
-// But it’s supported by Babel so you can use these statements in your source code and Babel will know
-// where to find the modules you want to include in your compiled JavaScript.
+// But it’s supported by Babel so you can use these statements in your source code and Babel
+// will knownwhere to find the modules you want to include in your compiled JavaScript.
