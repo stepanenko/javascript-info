@@ -9,11 +9,9 @@ const string = "Restaurants in Hanalei";
 let urlFriendly = "";
 
 for (let i = 0; i < string.length; i++) {
-  if (string[i] === " ") {
-    urlFriendly += "-";
-  } else {
-    urlFriendly += string[i];
-  }
+  if (string[i] === " ") urlFriendly += "-";
+  else urlFriendly += string[i];
+  
   // OR: urlFriendly += string[i] === " " ? "-" : string[i];
   // OR: urlFriendly = urlFriendly.concat(string[i] === " " ? "-" : string[i]);
   // OR: urlFriendly = urlFriendly + (string[i] === " " ? "-" : string[i]);
