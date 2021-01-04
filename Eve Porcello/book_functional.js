@@ -17,17 +17,21 @@ const obj = {
   }
 };
 
+obj.log(obj.message); // They can be added to objects like variables
+
+
 // We can also add functions to arrays in JavaScript:
 
 const messages = [
   "They can be inserted into arrays",
   message => console.log(message),
   "like variables",
-  message => console.log(message)
+  function (message) { console.log(message); }
 ];
 
 messages[1](messages[0]); // They can be inserted into arrays
 messages[3](messages[2]); // like variables
+
 
 // If you see more than one arrow used during a function declaration, this means that you’re using a higher-order function:
 
