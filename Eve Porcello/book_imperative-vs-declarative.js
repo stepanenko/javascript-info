@@ -14,6 +14,10 @@ for (let i = 0; i < string.length; i++) {
   } else {
     urlFriendly += string[i];
   }
+  // OR: urlFriendly += string[i] === " " ? "-" : string[i];
+  // OR: urlFriendly = urlFriendly.concat(string[i] === " " ? "-" : string[i]);
+  // OR: urlFriendly = urlFriendly + (string[i] === " " ? "-" : string[i]);
+  // BUT NOT: urlFriendly = urlFriendly + string[i] === " " ? "-" : string[i];
 }
 
 console.log(urlFriendly); // "Restaurants-in-Hanalei"
