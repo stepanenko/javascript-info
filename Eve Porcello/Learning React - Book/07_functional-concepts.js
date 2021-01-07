@@ -1,4 +1,3 @@
-
 // page 54
 
 // When writing functions, try to follow these three rules:
@@ -20,14 +19,14 @@ console.log(schools.join(", ")); // "Yorktown, Washington & Liberty, Wakefield"
 // If we wanted to create a function that creates a new array of the schools that begin
 // with the letter "W" we could use the Array.filter method:
 
-const wSchools = schools.filter(school => school[0] === "W");
+const wSchools = schools.filter((school) => school[0] === "W");
 
 console.log(wSchools); // ["Washington & Liberty", "Wakefield"]
 
 // When it’s time to remove an item from an array, we should use Array.filter over
 // Array.pop or Array.splice because Array.filter is immutable:
 
-const cutSchool = (cut, list) => list.filter(school => school !== cut);
+const cutSchool = (cut, list) => list.filter((school) => school !== cut);
 
 console.log(cutSchool("Washington & Liberty", schools).join(", ")); // "Yorktown, Wakefield"
 
@@ -36,7 +35,7 @@ console.log(cutSchool("Washington & Liberty", schools).join(", ")); // "Yorktown
 let schools2 = [{ name: "Yorktown" }, { name: "Stratford" }];
 
 const editName = (oldName, name, arr) =>
-  arr.map(item => (item.name === oldName ? { ...item, name } : item));
+  arr.map((item) => (item.name === oldName ? { ...item, name } : item));
 
 let updatedSchools = editName("Stratford", "HB Woodlawn", schools2);
 
@@ -73,7 +72,7 @@ const colors = [
     id: "prigbj",
     title: "grizzly grey",
     rating: 5,
-  }
+  },
 ];
 
 const hashColors = colors.reduce((hash, { id, title, rating }) => {
