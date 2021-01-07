@@ -1,5 +1,5 @@
 
-// Chapter 3, page 45
+// page 45, chapter 3
 
 // Functional techniques are being used more and more in JS projects, particularly React projects.
 

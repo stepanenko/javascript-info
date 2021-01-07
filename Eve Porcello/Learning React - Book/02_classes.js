@@ -1,4 +1,6 @@
 
+// page 41
+
 function Vacation(destination, length) {
   this.destination = destination;
   this.length = length;

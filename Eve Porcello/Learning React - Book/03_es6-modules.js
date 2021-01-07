@@ -1,4 +1,6 @@
 
+// page 42
+
 // A JavaScript module is a piece of reusable code that can easily be incorporated
 // into other JavaScript files without causing variable collisions.
 // JavaScript modules are stored in separate files, one file per module.
