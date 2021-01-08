@@ -3,9 +3,9 @@
 
 2nd Edition 2020
 
-Authors: Alex Banks and Eve Porcello
+Authors: **Alex Banks** and **Eve Porcello**
 
-Quotes:
+**Quotes:**
 
 > MAP and REDUCE are the main weapons of any functional programmer. If you want to be a proficient JavaScript engineer, then you must master these functions.
 
