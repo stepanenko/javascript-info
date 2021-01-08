@@ -79,3 +79,18 @@ const hashColors = colors.reduce((hash, { id, title, rating }) => {
   hash[id] = { title, rating };
   return hash;
 }, {});
+
+// In next example, the colors2 array is reduced to an array of distinct values:
+
+const colors2 = ["red", "red", "green", "blue", "green"];
+
+const uniqueColors = colors2.reduce(
+  (unique, color) =>
+    unique.indexOf(color) !== -1 ? unique : [...unique, color],
+  []
+);
+
+console.log(uniqueColors); // ["red", "green", "blue"]
+
+// MAP and REDUCE are the main weapons of any functional programmer.
+// If you want to be a proficient JavaScript engineer, then you must master these functions.
