@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #7171bb;
+        padding: 20px;
+      }
+      .item {
+        padding: 30px;
+      }
+      .first {
+        background: #aa5555;
+      }
+      .second {
+        background: #50c05f;
+      }
+      .third {
+        background: #a55dcf;
+      }
+    </style>
+  </head>
+
+  <body class="body item">
+    <section class="first item">
+      <div class="second item">
+        <p class="third item">
+          <button class="fourth item">Click me</button>
+        </p>
+      </div>
+    </section>
+
+    <script>
+      // Capturing and bubbling in action:
+      for (let elem of document.querySelectorAll("*")) {
+        elem.addEventListener(
+          "click",
+          (e) => alert(`Capturing: ${elem.tagName}`),
+          true
+        );
+        elem.addEventListener("click", (e) =>
+          alert(`Bubbling: ${elem.tagName}`)
+        );
+      }
+
+      // My examples:
+      const items = document.getElementsByClassName("item");
+      // Solution 1:
+      for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", () => console.log(items[i]), true);
+        // if false or ommitted -> bubbling, if true -> capturing
+      }
+      
+      // Solution 2:
+      for (var i = 0; i < items.length; i++) { // with 'var' we would need to use a closure
+      (function() {
+        var y = i;
+        // instead of just 'true' we could write '{ capture: true }'
+        items[y].addEventListener('click', () => console.log(items[y], y), { capture: true })
+        })();
+      }
+
+      // Solution 3:
+      Array.from(items).forEach((item) =>
+        item.addEventListener("click", () => console.log(item.className), true)
+      );
+
+      // Solution 4:
+      for (let item of items) {
+        item.addEventListener("click", () => console.log(item), {
+          capture: true
+        });
+      }
+    </script>
+  </body>
+</html>
