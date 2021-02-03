@@ -5,6 +5,10 @@
 
 Duration: 05:10:46,  Updated: 16/11/2020
 
+### [TypeScript Pro (James Henry)](https://coursehunter.net/course/typescript-pro-james-henry)
+
+Duration: 06:02:19, Date added: 06/03/2020, Author: James Henry (great British accent)
+
 ### [Typescript: The Complete Developer's Guide](https://coursehunter.net/course/typescript-polnoe-rukovodstvo-razrabotchika)
 
 Duration: 24:38:03,  Updated: 11/01/2021, Author: Steven Grider
@@ -15,10 +19,7 @@ Duration: 02:00:53, Date added: 16/01/2021
 
 ### [React and Typescript: Build a Portfolio Project](https://coursehunter.net/course/react-i-typescript-sozdanie-portfolio-proekta)
 
-### [TypeScript Pro (James Henry)](https://coursehunter.net/course/typescript-pro-james-henry)
-
-Date added: 06/03/2020, Author: James Henry (great British accent)
-
+  
 <hr>
   
 ## TypeScript Books
