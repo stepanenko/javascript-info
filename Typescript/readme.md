@@ -7,8 +7,18 @@ Duration: 05:10:46,  Updated: 16/11/2020
 
 ### [Typescript: The Complete Developer's Guide](https://coursehunter.net/course/typescript-polnoe-rukovodstvo-razrabotchika)
 
-Duration: 24:38:03,  Updated: 11/01/2021
+Duration: 24:38:03,  Updated: 11/01/2021, Author: Steven Grider
 
+### [React with TypeScript](https://coursehunter.net/course/react-s-typescript)
+
+Duration: 02:00:53, Added: 16/01/2021
+
+### [React and Typescript: Build a Portfolio Project](https://coursehunter.net/course/react-i-typescript-sozdanie-portfolio-proekta)
+
+### [TypeScript Pro (James Henry)](https://coursehunter.net/course/typescript-pro-james-henry)
+
+Author: James Henry (great British accent)
+  
   
 ## TypeScript Books
 
