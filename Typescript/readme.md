@@ -11,14 +11,15 @@ Duration: 24:38:03,  Updated: 11/01/2021, Author: Steven Grider
 
 ### [React with TypeScript](https://coursehunter.net/course/react-s-typescript)
 
-Duration: 02:00:53, Added: 16/01/2021
+Duration: 02:00:53, Date added: 16/01/2021
 
 ### [React and Typescript: Build a Portfolio Project](https://coursehunter.net/course/react-i-typescript-sozdanie-portfolio-proekta)
 
 ### [TypeScript Pro (James Henry)](https://coursehunter.net/course/typescript-pro-james-henry)
 
-Author: James Henry (great British accent)
-  
+Date added: 06/03/2020, Author: James Henry (great British accent)
+
+<hr>
   
 ## TypeScript Books
 
