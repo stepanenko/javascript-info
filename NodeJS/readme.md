@@ -1,7 +1,7 @@
 
-### To Do:
+### To Do Next:
 
-- create nodejs-app repo and move this one there
+- create `nodejs-apps` repo and move this one there
 
 ## [Introduction to Node.js](https://nodejs.dev/)
 
