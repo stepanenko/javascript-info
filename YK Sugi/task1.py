@@ -1,5 +1,5 @@
 
-myList = [1, 3, 4, 5, 0, 2]; # should return 4
+myList = [1, 3, 4, 5, 0, 2] # should return 4
 # myList = [2, 2, 1]; # should return 2
 # myList = [-2, -1]; # should return -2
 # myList = [1, 2, 2, 1]; # should return 2

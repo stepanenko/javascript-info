@@ -19,5 +19,5 @@ def areSafe(chess):
   return True
 
 # result = areSafe([[1,1],[0,1]]); # False
-result = areSafe([[1,0,0],[0,0,1], [0,1,0]]); # True
+result = areSafe([[1,0,0],[0,0,1], [0,1,0]]) # True
 print(result)
