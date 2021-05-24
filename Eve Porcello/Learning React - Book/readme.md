@@ -3,7 +3,9 @@
 
 2nd Edition 2020
 
-Authors: **Alex Banks** and **Eve Porcello**
+Book authors: **Alex Banks** and **Eve Porcello**
+
+Progress: **page 61 / 310**
 
 **Quotes:**
 
