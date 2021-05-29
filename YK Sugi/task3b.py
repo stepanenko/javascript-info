@@ -15,4 +15,4 @@ def diaSum(arr):
 
 
 result = diaSum(array)
-print('diagonal sum is:', result);
+print('diagonal sum is:', result)

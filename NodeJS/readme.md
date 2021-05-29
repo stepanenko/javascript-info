@@ -1,7 +1,7 @@
 
 ### To Do Next:
 
-- create `nodejs-apps` repo and move this one there
+- create `nodejs-apps` repo and move this one there as `nodejs-apps/NodeJS Practice`
 
 ## [Introduction to Node.js](https://nodejs.dev/)
 
