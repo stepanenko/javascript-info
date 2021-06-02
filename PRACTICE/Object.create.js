@@ -2,17 +2,19 @@
 // You only should use Object.create in very specific cases, such as:
 /// * You want to choose prototype object to inherit from, without the need to define constructor:
 
-let Vehicle = {
+const Vehicle = {
   type: 'General',
   display: function () {
     console.log(this.type);
   }
 }
 
-let Car = Object.create(Vehicle);
+const Car = Object.create(Vehicle);
+
 Car.type = 'Car';
 
 Car.display();   // Car
+
 Vehicle.display();   // General
 
 // In general, like in Array, do not use built-in constructor
@@ -20,9 +22,13 @@ Vehicle.display();   // General
 /// * More typing
 /// * Slower performance (much much slower)
 /// * Confusion & increasing more chances for mistake, for example:
-// let obj = new Object(id: 1, name: "test") // Error - obviously
-let obj1 = { id: 1, name: "test" };
-let obj2 = new Object(obj1); // obj1 and obj2 points to the same one
-obj2.id = 2;
-console.log(obj1.id); // 2
 
+// const obj = new Object(id: 1, name: "test") // Error - obviously
+
+const obj1 = { id: 1, name: "test" };
+
+const obj2 = new Object(obj1); // obj1 and obj2 points to the same one
+
+obj2.id = 2;
+
+console.log(obj1.id); // 2

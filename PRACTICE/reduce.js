@@ -8,10 +8,10 @@ const foo = {
 let newObj = {};
 let myNewObj = {};
 
-// ==== Option with forEach ====
+// ==== Version with forEach ====
 Object.keys(foo).forEach(prop => newObj[prop] = null);
 
-// ==== Option with Reduce ====
+// ==== Version with Reduce ====
 let bar = Object.keys(foo).reduce((myNewObj, prop) => {
   myNewObj[prop] = null;
   return myNewObj;

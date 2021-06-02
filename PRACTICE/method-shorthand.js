@@ -28,4 +28,3 @@ let short = Obj();
 console.log(short.method()); // candy
 console.log(ob.method()); // rainbow
 console.log(ob2.method()); // undefined
-
