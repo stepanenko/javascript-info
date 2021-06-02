@@ -33,31 +33,28 @@ console.log(bAmp);
 const cs = new ChannelStrip({ lowCut: '2', inputLevel: 4 });
 console.log(cs);
 
+console.log('======');
 
+// OR
+class Guitar {
+  constructor(obj = {}) {
+    this.cabinet = obj.cabinet || 'spruce';
+    this.distortion = obj.distortion || '1';
+    this.volume = obj.volume || '0';
+  }
+}
 
-// Before testing get some testing library
-/*
-test('Class Inheritance', nest => {
-  nest.test('BassAmp', assert => {
-    const msg = `instance should inherit props
-    from GuitarAmp and BassAmp`;
+let g = new Guitar();
+console.log('g', g);
 
-    const myAmp = new BassAmp();
-    const actual = Object.keys(myAmp);
-    const expected = ['cabinet', 'distortion', 'volume', 'lowCut'];
+class BaseGuitar extends Guitar {
+  constructor(options = {}) {
+    super();
+    this.lowCut = options.lowCut || 12;
+  }
+}
 
-    assert.deepEqual(actual, expected, msg);
-    assert.end();
-  });
+let bg = new BaseGuitar();
+console.log('bg', bg);
 
-  nest.test('ChannelStrip', assert => {
-    const msg = 'instance should inherit from GuitarAmp, BassAmp, and ChannelStrip';
-    const myStrip = new ChannelStrip();
-    const actual = Object.keys(myStrip);
-    const expected = ['cabinet', 'distortion', 'volume', 'lowCut', 'inputLevel'];
-
-    assert.deepEqual(actual, expected, msg);
-    assert.end();
-  });
-});
-*/
+// ...
