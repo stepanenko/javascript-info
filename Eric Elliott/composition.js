@@ -1,5 +1,8 @@
-// Composition Example (Concatenative inheritance)
+// Composition Example
 // You can inherit just the stuff you really need using object composition:
+
+// Concatenative inheritance - The process of inheriting features directly
+// from one object to another by copying the source objects properties:
 
 const distortion = { distortion: 1 };
 const volume = { volume: 1 };

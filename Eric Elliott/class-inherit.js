@@ -35,7 +35,7 @@ console.log(cs);
 
 console.log('======');
 
-// OR
+// OR, my version:
 class GuitarAmp2 {
   constructor(obj = {}) {
     this.cabinet = obj.cabinet || 'spruce';
@@ -45,7 +45,7 @@ class GuitarAmp2 {
 }
 
 let ga = new GuitarAmp2();
-console.log('g', ga);
+console.log('ga', ga);
 
 class BassAmp2 extends GuitarAmp2 {
   constructor(options = {}) {
@@ -55,7 +55,7 @@ class BassAmp2 extends GuitarAmp2 {
 }
 
 let ba = new BassAmp2();
-console.log('bg', ba);
+console.log('ba', ba);
 
 // ...
 
