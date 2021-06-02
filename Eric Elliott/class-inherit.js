@@ -36,7 +36,7 @@ console.log(cs);
 console.log('======');
 
 // OR
-class Guitar {
+class GuitarAmp2 {
   constructor(obj = {}) {
     this.cabinet = obj.cabinet || 'spruce';
     this.distortion = obj.distortion || '1';
@@ -44,17 +44,22 @@ class Guitar {
   }
 }
 
-let g = new Guitar();
-console.log('g', g);
+let ga = new GuitarAmp2();
+console.log('g', ga);
 
-class BaseGuitar extends Guitar {
+class BassAmp2 extends GuitarAmp2 {
   constructor(options = {}) {
     super();
     this.lowCut = options.lowCut || 12;
   }
 }
 
-let bg = new BaseGuitar();
-console.log('bg', bg);
+let ba = new BassAmp2();
+console.log('bg', ba);
 
 // ...
+
+// This is an example of how OO design goes wrong. A channel strip isn’t
+// actually a type of guitar amp, and doesn’t actually need a cabinet at all.
+// A better option would be to create a new base class that both the amps
+// and the channel strip inherits from, but even that has limitations.
