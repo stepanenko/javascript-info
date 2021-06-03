@@ -1,6 +1,6 @@
 
-// FROM: https://javascript.info/map-set
-// TASK: Let arr be an array. Create a function unique(arr) that should return an array with unique items of arr.
+// TASK: Let arr be an array. Create a function unique(arr)
+// that should return an array with unique items of arr.
 
 // Solution 1:
 function unique(arr) {
@@ -34,3 +34,5 @@ const values = ["Hare", "Krishna", "Hare", "Krishna",
 
 const output = unique3(values); // Hare, Krishna, :-O
 console.log(output);
+
+// FROM: https://javascript.info/map-set
