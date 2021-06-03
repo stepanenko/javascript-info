@@ -12,12 +12,12 @@ class MyClass extends BaseClass {
   bar() { return 2; }
 }
 
-const obj = new MyClass();
-obj.baz = function () { return 3; };
-obj[Symbol.for('test')] = 4;
+const array = new MyClass();
+array.baz = function () { return 3; };
+array[Symbol.for('test')] = 4;
 
 // Does _not_ copy any properties from `MyClass` or `BaseClass`
-const clone = { ...obj };
+const clone = { ...array };
 
 console.log(clone); // { baz: [Function], [Symbol(test)]: 4 }
 console.log(clone.constructor.name); // Object
@@ -43,7 +43,7 @@ const obj3 = Object.assign(obj2, { val: 42 }); // logs "Setter called 42"
 // Object.assign() triggers setters, spread doesn’t.
 
 
-// 2. Another related difference is that spread defines new properties,
+// 2. Another difference is that spread defines new properties,
 // whereas Object.assign() sets them:
 
 const obj4 = {};

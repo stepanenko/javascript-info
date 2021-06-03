@@ -29,3 +29,10 @@ let added = nums.map(num => num + 1);
 console.log(check);   // undefined
 console.log(nums);    // [ 6, 10, 8 ]
 console.log(added);   // [ 7, 11, 9 ]
+
+
+// copying with reduce:
+const res = [1, 2, 3, 4].reduce((acc, el) => acc.concat(el), []);
+const res2 = [1, 2, 3, 4].reduce((acc, el) => [...acc, el], []);
+
+console.log(res, res2); // [ 1, 2, 3, 4 ] [ 1, 2, 3, 4 ]

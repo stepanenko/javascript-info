@@ -1,20 +1,26 @@
 
-let obj = [{
-  name: 'Serg',
-  age: 45
-},
-{
-  name: 'Tom',
-  age: 34
-}];
+let array = [
+  {
+    name: 'Serg',
+    age: 45
+  },
+  {
+    name: 'Tom',
+    age: 34
+  }
+];
 
-let newObj = [];
+let arr1 = [];
 
-obj.map(el => {
-  newObj = newObj.concat({
+array.forEach(el => {
+  arr1 = arr1.concat({
     name: el.name,
     age: el.age + 5
   });
 });
 
-console.log(newObj);
+console.log(arr1);
+
+const arr2 = array.map(el => ({ ...el, age: el.age + 5 }));
+
+console.log(arr2);
