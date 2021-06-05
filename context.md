@@ -4,7 +4,7 @@ Every function invocation has both a scope and a context associated with it. Fun
 
 ### Context
 
-Context is most often determined by how a function is invoked. When a function is called as a method of an object, this is set to the object the method is called on. When called as an unbound function, this will default to the global context or window object in the browser. However, if the function is executed in strict mode, the context will default to `undefined`.
+Context is most often determined by how a function is invoked. When a function is called as a method of an object, `this` is set to the object the method is called on. When called as an unbound function, `this` will default to the global context or `window` object in the browser. However, if the function is executed in strict mode, the context will default to `undefined`.
 
 ### Closures
 
@@ -28,15 +28,15 @@ In JavaScript, we use `this` as a shortcut, a reference. It refers to objects, v
 ```
 const a = 20;
 
-function gx () {
+function gx() {
     return this;
 }
 
-function fx () {
+function fx() {
     return this.a;
 }
 
-function fy () {
+function fy() {
     return window.a;
 }
 
@@ -46,7 +46,8 @@ console.log(fy());  // 20 or undefined if 'strict mode'
 ```
 
 `this` is determined by how a function is invoked.
-When a function is called as a method of an object, this is set to the object the method is called on.
+
+When a function is called as a method of an object, this is set to the object the method is called on:
 ```
 const o = {
   prop: 37,
