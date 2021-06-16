@@ -4,7 +4,7 @@ Every function invocation has both a **scope** and a **context** associated with
 
 ### Context
 
-**Context** is most often determined by how a function is invoked. When a function is called as a method of an object, `this` is set to the object the method is called on. When called as an unbound function, `this` will default to the **global context** or `window` object in the browser. However, if the function is executed in strict mode, the **context** will default to `undefined`.
+**Context** is most often determined by how a function is invoked. When a function is called as a method of an object, **`this`** is set to the object the method is called on. When called as an unbound function, **`this`** will default to the **global context** or `window` object in the browser. However, if the function is executed in strict mode, the **context** will default to `undefined`.
 
 ### Closures
 
@@ -16,7 +16,7 @@ These two simple methods, inherent to all functions, allow you to execute **(cal
 
 ### Bind
 
-It is used for manipulating **context**. It <u>returns</u> a new function that is <ul>permanently bound</u> to the first argument of **bind** regardless of how the function is being used. It works by using a **closure** that is responsible for <ul>redirecting</u> the call in the appropriate **context**.
+It is used for manipulating **context**. It returns a new function that is permanently bound to the first argument of **bind** regardless of how the function is being used. It works by using a **closure** that is responsible for redirecting the call in the appropriate **context**.
 
 ### Lexical Environment
 
@@ -24,9 +24,9 @@ The word Lexical means related to something. **Lexical Environment** means how a
 
 ### This
 
-In JavaScript, we use `this` as a shortcut, a reference. It refers to objects, variables and we use it in context.
+In JavaScript, we use **`this`** as a shortcut, a reference. It refers to objects, variables and we use it in context.
 Context is related to objects. It refers to the object within the function being executed.  
-`this` refers to the object that the function is executing in:
+**`this`** refers to the object that the function is executing in:
 ```
 const a = 20;
 
@@ -47,9 +47,9 @@ console.log(fx());  // 20 or undefined if 'strict mode'
 console.log(fy());  // 20 or undefined if 'strict mode'
 ```
 
-`this` is determined by how a function is invoked.
+**`this`** is determined by how a function is invoked.
 
-When a function is called as a method of an object, this is set to the object the method is called on:
+When a function is called as a method of an object, **`this`** is set to the object the method is called on:
 ```
 const o = {
   prop: 37,
