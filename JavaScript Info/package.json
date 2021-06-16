@@ -1,0 +1,15 @@
+{
+  "name": "javascript-info",
+  "version": "1.0.0",
+  "description": "How it's done now. From the basics to advanced topics with simple, but detailed explanations.",
+  "main": "arrow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
