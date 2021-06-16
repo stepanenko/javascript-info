@@ -16,7 +16,7 @@ These two simple methods, inherent to all functions, allow you to execute **(cal
 
 ### Bind
 
-It is used for manipulating **context**. It returns a new function that is permanently bound to the first argument of **bind** regardless of how the function is being used. It works by using a **closure** that is responsible for redirecting the call in the appropriate **context**.
+It is used for manipulating **context**. It returns a new function that is <ins>permanently bound</ins> to the first argument of **bind** regardless of how the function is being used. It works by using a **closure** that is responsible for redirecting the call in the appropriate **context**.
 
 ### Lexical Environment
 
