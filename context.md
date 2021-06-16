@@ -4,7 +4,7 @@ Every function invocation has both a **scope** and a **context** associated with
 
 ### Context
 
-**Context** is most often determined by how a function is invoked. When a function is called as a method of an object, **this** is set to the object the method is called on. When called as an unbound function, **this** will default to the **global context** or **window** object in the browser. However, if the function is executed in strict mode, the **context** will default to `undefined`.
+**Context** is most often determined by how a function is invoked. When a function is called as a method of an object, `this` is set to the object the method is called on. When called as an unbound function, `this` will default to the **global context** or `window` object in the browser. However, if the function is executed in strict mode, the **context** will default to `undefined`.
 
 ### Closures
 
@@ -16,7 +16,7 @@ These two simple methods, inherent to all functions, allow you to execute **(cal
 
 ### Bind
 
-It is used for manipulating **context**. It ++returns++ a new function that is ++permanently bound++ to the first argument of **bind** regardless of how the function is being used. It works by using a **closure** that is responsible for ++redirecting++ the call in the appropriate **context**.
+It is used for manipulating **context**. It <ul>returns</ul> a new function that is ++permanently bound++ to the first argument of **bind** regardless of how the function is being used. It works by using a **closure** that is responsible for ++redirecting++ the call in the appropriate **context**.
 
 ### Lexical Environment
 
