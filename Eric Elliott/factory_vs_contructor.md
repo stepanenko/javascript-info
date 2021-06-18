@@ -7,10 +7,10 @@ So what does the `new` keyword do?
 
 > Note: We’ll use `instance` to refer to the newly created instance, and `Constructor` to refer to the constructor function or class that created the instance.
 
-1. Instantiates a new instance object and binds this to it within the constructor.
-2. Binds instance.__proto__ to Constructor.prototype.
-3. As a side-effect of 2, binds instance.__proto__.constructor to Constructor.
-4. Implicitly returns this, which refers to instance.
+1. Instantiates a new instance object and binds `this` to it within the constructor.
+2. Binds `instance.__proto__` to Constructor.prototype.
+3. As a side-effect of 2, binds `instance.__proto__.constructor` to `Constructor`.
+4. Implicitly returns `this`, which refers to `instance`.
 
 
 ### Benefits of Constructors & `class`:
