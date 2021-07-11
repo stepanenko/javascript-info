@@ -34,3 +34,5 @@ TestClass.getName2 = function() {
   return 'getName2 result';
 }
 ```
+
+More at: https://stackoverflow.com/questions/55204088/defining-javascript-functions-inside-vs-outside-of-a-class
