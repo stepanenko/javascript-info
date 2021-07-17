@@ -23,3 +23,9 @@ import { sequence, toList, toList } from "./sequence";
 In a way, we can imagine a module as a self-executing function that takes the import data as inputs and returns the export data.
 
 More on scope: https://www.freecodecamp.org/news/an-introduction-to-scope-in-javascript-cbd957022652/
+
+### Asynchrony
+
+If the value of the expression following the `await` operator is not a `Promise`, it's converted to a resolved `Promise`.
+
+The `Promise.resolve()` method returns a `Promise` object that is resolved with a given value. If the value is a promise, that promise is returned; if the value is a thenable (i.e. has a "then" method), the returned promise will "follow" that thenable, adopting its eventual state; otherwise the returned promise will be fulfilled with the value. **This function flattens nested layers of promise-like objects** (e.g. a promise that resolves to a promise that resolves to something) into a single layer.
