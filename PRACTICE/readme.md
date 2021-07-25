@@ -12,7 +12,7 @@ Before modules, a variable declared outside any function was a global variable. 
 
 Exporting makes a function or object available to other modules. In the next example, I export a function from the sequence.js module file:
 
-// in sequence.js
+> in sequence.js:
 ```
 export { sequence, toList, take };
 ```
