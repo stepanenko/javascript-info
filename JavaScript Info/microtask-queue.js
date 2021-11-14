@@ -19,3 +19,14 @@ console.log("code finished"); // this shows first
 Promise.resolve()
   .then(() => console.log("promise done!"))
   .then(() => console.log("code finished"));
+
+// An “unhandled rejection” occurs when a promise error is not handled at the end of the microtask queue.
+
+// Normally, if we expect an error, we add .catch to the promise chain to handle it:
+let promise2 = Promise.reject(new Error("Promise Failed!"));
+promise2.catch(err => console.log('caught'));
+
+// doesn't run: error handled
+window.addEventListener('unhandledrejection', event => console.log(event.reason));
+
+// In most Javascript engines, including browsers and Node.js, the concept of microtasks is closely tied with the “event loop” and “macrotasks”.
