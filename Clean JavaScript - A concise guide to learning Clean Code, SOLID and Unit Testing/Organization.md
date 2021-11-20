@@ -14,17 +14,17 @@ highest to the lowest, leaving the accessors (getters and setters) to the end.
 For this example we will use a small class built with Typescript, since it makes it
 easier for us to set methods and private variables:
 
-```js
+```typescript
 class Post {
   private title: string;
   private content: number;
   private createdAt: number;
 
-  static create(title: string; content: string) {
+  static create(title: string, content: string) {
     return new Post(title, content);
   }
 
-  private constructor(title: string; content: string) {
+  private constructor(title: string, content: string) {
     this.setTitle(title);
     this.setContent(content);
     this.createdAt = Date.now();
