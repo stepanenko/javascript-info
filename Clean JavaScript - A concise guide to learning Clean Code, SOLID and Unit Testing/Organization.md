@@ -15,39 +15,49 @@ For this example we will use a small class built with Typescript, since it makes
 easier for us to set methods and private variables:
 
 ```typescript
+
 class Post {
-  private title: string;
-  private content: number;
-  private createdAt: number;
+    private title: string;
+    private content: string;
+    private createdAt: number;
 
-  static create(title: string, content: string) {
-    return new Post(title, content);
-  }
+    static create(title: string, content: string) {
+        return new Post(title, content);
+    }
 
-  private constructor(title: string, content: string) {
-    this.setTitle(title);
-    this.setContent(content);
-    this.createdAt = Date.now();
-  }
+    private constructor(title: string, content: string) {
+        this.setTitle(title);
+        this.setContent(content);
+        this.createdAt = Date.now();
+    }
 
-  setTitle(title: string) {
-    if (StringUtils.isNullOrEmpty(title)) throw new Error(‘Title cannot be empty’);
+    setTitle(title: string) {
+        if (!title) throw new Error('Title cannot be empty');
 
-    this.title = title;
-  }
- 
-  setContent(content: string) {
-    if (StringUtils.isNullOrEmpty((content)) throw new Error(‘Content cannot be empty’);
+        this.title = title;
+    }
 
-    this.content = content;
-  }
+    setContent(content: string) {
+        if (!content) throw new Error('Content cannot be empty');
 
-  getTitle() {
-    return this.title;
-  }
+        this.content = content;
+    }
 
-  getContent() {
-    return this.content;
-  }
+    getTitle() {
+        return this.title;
+    }
+
+    getContent() {
+        return this.content;
+    }
 }
+
+const post1 = Post.create('testPost', 'some text here');
+console.log(post1);
+// Post {
+//     title: 'testPost',
+//     content: 'some text here',
+//     createdAt: 1637427108298
+// }
+
 ```
