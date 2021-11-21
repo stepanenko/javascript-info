@@ -30,8 +30,8 @@ start();
 ```
 ## Applying the SRP
 
-Returning to the example, one way to separate these responsibilities could be by
-moving each of the functions of the UseCase class to others, like this 
+One way to separate these responsibilities could be by
+moving each of the functions of the UseCase class to others, like this:
 
 ```js
 class UseCase {
