@@ -91,3 +91,25 @@ function start() {
 start();
 
 ```
+
+## Detecting violations of SRP
+
+Knowing whether or not we are respecting the single responsibility principle can be
+somewhat ambiguous at times. Below we will see a list of situations that will help
+us detect violations of the SRP:
+
+- Too generic a name. Choosing an overly generic name often results in a God
+Object, an object that does too many things.
+- Changes usually affect this class. When a high percentage of changes usually
+affect the same class, it may be a sign that the class is too coupled or has too
+many responsibilities.
+- The class involves multiple layers of architecture. If, as we saw in the case of
+the example, our class does things like access the persistence layer or notify the
+user, in addition to implementing the business logic, it is clearly violating the
+SRP.
+- High number of imports. Although this by itself does not imply anything, it
+could be a symptom of violation.
+- High number of public methods. When a class has an API with a high number
+of public methods, it is often a sign that it has too many responsibilities.
+- Excessive number of lines of code. If our class only has a single responsibility,
+its number of lines should not, in principle, be very high.
