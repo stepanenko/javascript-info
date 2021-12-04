@@ -101,3 +101,13 @@ export class ClientWrapper {
 
 In this way we have managed to change requestTodoItems without modifying its
 code, thus respecting the open/closed principle
+
+## Detect violations of OCP
+
+This principle is closely related to that of single responsibility.
+If a high percentage of changes is affecting our class, it is a symptom that
+this class, in addition to being too coupled and having too many responsibilities, is
+violating the open closed principle.
+
+Also, the principle is violated very often when we involve
+different layers of the project architecture (as it was in the example above).
