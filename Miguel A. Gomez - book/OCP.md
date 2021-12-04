@@ -12,20 +12,18 @@ And you should try to prioritize composition over inheritance.
 I think a good context to illustrate how to apply the OCP might be to try to decouple dependent things:
 
 ```js
-const axios = require('axios');
+const axios = require("axios");
 
 class TodoExternalService {
   requestTodoItems(callback) {
-    const url = 'https://jsonplaceholder.typicode.com/todos/';
-    axios
-      .get(url)
-      .then(callback);
+    const url = "https://jsonplaceholder.typicode.com/todos/";
+    axios.get(url).then(callback);
   }
 }
 
-new TodoExternalService()
-  .requestTodoItems(response => console.log(response.data));
-
+new TodoExternalService().requestTodoItems((response) =>
+  console.log(response.data)
+);
 ```
 
 Here we are skipping the OCP, since if we wanted to replace the library axios for another, like fetch,
@@ -39,9 +37,7 @@ It is a pattern we are decoupling elements of our system and third-party librari
 ```js
 class ClientWrapper {
   makeGetRequest(url, callback) {
-    return axios
-      .get(url)
-      .then(callback);
+    return axios.get(url).then(callback);
   }
 }
 ```
@@ -52,12 +48,10 @@ It is this easy:
 
 ```js
 // infrastructure/ClientWrapper
-const axios = require('axios');
+const axios = require("axios");
 export class ClientWrapper {
   makeGetRequest(url, callback) {
-    return axios
-      .get(url)
-      .then(callback);
+    return axios.get(url).then(callback);
   }
 }
 
@@ -70,21 +64,21 @@ export class TodoService {
   }
 
   requestTodoItems(callback) {
-    const url = 'https://jsonplaceholder.typicode.com/todos/';
-    this.client.makeGetRequest(url, callback)
+    const url = "https://jsonplaceholder.typicode.com/todos/";
+    this.client.makeGetRequest(url, callback);
   }
 }
 
 // index
-import { ClientWrapper } from './infrastructure/ClientWrapper';
-import { TodoService } from './domain/TodoService';
+import { ClientWrapper } from "./infrastructure/ClientWrapper";
+import { TodoService } from "./domain/TodoService";
 
 const start = () => {
   const client = new ClientWrapper();
   const todoService = new TodoService(client);
 
-  todoService.requestTodoItems(response => console.log(response.data))
-}
+  todoService.requestTodoItems((response) => console.log(response.data));
+};
 
 start();
 ```
@@ -99,9 +93,8 @@ for example, we would only have to do it in our ClientWrapper class:
 export class ClientWrapper {
   makeGetRequest(url, callback) {
     return fetch(url)
-      .then(response => response.json())
-      .then(callback)
-
+      .then((response) => response.json())
+      .then(callback);
   }
 }
 ```
