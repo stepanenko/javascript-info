@@ -45,6 +45,6 @@ const DataComponent = (ComposedComponent, url) =>
 const RandomMeUsers = DataComponent(
   PeopleList,
   'https://randomuser.me/api?results=10'
-  );
+);
 
 ReactDOM.render(<RandomMeUsers />, document.getElementById('root'));

@@ -1,4 +1,14 @@
 
+// !!! BUT as Eric Elliott said:
+// Any function can return a new object. When it’s not a constructor function or class, it’s called a factory function.
+
+// ES6 classes desugar to constructor functions, so everything that follows about constructor functions also applies to ES6 classes.
+
+// The Difference Between a Factory and a Constructor is that 
+// - Constructors force callers to use the new keyword.
+// - Factories don’t. That’s it, but that has some relevant side-effects.
+
+// Based on above the following doesnt look correct:
 class Car {
   constructor(doors, engine, color) {
     this.doors = doors;
