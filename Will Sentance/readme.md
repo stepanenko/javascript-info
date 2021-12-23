@@ -1,6 +1,6 @@
 
-## Will
+## Will Sentance
 
-Functional P [Course](https://coursehunter.net/course/zhestkie-chasti-funkcionalnoe-programmirovanie)
+Functional Programming [Course](https://coursehunter.net/course/zhestkie-chasti-funkcionalnoe-programmirovanie)
 
-Callenges - http://csbin.io/functional
+Challenges - http://csbin.io/functional
