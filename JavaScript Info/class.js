@@ -18,15 +18,14 @@ console.log(User.prototype.sayHi); // [Function: sayHi]
 // ...there are two methods:
 console.log(Object.getOwnPropertyNames(User.prototype)); // [ 'constructor', 'sayHi' ]
 
-// Class is not just a syntactic suger:
+// Class is not just a syntactic sugar
 
-// rewriting class User in pure functions:
-
+// class User rewritten in pure functions:
 function User2(name) {
   this.name = name;
 }
 
-User2.prototype.greet = function() {
+User2.prototype.greet = function () {
   console.log('Hello,', this.name);
 }
 
@@ -41,7 +40,8 @@ for (let prop in tom) {
   console.log(prop);   // name, greet
 }
 
-// if a class expression has a name, it’s visible inside the class only:
+
+// If a class expression has a name, it’s visible only inside the class:
 const User3 = class MyClass {
   msg() {
     console.log(MyClass);
