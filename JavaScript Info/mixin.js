@@ -47,17 +47,17 @@ let sayHiMixin2 = {
   }
 };
 
-class User {
+class User2 {
   constructor(name) {
     this.name = name;
   }
 }
 
 // copy the methods
-Object.assign(User.prototype, sayHiMixin2);
+Object.assign(User2.prototype, sayHiMixin2);
 
 // now User can say hi
-new User("Dude").sayHi(); // Hello Dude!
+new User("Bill").sayHi(); // Hello Dude!
 
 // Please note that the call to the parent method super.say() from sayHiMixin (*)
 // looks for the method in the prototype of that mixin, not the class.
