@@ -1,6 +1,7 @@
 
-// Currying is a transformation of functions that translates
-// a function from callable as f(a, b, c) into callable as f(a)(b)(c).
+// Currying is a transformation of functions that translates a function from
+// callable as f(a, b, c) into callable as f(a)(b)(c).
+
 // Currying doesn’t call a function. It just transforms it: f(a, b, c) -> f(a)(b)(c)
 
 function curry1(f) { // curry(f) does the currying transform
