@@ -47,13 +47,13 @@ user.myjoin = [].join;
 
 console.log(user.myjoin(' - ')); // prints 'Chris - Nicholson - 57'
 
-// Copying [].join, as above, is not safe and recommended
-// safely calling the join can be done with 'call':
+// Copying [].join as above is not safe and not recommended
+// instead you can call the join with 'call':
 function logArgs() {
   const newJoin = [].join;
   const args = newJoin.call(arguments, '/');
   console.log(args);
 }
 
+// Here we're calling join without copying, it's clear and safe:
 logArgs(2, -6, 'shit', false); // prints '2/-6/shit/false'
-// We called join without copying - clear and safe
