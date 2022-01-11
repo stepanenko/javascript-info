@@ -17,7 +17,7 @@ getFullName.call(person, 'firstName', 'middle');
 function getArgs() {
   // copying array's built-in method 'join' into arguments and naming it 'iJoin':
   arguments.iJoin = [].join;
-  // calling just copied join in the context of 'arguments':
+  // calling the just copied 'iJoin' in the context of 'arguments':
   const args = arguments.iJoin(' : ');
   console.log(args);
 }
