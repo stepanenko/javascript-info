@@ -3,7 +3,7 @@
 // we can wrap them in constructor function, like this:
 
 let user = new function () {
-  this.name = 'Bill';
+  this.name = 'Ben';
   this.isAdmin = true;
   this.getUserName = function () {
     console.log('Name:', this.name);
