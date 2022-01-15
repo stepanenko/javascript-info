@@ -1,5 +1,5 @@
 
-// Nullish coalescing operator - "??"
+// ?? -> Nullish coalescing operator
 // To work it requires modern browser or Nodejs >= 14.5
 
 let a;
