@@ -43,7 +43,7 @@ let obj2 = {
       return { done: true };
     }
   }
-}
+};
 
 for (let n of obj2) {
   console.log(n);
