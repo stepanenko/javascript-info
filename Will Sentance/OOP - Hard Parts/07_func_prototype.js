@@ -1,6 +1,6 @@
 
 function multiplyBy2(num) {
-  return num*2;
+  return num * 2;
 }
 
 multiplyBy2.toString(); // function multiplyBy2(num) {return num*2;}

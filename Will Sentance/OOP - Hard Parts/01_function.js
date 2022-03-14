@@ -5,7 +5,7 @@ function UserCreator(name, score) {
 
   newUser.name = name;
   newUser.score = score;
-  newUser.increment = function() {
+  newUser.increment = function () {
     newUser.score++;
   }
 

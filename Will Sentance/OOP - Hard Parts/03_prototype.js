@@ -8,6 +8,7 @@ function mul(num1, num2) {
 const result = mul(3, 4);
 
 mul.stored = 34; // 34 will be stored inside the function
+console.log(mul.stored); // 34
 
 mul.prototype.string = 'text' // will be stored inside functions default property -> prototype
 

@@ -4,7 +4,7 @@ function UserCreator(name, score) {
   this.score = score;
 }
 
-UserCreator.prototype.increment = function() {
+UserCreator.prototype.increment = function () {
   // function add1() {
   //   this.score++; // will refer to global window object
   // }

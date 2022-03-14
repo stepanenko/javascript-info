@@ -10,7 +10,7 @@ function UserCreator(name, score) {
 }
 
 const userMethodsStore = {
-  increment: function() {
+  increment: function () {
     this.score++;
   }
 }
