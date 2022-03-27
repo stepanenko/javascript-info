@@ -43,3 +43,14 @@ let obj = {
 };
 
 console.log(obj); // { '': 'strange also' }
+
+// Example 5, strange [0] and [false]
+let ob = {
+    [0]: 'zero',
+    [false]: 'bollean'
+};
+
+ob[true] = 'bool true';
+
+console.log(ob); // { '0': 'zero', false: 'bollean', true: 'bool true' }
+console.log(Object.keys(ob)); // [ '0', 'false', 'true' ]
