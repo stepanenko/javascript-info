@@ -24,5 +24,8 @@ function wait() {
   console.timeEnd('timeParallel');
 })();
 
+// Note that promises start their task when they are being created.
+// Promise.all just waits until all the given promises are resolved.
+
 
 // More: https://betterprogramming.pub/4-javascript-promise-methods-all-allsettled-any-and-race-ba0e0c8c034e
