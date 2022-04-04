@@ -35,3 +35,7 @@
 // - You only care about the successful result of all promises.
 // - Your code relies on multiple related asynchronous tasks to work correctly. So instead of running
 // these tasks serially, kick off them parallelly and wait for their execution with a single Promise.all
+
+// Promise.all vs Promise.allSettled
+// Promise.all resolves to a single promise only when all the input promises are fulfilled and rejects otherwise.
+// Promise.allSettled always resolves to a single promise with the status of individual input promises.
