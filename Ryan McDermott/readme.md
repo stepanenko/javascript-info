@@ -23,7 +23,7 @@ To make it obvious what properties the function expects, you can use the ES2015/
 - Linters can warn you about unused properties, which would be impossible without destructuring.
 
 Bad:
-```
+```js
 function createMenu(title, body, buttonText, cancellable) {
   // ...
 }
@@ -31,7 +31,7 @@ function createMenu(title, body, buttonText, cancellable) {
 createMenu("Foo", "Bar", "Baz", true);
 ```
 Good:
-```
+```js
 function createMenu({ title, body, buttonText, cancellable }) {
   // ...
 }
@@ -50,7 +50,7 @@ This is by far the most important rule in software engineering.
 When functions do more than one thing, they are harder to compose, test, and reason about.
 
 Bad:
-```
+```js
 function emailClients(clients) {
   clients.forEach(client => {
     const clientRecord = database.lookup(client);
@@ -61,7 +61,7 @@ function emailClients(clients) {
 }
 ```
 Good:
-```
+```js
 function emailActiveClients(clients) {
   clients.filter(isActiveClient).forEach(email);
 }
@@ -80,7 +80,7 @@ Removing duplicate code means creating an abstraction that can handle this set o
 Getting the abstraction right is critical. **Bad abstractions can be worse than duplicate code**!
 
 Bad:
-```
+```js
 function showDeveloperList(developers) {
   developers.forEach(developer => {
     const expectedSalary = developer.calculateExpectedSalary();
@@ -112,7 +112,7 @@ function showManagerList(managers) {
 }
 ```
 Good:
-```
+```js
 function showEmployeeList(employees) {
   employees.forEach(employee => {
     const expectedSalary = employee.calculateExpectedSalary();
@@ -135,4 +135,114 @@ function showEmployeeList(employees) {
     render(data);
   });
 }
+```
+
+### Set default objects with Object.assign
+
+Bad:
+```js
+const menuConfig = {
+  title: null,
+  body: "Bar",
+  buttonText: null,
+  cancellable: true
+};
+
+function createMenu(config) {
+  config.title = config.title || "Foo";
+  config.body = config.body || "Bar";
+  config.buttonText = config.buttonText || "Baz";
+  config.cancellable =
+    config.cancellable !== undefined ? config.cancellable : true;
+}
+
+createMenu(menuConfig);
+```
+Good:
+```js
+const menuConfig = {
+  title: "Order",
+  // User did not include 'body' key
+  buttonText: "Send",
+  cancellable: true
+};
+
+function createMenu(config) {
+  let finalConfig = Object.assign(
+    {
+      title: "Foo",
+      body: "Bar",
+      buttonText: "Baz",
+      cancellable: true
+    },
+    config
+  );
+  return finalConfig
+  // config now equals: {title: "Order", body: "Bar", buttonText: "Send", cancellable: true}
+  // ...
+}
+
+createMenu(menuConfig);
+```
+
+### Don't use flags as function parameters
+
+Flags tell your user that this function does more than one thing.Functions should do one thing.
+Split out your functions if they are following different code paths based on a boolean.
+
+Bad:
+```js
+function createFile(name, temp) {
+  if (temp) {
+    fs.create(`./temp/${name}`);
+  } else {
+    fs.create(name);
+  }
+}
+```
+Good:
+```js
+function createFile(name) {
+  fs.create(name);
+}
+
+function createTempFile(name) {
+  createFile(`./temp/${name}`);
+}
+```
+
+### Avoid Side Effects (part 1)
+
+A function produces a side effect if it does anything other than take a value in and return another value or values.
+A side effect could be writing to a file, modifying some global variable.
+
+Don't have several functions and classes that write to a particular file. Have one service that does it!
+
+Avoid using mutable data types that can be written to by anything, and not centralizing where your side effects occur.
+
+Bad:
+```js
+// Global variable referenced by following function.
+// If we had another function that used this name, now it'd be an array and it could break it.
+let name = "Ryan McDermott";
+
+function splitIntoFirstAndLastName() {
+  name = name.split(" ");
+}
+
+splitIntoFirstAndLastName();
+
+console.log(name); // ['Ryan', 'McDermott'];
+```
+Good:
+```js
+function splitIntoFirstAndLastName(name) {
+  return name.split(" ");
+}
+
+const name = "Ryan McDermott";
+const newName = splitIntoFirstAndLastName(name);
+
+console.log(name); // 'Ryan McDermott';
+console.log(newName); // ['Ryan', 'McDermott'];
 ```
