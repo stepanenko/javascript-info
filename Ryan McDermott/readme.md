@@ -214,7 +214,7 @@ function createTempFile(name) {
 ### Avoid Side Effects (part 1)
 
 A function produces a side effect if it does anything other than take a value in and return another value or values.
-A side effect could be writing to a file, modifying some global variable, making a GET or POST request to an external API endpoint or working with a browser API like window.navigator or document.getElementById().
+A side effect could be writing to a file, modifying some global variable, making a GET or POST request, working with a browser API like window.navigator or document.getElementById(), network I/O, logging to console, writing to localStorage, etc.
 
 Don't have several functions and classes that write to a particular file. Have one service that does it!
 

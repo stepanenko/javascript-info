@@ -3,17 +3,18 @@ function userCreator(name, score) {
   const newUser = Object.create(userFunctions);
   newUser.name = name;
   newUser.score = score;
+
   return newUser;
 }
 
 userFunctions = {
-  increment: function() {
+  increment: function () {
     this.score++;
   },
-  sayHi: function() {
+  sayHi: function () {
     console.log(this.name + ' is saying hi!');
   }
-}
+};
 
 const david = userCreator('David', 3);
 david.increment();
@@ -24,14 +25,15 @@ function paidUser(paidName, paidScore, balance) {
   const newPaidUser = userCreator(paidName, paidScore);
   Object.setPrototypeOf(newPaidUser, paidUserFunctions);
   newPaidUser.balance = balance;
+
   return newPaidUser;
 }
 
 paidUserFunctions = {
-  increaseBalance: function(value) {
+  increaseBalance: function (value) {
     this.balance += value;
   }
-}
+};
 
 Object.setPrototypeOf(paidUserFunctions, userFunctions);
 
