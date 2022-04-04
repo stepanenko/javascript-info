@@ -4,7 +4,7 @@
 
 // ==== Bad: ====
 
-const Employee = function(name) {
+const Employee = function (name) {
   this.name = name;
 };
 
@@ -28,7 +28,7 @@ function makeEmployee(name) {
   };
 }
 
-const employee = makeEmployee("John Doe");
+const employee2 = makeEmployee("John Doe");
 console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe

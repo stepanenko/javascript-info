@@ -9,6 +9,7 @@ let lion = {
 // bracket notation:
 console.log(lion['lion-baby']); // "cub"
 
+
 // Example 2
 let category = 'carnivore';
 let lion2 = {
@@ -17,6 +18,7 @@ let lion2 = {
 };
 
 console.log(lion2); // { lion-baby: "cub" , carnivore: true }
+
 
 // Example 3
 const age = 8;
@@ -36,13 +38,15 @@ let animal = {
 
 console.log(animal); // { '0': true, name: 'lion', young: true, babies: 5, false: 'yes' }
 
+
 // Example 4, strange '' key
 let obj = {
     "": 'weird',
     '': 'strange also',
 };
 
-console.log(obj); // { '': 'strange also' }
+console.log(obj); // { '': 'strange also' } <- overrides the previous "" key-value
+
 
 // Example 5, strange [0] and [false]
 let ob = {
