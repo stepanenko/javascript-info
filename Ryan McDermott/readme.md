@@ -211,7 +211,7 @@ function createTempFile(name) {
 }
 ```
 
-### Avoid Side Effects (part 1)
+### Avoid Side Effects
 
 A function produces a side effect if it does anything other than take a value in and return another value or values.
 A side effect could be writing to a file, modifying some global variable, making a GET or POST request, working with a browser API like window.navigator or document.getElementById(), network I/O, logging to console, writing to localStorage, etc.
@@ -245,4 +245,23 @@ const newName = splitIntoFirstAndLastName(name);
 
 console.log(name); // 'Ryan McDermott';
 console.log(newName); // ['Ryan', 'McDermott'];
+```
+
+Objects and arrays are two kinds of mutable values so it's important to handle them carefully when they're passed as parameters to a function.
+
+There are rare cases where you actually want to modify the input object. But most things can be refactored to have no side effects!
+
+Cloning big objects can be very expensive in terms of performance. Luckily, there are [great libraries](https://immutable-js.com/) that are fast and not as memory intensive as it would be for you to manually clone objects and arrays.
+
+Bad:
+```js
+const addItemToCart = (cart, item) => {
+  cart.push({ item, date: Date.now() });
+};
+```
+Good:
+```js
+const addItemToCart = (cart, item) => {
+  return [...cart, { item, date: Date.now() }];
+};
 ```
