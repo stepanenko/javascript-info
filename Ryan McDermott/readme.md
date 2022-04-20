@@ -265,3 +265,45 @@ const addItemToCart = (cart, item) => {
   return [...cart, { item, date: Date.now() }];
 };
 ```
+
+### Make objects have private members
+
+This can be accomplished through closures (for ES5 and below).
+
+Bad:
+```js
+const Employee = function(name) {
+  this.name = name;
+};
+
+Employee.prototype.getName = function getName() {
+  return this.name;
+};
+
+const employee = new Employee("John Doe");
+console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
+delete employee.name;
+console.log(`Employee name: ${employee.getName()}`); // Employee name: undefined
+```
+Good:
+```js
+function makeEmployee(name) {
+  return {
+    getName() {
+      return name;
+    }
+  };
+}
+
+const employee = makeEmployee("John Doe");
+console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
+delete employee.name;
+console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
+```
+
+### Prefer ES2015/ES6 classes over ES5 plain functions
+
+It's very difficult to get readable class inheritance, construction, and method definitions for classical ES5 classes. If you need inheritance (and be aware that you might not), then prefer ES2015/ES6 classes.
+
+However, prefer small functions over classes until you find yourself needing larger and more complex objects.
+
