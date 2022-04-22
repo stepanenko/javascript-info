@@ -307,3 +307,22 @@ It's very difficult to get readable class inheritance, construction, and method 
 
 However, prefer small functions over classes until you find yourself needing larger and more complex objects.
 
+### Don't write to global functions
+```js
+// Bad:
+
+Array.prototype.diff = function diff(comparisonArray) {
+  const hash = new Set(comparisonArray);
+  return this.filter(elem => !hash.has(elem));
+};
+
+// Good:
+
+class SuperArray extends Array {
+  diff(comparisonArray) {
+    const hash = new Set(comparisonArray);
+    return this.filter(elem => !hash.has(elem));
+  }
+}
+```
+
