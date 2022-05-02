@@ -334,3 +334,49 @@ function isDOMNodePresent(node) {}
 
 if (isDOMNodePresent(node)) {}
 ```
+
+### Avoid conditionals
+
+First hearing this people say, "how am I supposed to do anything without an if statement?" The answer is that you can use polymorphism to achieve the same task in many cases. The second question is usually, "well that's great but why would I want to do that?" Function should only do one thing. When you have classes and functions that have if statements, you are telling your user that your function does more than one thing.
+```js
+// Bad:
+class Airplane {
+  // ...
+  getCruisingAltitude() {
+    switch (this.type) {
+      case "777":
+        return this.getMaxAltitude() - this.getPassengerCount();
+      case "Air Force One":
+        return this.getMaxAltitude();
+      case "Cessna":
+        return this.getMaxAltitude() - this.getFuelExpenditure();
+    }
+  }
+}
+
+// Good:
+class Airplane {
+  // ...
+}
+
+class Boeing777 extends Airplane {
+  // ...
+  getCruisingAltitude() {
+    return this.getMaxAltitude() - this.getPassengerCount();
+  }
+}
+
+class AirForceOne extends Airplane {
+  // ...
+  getCruisingAltitude() {
+    return this.getMaxAltitude();
+  }
+}
+
+class Cessna extends Airplane {
+  // ...
+  getCruisingAltitude() {
+    return this.getMaxAltitude() - this.getFuelExpenditure();
+  }
+}
+```
