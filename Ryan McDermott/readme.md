@@ -8,7 +8,7 @@ Website: https://ryanmcdermott.me/
 
 ## Functions
 
-### Function arguments (2 or fewer ideally)
+## Function arguments (2 or fewer ideally)
 
 One or two arguments is the ideal case, and three should be avoided if possible.
 Usually, if you have more than two arguments then your function is trying to do too much.
@@ -44,7 +44,7 @@ createMenu({
 });
 ```
 
-### Functions should do one thing
+## Functions should do one thing
 
 This is by far the most important rule in software engineering.
 When functions do more than one thing, they are harder to compose, test, and reason about.
@@ -72,7 +72,7 @@ function isActiveClient(client) {
 }
 ```
 
-### Remove duplicate code
+## Remove duplicate code
 Duplicate code is bad because it means that there's more than one place to alter something if you need to change some logic.
 
 Removing duplicate code means creating an abstraction that can handle this set of different things with just one function/module/class.
@@ -137,7 +137,7 @@ function showEmployeeList(employees) {
 }
 ```
 
-### Set default objects with Object.assign
+## Set default objects with Object.assign
 
 Bad:
 ```js
@@ -185,7 +185,7 @@ function createMenu(config) {
 createMenu(menuConfig);
 ```
 
-### Don't use flags as function parameters
+## Don't use flags as function parameters
 
 Flags tell your user that this function does more than one thing.Functions should do one thing.
 Split out your functions if they are following different code paths based on a boolean.
@@ -211,7 +211,7 @@ function createTempFile(name) {
 }
 ```
 
-### Avoid Side Effects
+## Avoid Side Effects
 
 A function produces a side effect if it does anything other than take a value in and return another value or values.
 A side effect could be writing to a file, modifying some global variable, making a GET or POST request, working with a browser API like window.navigator or document.getElementById(), network I/O, logging to console, writing to localStorage, etc.
@@ -266,12 +266,11 @@ const addItemToCart = (cart, item) => {
 };
 ```
 
-### Make objects have private members
+## Make objects have private members
 
 This can be accomplished through closures (for ES5 and below).
-
-Bad:
 ```js
+// Bad:
 const Employee = function(name) {
   this.name = name;
 };
@@ -284,9 +283,8 @@ const employee = new Employee("John Doe");
 console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: undefined
-```
-Good:
-```js
+
+// Good:
 function makeEmployee(name) {
   return {
     getName() {
@@ -301,23 +299,21 @@ delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 ```
 
-### Prefer ES2015/ES6 classes over ES5 plain functions
+## Prefer ES2015/ES6 classes over ES5 plain functions
 
 It's very difficult to get readable class inheritance, construction, and method definitions for classical ES5 classes. If you need inheritance (and be aware that you might not), then prefer ES2015/ES6 classes.
 
 However, prefer small functions over classes until you find yourself needing larger and more complex objects.
 
-### Don't write to global functions
+## Don't write to global functions
 ```js
 // Bad:
-
 Array.prototype.diff = function diff(comparisonArray) {
   const hash = new Set(comparisonArray);
   return this.filter(elem => !hash.has(elem));
 };
 
 // Good:
-
 class SuperArray extends Array {
   diff(comparisonArray) {
     const hash = new Set(comparisonArray);
@@ -326,3 +322,15 @@ class SuperArray extends Array {
 }
 ```
 
+## Avoid negative conditionals
+```js
+// Bad:
+function isDOMNodeNotPresent(node) {}
+
+if (!isDOMNodeNotPresent(node)) {}
+
+// Good:
+function isDOMNodePresent(node) {}
+
+if (isDOMNodePresent(node)) {}
+```
