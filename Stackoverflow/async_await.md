@@ -86,4 +86,8 @@ The files will be processed sequentially, one at a time.
 
 More at: https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop/
 
+The initialValue of the `reduce` does not need to be a `Promise`, it will however in most cases clarify the intent.
+
+More at: https://stackoverflow.com/questions/41243468/javascript-array-reduce-with-async-await
+
 ---
