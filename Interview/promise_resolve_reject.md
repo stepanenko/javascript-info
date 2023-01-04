@@ -1,6 +1,6 @@
-## `Promise.resolve()`
+## `Promise.resolve()` and `Promise.reject()`
 
-Q: Implement `Promise.resolve()`
+1 Q: Implement `Promise.resolve()`
 
 Example:
 ```js
@@ -23,7 +23,7 @@ Promise.resolve(p4).then(console.log) // 4
 Promise.resolve().then(console.log) // undefined
 ```
 
-A:
+1 A:
 
 ```js
 Promise.myResolve = function (value) {
@@ -34,6 +34,30 @@ Promise.myResolve = function (value) {
   // Otherwise, all other cases are wrapped again by Promise 
   return new Promise((resolve) => {
     resolve(value)
+  })
+}
+```
+
+2 Q: Implement `Promise.reject`
+
+The Promise.reject() method returns a Promise object that is rejected with a given reason.
+
+Example:
+
+```js
+Promise.reject(new Error('fail'))
+  .then(() => console.log('Resolved'), 
+        (err) => console.log('Rejected', err))
+// Output the following        
+// Rejected Error: fail
+//    at <anonymous>:2:16
+```
+
+2 A:
+```js
+Promise.myReject = function (value) {
+  return new Promise((_, reject) => {
+    reject(value)
   })
 }
 ```
