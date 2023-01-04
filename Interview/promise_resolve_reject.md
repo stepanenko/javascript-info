@@ -2,6 +2,8 @@
 
 1 Q: Implement `Promise.resolve()`
 
+The `Promise.resolve()` method “resolves” a given value to a `Promise`. If the value is a promise, that promise is returned; if the value is a thenable, `Promise.resolve()` will call the `then()` method with two callbacks it prepared; otherwise, the returned promise will be fulfilled with the value.
+
 Example:
 ```js
 // 1. Non-Promise object, non-thenable object
@@ -38,9 +40,11 @@ Promise.myResolve = function (value) {
 }
 ```
 
+---
+
 2 Q: Implement `Promise.reject`
 
-The Promise.reject() method returns a Promise object that is rejected with a given reason.
+The `Promise.reject()` method returns a `Promise` object that is rejected with a given reason.
 
 Example:
 
