@@ -14,6 +14,8 @@ In comparison, the `Promise` returned by `Promise.all()` may be more appropriate
 - the tasks are dependent on each other
 - you'd like to immediately reject upon any of them rejecting
 
+Q: Implement your own `Promise.allSettled()`
+
 Example:
 
 ```js
@@ -88,4 +90,48 @@ const p13 = Promise.allSettled([ p1, p4, p5 ])
   }
 ]
 */
+```
+
+A:
+
+- whether the `Promise` is fully successful or partially failed, it will eventually enter the `.then` callback of `Promise.allSettled`
+- in the final return value, both the successful and failed items have the status attribute, the value is fulfilled when successful, and rejected when it fails
+- in the final return value, success contains the value attribute, while failure is the reason attribute
+
+```js
+Promise.myAllSettled = (promises) => {
+  return new Promise((rs, rj) => {
+    let count = 0;
+    let result = [];
+    const len = promises.length;
+    // If the array is empty, return empty data directly
+    if (len === 0) {
+      return rs([]);
+    }
+    promises.forEach((p, i) => {
+      Promise.resolve(p).then((res) => {
+        count += 1;
+        // set success attribute 
+        result[ i ] = {
+          status: 'fulfilled',
+          value: res
+        };
+        
+        if (count === len) {
+          rs(result);
+        }
+      }).catch((err) => {
+        count += 1;
+        // set failure property 
+        result[i] = { 
+          status: 'rejected', 
+          reason: err 
+        };
+        if (count === len) {
+          rs(result);
+        }
+      });
+    });
+  });
+};
 ```
