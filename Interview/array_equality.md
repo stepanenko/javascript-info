@@ -1,5 +1,5 @@
 
-Q: Impl function to compare if two arrays are equal
+Q: Implement function to compare if two arrays are equal
 
 ```js
 let array1 = [11, 22, 33];
@@ -9,8 +9,7 @@ console.log(array1 == array2); // false
 console.log(array1 === array2); // false
 ```
 
-A:
-
+Possible answers:
 ```js
 // 1
 const compareArrays = (a, b) => {
