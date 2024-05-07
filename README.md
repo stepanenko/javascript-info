@@ -10,3 +10,4 @@
 - Every time a function is created, we throw away the old picture and take a new one.
 - Closure is a natural result of lexical scope when the language has functions as first-class values.
 - When a function makes reference to variables from an outer scope, and that function is passed around as a value and executed in other scopes, it maintains access to its original scope variables - this is closure.
+- Across all of programming, but especially in JS, closure drives many of the most important programming patterns, including modules.
