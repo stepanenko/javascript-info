@@ -36,3 +36,23 @@ export default singletonCounter;
 // The Object.freeze method makes sure that consuming code cannot
 // modify the Singleton. Properties on the frozen instance cannot be added or
 // modified, which reduces the risk of accidentally overwriting the values on the Singleton.
+
+// However, the class implementation shown in the examples above is actually overkill.
+// Since we can directly create objects in JavaScript, we can simply use a regular object to achieve the same result:
+
+let count = 0;
+    
+const counter = {
+  increment () {
+    return ++count;
+  },
+  decrement ( ) {
+    return --count;
+  ｝
+};
+  
+Object. freeze(counter);
+export { counter };
+
+// Since objects are passed by reference, all the files importing singletonCounter will get a reference to the same singleton Counter object.
+// Modifying the value of count in any of these files will modify the value on the singletonCounter.
