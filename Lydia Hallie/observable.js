@@ -49,7 +49,8 @@ export default function App() {
       <Button variant="contained" onClick={handleClick}>
         Click me!
       </Button>
-      <FormControlLabel control={<Switch name="" onChange={handleToggle} />}
+      <FormControlLabel
+        control={<Switch name="" onChange={handleToggle} />}
         label="Toggle me"
       />
     </div>
