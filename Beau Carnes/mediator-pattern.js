@@ -1,4 +1,4 @@
-/* Mediator Design Pattern */
+// Mediator Design Pattern
 
 let Participant = function(name) {
   this.name = name;
@@ -11,7 +11,7 @@ Participant.prototype = {
   },
   receive: function(message, from) {
     console.log(from.name + " to " + this.name + ": " + message);
-  }
+  },
 };
 
 let Chatroom = function() {
@@ -35,7 +35,7 @@ let Chatroom = function() {
           }
         }
       }
-    }
+    },
   };
 };
 
