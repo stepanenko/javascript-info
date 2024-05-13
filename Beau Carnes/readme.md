@@ -8,7 +8,9 @@
 
 Design patterns are proven solutions to recurring problems in software development. They are not specific to a particular programming language or framework, but rather they are abstract concepts that can be applied in various situations.
 
-The GoF patterns are a set of 23 design patterns that were first introduced in the book "Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. These patterns are divided into three categories:
+The GoF patterns are a set of 23 design patterns that were first introduced in the book "Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.  
+
+These patterns are divided into three categories:
 
 Creational | Structural | Behavioral
 ---------- | ---------- | ----------
