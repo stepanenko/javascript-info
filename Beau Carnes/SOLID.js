@@ -1,9 +1,6 @@
-/* Clean Code: S.O.L.I.D. */
+// Single Responsibility Principle
 
-// **Single Responsibility Principle**
-
-// Bad
-
+// BAD
 class UserSettings {
   constructor(user) {
     this.user = user;
@@ -20,8 +17,7 @@ class UserSettings {
   }
 }
 
-// Good
-
+// GOOD
 class UserAuth {
   constructor(user) {
     this.user = user;
@@ -47,7 +43,7 @@ class UserSettings {
 }
 
 
-// **Open/Closed Principle**
+// Open/Closed Principle
 
 // BAD
 var iceCreamFlavors=["chocolate","vanilla"];
@@ -79,10 +75,9 @@ var iceCreamMaker={
 export default iceCreamMaker;
 
 
-// **Liskov Substitution Principle**
+// Liskov Substitution Principle
 
 // BAD
-
 class Rectangle {
   constructor() {
     this.width = 0;
@@ -136,7 +131,6 @@ renderLargeRectangles(rectangles);
 
 
 // GOOD
-
 class Shape {
   setColor(color) {
     // ...
@@ -181,10 +175,9 @@ const shapes = [new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
 renderLargeShapes(shapes);
 
 
-// **Interface Segregation Principle**
+// Interface Segregation Principle
 
 // BAD
-
 class DOMTraverser {
   constructor(settings) {
     this.settings = settings;
@@ -203,12 +196,11 @@ class DOMTraverser {
 
 const $ = new DOMTraverser({
   rootNode: document.getElementsByTagName('body'),
-  animationModule() {} // Most of the time, we won't need to animate when traversing.
+  animationModule() {} // Most of the time, we won't need to animate when traversing
   // ...
 });
 
 // GOOD
-
 class DOMTraverser {
   constructor(settings) {
     this.settings = settings;
@@ -239,10 +231,9 @@ const $ = new DOMTraverser({
   }
 });
 
-// **Dependency Inversion Principle**
+// Dependency Inversion Principle
 
 // BAD
-
 class InventoryRequester {
   constructor() {
     this.REQ_METHODS = ['HTTP'];
@@ -257,7 +248,7 @@ class InventoryTracker {
   constructor(items) {
     this.items = items;
 
-    // BAD: We have created a dependency on a specific request implementation.
+    // BAD: We have created a dependency on a specific request implementation
     // We should just have requestItems depend on a request method: `request`
     this.requester = new InventoryRequester();
   }
@@ -273,7 +264,6 @@ const inventoryTracker = new InventoryTracker(['apples', 'bananas']);
 inventoryTracker.requestItems();
 
 // GOOD
-
 class InventoryTracker {
   constructor(items, requester) {
     this.items = items;
@@ -309,5 +299,6 @@ class InventoryRequesterV2 {
 
 // By constructing our dependencies externally and injecting them, we can easily
 // substitute our request module for a fancy new one that uses WebSockets.
-const inventoryTracker = new InventoryTracker(['apples', 'bananas'], new InventoryRequesterV2());
+const inventoryTracker = new InventoryTracker(["apples", "bananas"], new InventoryRequesterV2());
+
 inventoryTracker.requestItems();
