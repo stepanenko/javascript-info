@@ -1,6 +1,4 @@
 
-### Advanced JavaScript
+### Advanced Javascript (Interview Questions: Ace the JS Interview)
 
-Video lectures of Asim Hussain are downloaded to Acer laptop
-
-Last **reviewed** on 30.01.2021
+Last **reviewed** on 18.05.2024
