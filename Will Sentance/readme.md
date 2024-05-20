@@ -10,4 +10,4 @@
 - JavaScript: The New Hard Parts [Course](https://coursehunter.net/course/javascript-novye-zhestkie-chasti)
 - JavaScript: The Hard Parts [Course](https://coursehunter.net/course/javascript-zhestkie-chasti)
 
-Challenges - http://csbin.io/functional
+Edited: 20.05.2024
