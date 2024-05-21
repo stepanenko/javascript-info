@@ -31,14 +31,14 @@
   </div>
 
   <script>
-    const box = document.querySelector('.box');
+    const box = document.querySelector(".box");
 
-    const p = document.createElement('p');
-    const span = document.createElement('span');
-    const span2 = document.createElement('span2');
+    const p = document.createElement("p");
+    const span = document.createElement("span");
+    const span2 = document.createElement("span2");
 
-    p.innerText = 'Coords: ';
-    span.innerText = 'move over the box'
+    p.innerText = "Coords: ";
+    span.innerText = "move over the box";
     p.appendChild(span);
     p.appendChild(span2);
     box.appendChild(p)
@@ -48,24 +48,20 @@
       span2.innerText = ` Y: ${e.offsetY}`;
     }
 
-    const btn = document.querySelector('#btn');
-    btn.addEventListener('click', action);
+    const btn = document.querySelector("#btn");
+    btn.addEventListener("click", action);
 
     function action(e) {
-      console.log(e.target)
+      console.log(e.target);
     }
 
-    document.body.addEventListener('click', push);
+    document.body.addEventListener("click", push);
     function push(e) {
-      if (e.target.classList.contains('small')) {
-        console.log('removed')
-        e.target.remove()
-
+      if (e.target.classList.contains("small")) {
+        console.log("removed");
+        e.target.remove();
       }
     }
-
-    console.log(btn)
-
   </script>
 </body>
 
