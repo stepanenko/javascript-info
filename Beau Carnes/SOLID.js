@@ -46,29 +46,29 @@ class UserSettings {
 // Open/Closed Principle
 
 // BAD
-var iceCreamFlavors=["chocolate","vanilla"];
-var iceCreamMaker={
+var iceCreamFlavors = ["chocolate", "vanilla"];
+var iceCreamMaker = {
  makeIceCream (flavor) {
-  if(iceCreamFlavors.indexOf(flavor)>-1){
-   console.log("Great success. You now have ice cream.")
-  }else{
-   console.log("Epic fail. No ice cream for you.")
+  if (iceCreamFlavors.indexOf(flavor) > -1) {
+   console.log("Great success. You now have ice cream.");
+  } else {
+   console.log("Epic fail. No ice cream for you.");
   }
  }
 }
 export default iceCreamMaker;
 
 // GOOD
-var iceCreamFlavors=["chocolate","vanilla"];
-var iceCreamMaker={
+var iceCreamFlavors = ["chocolate", "vanilla"];
+var iceCreamMaker = {
  makeIceCream (flavor) {
-  if(iceCreamFlavors.indexOf(flavor)>-1){
-   console.log("Great success. You now have ice cream.")
-  }else{
-   console.log("Epic fail. No ice cream for you.")
+  if (iceCreamFlavors.indexOf(flavor) > -1) {
+   console.log("Great success. You now have ice cream.");
+  } else {
+   console.log("Epic fail. No ice cream for you.");
   }
  }
- addFlavor(flavor){
+ addFlavor(flavor) {
   iceCreamFlavors.push(flavor);
  }
 }
@@ -225,7 +225,7 @@ class DOMTraverser {
 }
 
 const $ = new DOMTraverser({
-  rootNode: document.getElementsByTagName('body'),
+  rootNode: document.getElementsByTagName("body"),
   options: {
     animationModule() {}
   }
@@ -289,7 +289,7 @@ class InventoryRequesterV1 {
 
 class InventoryRequesterV2 {
   constructor() {
-    this.REQ_METHODS = ['WS'];
+    this.REQ_METHODS = ["WS"];
   }
 
   requestItem(item) {
