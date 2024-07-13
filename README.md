@@ -1,6 +1,9 @@
 
 # JavaScript
 
+### Guides:
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
 ### Books:
 - [Books](https://github.com/stepanenko/javascript-info/blob/master/BOOKS.md)
 
