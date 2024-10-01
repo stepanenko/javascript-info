@@ -2,7 +2,7 @@
 
 ## 1. Types  
 - **Primitive**: `string`, `number`, `boolean`, `null` (represents no value), `undefined` (uninitialized or missing value), `bigInt` (for large integers), `Symbol` (for unique identifiers)
-- **Non-Primitive**: Object: `{}`, `[]`, `function() {}` (callable object) - (includes arrays, functions, and other objects)
+- **Non-Primitive**: Object: `{}`, `[]`, `function() {}` (callable object)
 
 ## 2. Objects  
 - Non-Static (Instance-based): `Object`, `Array`, `Function`, `Date`, `RegExp`, `Error`, `Set`, `Map`, `WeakSet`, `WeakMap`, `Promise`, `Int8Array`, `Uint8Array`, `ArrayBuffer`, `DataView`, `Proxy`
