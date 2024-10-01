@@ -50,7 +50,6 @@ Q_2:
 const double = multiply(2);
 console.log(double(5));  // 10
 ```
-
 A_2:
 ```js
 function multiply(factor) {
@@ -58,4 +57,23 @@ function multiply(factor) {
     return x * factor;
   };
 }
+```
+---
+Q_3:
+```js
+// implement myModule.js
+import { getValue, setValue } from "./myModule.js";
+
+console.log(getX()); // 5
+setX(6);
+console.log(getX()); // 6
+```
+A_3:
+```js
+// myModule.js
+let value = 5;
+export const getValue = () => x;
+export const setValue = (v) => {
+  value = v;
+};
 ```
