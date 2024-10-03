@@ -47,26 +47,26 @@ A: The `getName2` will be `undefined`. It will not print `"fatfish"`, because `t
 
 ```js
 const Person = function (name) {
-  this.name = name
+  this.name = name;
 }
 
 Person.prototype.showName = function () {
-  console.log('showName', this, this.name)
+  console.log('showName', this, this.name);
 }
 
 Person.prototype.showName2 = () => {
-  console.log('showName2', this, this.name)
+  console.log('showName2', this, this.name);
 }
 
-const p1 = new Person('fatfish', 100)
+const p1 = new Person('fatfish', 100);
 
-p1.showName()
-p1.showName2()
+p1.showName();
+p1.showName2();
 ```
 Q: What will this code output?
 
 A:
 ```
-showName Person {...} fatfish
-showName2 Window {...}
+showName Person { name: 'fatfish' } fatfish
+showName2 nodejs: {} undefined, broswer: Window {...}
 ```
