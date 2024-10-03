@@ -19,5 +19,14 @@ const { name, address: { city, zip } } = person;
 
 ```
 
-Q_1: How can the `city` value be extracted from the `person`?
+Q_1: How can the `city` value be extracted from the `person`?  
 A_1: `const { address: { city } } = person;`
+
+---
+Q_2: How Destructuring can be used in functions?  
+A_2: 
+```js
+const userInfo = ({ name, age }) => {
+  console.log(`Name: ${name}, Age: ${age}`);
+};
+```
