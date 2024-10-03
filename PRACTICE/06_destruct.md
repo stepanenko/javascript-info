@@ -30,3 +30,21 @@ const userInfo = ({ name, age }) => {
   console.log(`Name: ${name}, Age: ${age}`);
 };
 ```
+
+# Spread
+
+The spread operator (`...`) in JS is used to expand or "spread" elements of an array, object, or iterable into individual elements or properties. It allows for easier manipulation of arrays and objects, including merging, cloning, or passing elements.
+
+Examples:
+```js
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1];
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combined = [...arr1, ...arr2];
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+const merged = { ...obj1, ...obj2 };
+```
