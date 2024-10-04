@@ -76,4 +76,52 @@ function FocusInput() {
   );
 }
 ```
-  
+
+## `useReducer`
+
+The `useReducer` hook is a built-in React hook that helps manage complex state logic in a component.
+It is an alternative to `useState` and is particularly useful when dealing with state transitions that involve multiple sub-values or when the next state depends on the previous one.
+
+Key Features of useReducer:
+- **State Management**: Allows managing more complex state logic than useState, making it suitable for applications with multiple related state variables.
+- **Reducer Function**: Based on the Redux pattern, you define a reducer function that takes the current state and an action to return the new state.
+- **Dispatching Actions**: You can dispatch actions to trigger state changes, promoting a clearer flow of state transitions.
+
+When to Use `useReducer`:
+- **Complex State Logic**: When managing state with complex interactions or multiple sub-values that need to be updated based on different actions.
+- **Performance Optimization**: When passing state down to deeply nested components, since useReducer can help avoid prop drilling by keeping state management localized.
+- **Cleaner Code**: When the logic of state updates is better expressed in a function than in multiple state variables, promoting more readable and maintainable code.
+
+Q3: Use `useReducer` for managing a counter:
+
+```jsx
+// Define the initial state
+const initialState = { count: 0 };
+
+// Define the reducer function
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 }; // Increment count
+    case 'decrement':
+      return { count: state.count - 1 }; // Decrement count
+    case 'reset':
+      return initialState; // Reset count to initial state
+    default:
+      throw new Error(); // Handle unknown action type
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState); // Use useReducer
+
+  return (
+    <div>
+      <h1>Count: {state.count}</h1>
+      <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
+      <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
+    </div>
+  );
+}
+```
