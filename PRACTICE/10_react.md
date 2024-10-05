@@ -1,7 +1,6 @@
 # React
 
-Q1: Use `useEffect` to fetch some data from some API
-
+Q1: Use `useEffect` to fetch some data from some API:  
 A1:
 ```jsx
 function DataFetchingComponent() {
