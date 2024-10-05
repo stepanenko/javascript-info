@@ -51,8 +51,7 @@ Key Features of `useRef`:
 - No Re-render: Changing the `current` property of a `ref` does not trigger a re-render of the component, making it suitable for storing values that do not affect rendering.
 - Accessing DOM Elements: `useRef` is commonly used to access and interact with DOM elements directly, allowing for imperative operations.
 
-Q2: Use `useRef` to focus an input field when a button is clicked:
-
+Q2: Use `useRef` to focus an input field when a button is clicked:  
 A2:
 ```jsx
 function FocusInput() {
@@ -82,18 +81,18 @@ function FocusInput() {
 The `useReducer` hook is a built-in React hook that helps manage complex state logic in a component.
 It is an alternative to `useState` and is particularly useful when dealing with state transitions that involve multiple sub-values or when the next state depends on the previous one.
 
-Key Features of useReducer:
+Key Features of `useReducer`:
 - **State Management**: Allows managing more complex state logic than useState, making it suitable for applications with multiple related state variables.
 - **Reducer Function**: Based on the Redux pattern, you define a reducer function that takes the current state and an action to return the new state.
 - **Dispatching Actions**: You can dispatch actions to trigger state changes, promoting a clearer flow of state transitions.
 
-When to Use `useReducer`:
+When to use `useReducer`:
 - **Complex State Logic**: When managing state with complex interactions or multiple sub-values that need to be updated based on different actions.
 - **Performance Optimization**: When passing state down to deeply nested components, since useReducer can help avoid prop drilling by keeping state management localized.
 - **Cleaner Code**: When the logic of state updates is better expressed in a function than in multiple state variables, promoting more readable and maintainable code.
 
-Q3: Use `useReducer` for managing a counter:
-
+Q3: Use `useReducer` for managing a counter:  
+A3:
 ```jsx
 // Define the initial state
 const initialState = { count: 0 };
