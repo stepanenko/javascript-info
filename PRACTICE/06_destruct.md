@@ -19,12 +19,12 @@ const { name, address: { city, zip } } = person;
 
 ```
 
-Q_1: How can the `city` value be extracted from the `person`?  
-A_1: `const { address: { city } } = person;`
+Q1: How can the `city` value be extracted from the `person`?  
+A1: `const { address: { city } } = person;`
 
 ---
-Q_2: How Destructuring can be used in functions?  
-A_2: 
+Q2: How Destructuring can be used in functions?  
+A2: 
 ```js
 const userInfo = ({ name, age }) => {
   console.log(`Name: ${name}, Age: ${age}`);
@@ -47,4 +47,19 @@ const combined = [...arr1, ...arr2];
 const obj1 = { a: 1, b: 2 };
 const obj2 = { c: 3, d: 4 };
 const merged = { ...obj1, ...obj2 };
+```
+
+# Rest
+
+Q3: Remove some of object's props  
+A3:  
+The following technique helps us avoid mutable operations and the `delete` keyword,
+giving us an immutable pattern for removing properties from objects in JavaScript.
+```js
+const data = { a: 1, b: 2, c: 3 };
+
+const { a, ...rest } = data;
+
+console.log(a); // 1
+console.log(rest); // { b: 2, c: 3 }
 ```
