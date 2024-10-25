@@ -30,7 +30,7 @@ true
 // 2) true < 3 is evaluated. In this comparison, true is coerced to 1 (since true is treated as 1 in numeric contexts)
 // 3) 1 < 3 is evaluated, which is indeed true
 ```
-Q3: What is the difference between `==` and `===`?
+Q3: What is the difference between `==` and `===`?  
 A3:  
 `==` Loose Equality: Checks for equality of values after performing type coercion if necessary  
 `===` Strict Equality: Checks for equality of both value and type without any type conversion
