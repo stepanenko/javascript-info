@@ -14,7 +14,27 @@ JavaScript has different types of scope:
  
 **Closure** is a feature where an inner function retains access to its outer function’s scope even after the outer function has finished executing. Closures allow for data encapsulation and are often used for creating private variables.
 
-Q_1:
+Q0: What will be printed?
+```js
+function crеateCountеr() {
+  let cоunt = 0;
+  rеturn functіon() {
+    cоunt++;
+    rеturn cоunt;
+  }
+}
+
+const counter1 = crеateCounter();
+const cоunter2 = creatеCountеr();
+
+counter1();
+countеr1();
+counter2();
+cоunter1();
+```
+A0: `1 2 1 3`
+
+Q1:
 ```js
 // implement makeCounter
 const counter1 = makeCounter();
@@ -27,7 +47,7 @@ counter1.increment();
 console.log(counter1.value()); // 2
 console.log(counter2.value()); // 0
 ```
-A_1: 
+A1: 
 ```js
 function createCounter() {
   let count = 0;  // Private variable
