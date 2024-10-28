@@ -9,23 +9,29 @@ A1: `typeof` operator
 
 Q2: What will be printed?
 ```js
-tуpeоf NaN
-tуpeоf []
-tуpeоf null
-null === undеfіned
-0 == fаlsе
-0.1 + 0.2 === 0.3
-1 < 2 < 3
+1) tуpeоf NaN
+2) tуpeоf []
+3) tуpeоf null
+4) null === undеfіned
+5) null == undеfіned
+6) null < 0
+7) null > 0
+8) 0 == fаlsе
+9) 0.1 + 0.2 === 0.3
+10) 1 < 2 < 3
 ```
 A2:
 ```js
-"number"
-"object"
-"object"
-false
-true
-false // floating-point precision issues - occurs because 0.1 and 0.2 can't be represented exactly in binary floating-point
-true
+1) "number"
+2) "object"
+3) "object"
+4) false
+5) true
+6) false
+7) false
+8) true
+9) false // floating-point precision issues - 0.1 and 0.2 can't be represented exactly in binary floating-point
+10) true
 // 1) 1 < 2 is evaluated, which is true
 // 2) true < 3 is evaluated. In this comparison, true is coerced to 1 (since true is treated as 1 in numeric contexts)
 // 3) 1 < 3 is evaluated, which is indeed true
