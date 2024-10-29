@@ -1,3 +1,36 @@
+Q0:
+```js
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout 1");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise 1");
+});
+
+setTimeout(() => {
+  console.log("Timeout 2");
+}, 10);
+
+Promise.resolve().then(() => {
+  console.log("Promise 2");
+});
+
+console.log("End");
+```
+
+A0:
+```js
+Start
+End
+Promise 1
+Promise 2
+Timeout 1
+Timeout 2
+```
+
 Q_1:
 - implement using `async/await`
 - implement using `Promise`
