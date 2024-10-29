@@ -1,4 +1,6 @@
-Q0:
+# Async exercises
+
+Q1:
 ```js
 console.log("Start");
 
@@ -21,7 +23,7 @@ Promise.resolve().then(() => {
 console.log("End");
 ```
 
-A0:
+A1:
 ```js
 Start
 End
@@ -31,7 +33,7 @@ Timeout 1
 Timeout 2
 ```
 
-Q_1:
+Q2:
 - implement using `async/await`
 - implement using `Promise`
 - add error handling
@@ -50,7 +52,7 @@ fetchAndProcessUsers()
 // ...
 ```
 
-A_1_a solution with `async/await`:
+A2_a solution with `async/await`:
 ```js
 async function fetchAndProcessUsers() {
   try {
@@ -76,7 +78,7 @@ function displayUsers(users) {
 }
 ```
 
-A_1_b solution with `Promises`:
+A2_b solution with `Promises`:
 ```js
 function fetchAndProcessUsers() {
   return fetch('https://jsonplaceholder.typicode.com/users')
