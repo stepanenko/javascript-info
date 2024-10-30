@@ -15,3 +15,30 @@ export const ModalDialog = ({ onClose }) => {
   );
 };
 ```
+---
+Q2: Build another React component called `App` where the previously created `ModalDialog` component is added.  
+A2:
+```jsx
+export const App = () => {
+  return (
+    <ModalDialog />
+  );
+};
+```
+---
+Q3: Add a button that would open the `ModalDialog` component.  
+A3:
+```jsx
+export const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="layout">
+      <Button onClick={() => setIsOpen(true)}>
+        Open dialog
+      </Button>
+      {isOpen ? <ModalDialog onClose={() => setIsOpen(false)} /> : null}
+    </div>
+  );
+}
+```
+---
