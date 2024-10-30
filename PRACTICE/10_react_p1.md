@@ -42,3 +42,17 @@ export const App = () => {
 }
 ```
 ---
+Q4: Imagine we have a `<VerySlowComponent />` after our `<ModalDialog />`, what issue it will bring and how to fix it?  
+A4: On each button click the `<VerySlowComponent />` will be re-rendered and `<ModalDialog />` will be very slow.  
+We can fix this issue by "Moving state down":
+```jsx
+const App = () => {
+  return (
+    <div className="layout">
+      {/* we moved button and dialog into separate component */}
+      <ButtonWithModalDialog />
+      <VerySlowComponent />
+    </div>
+  );
+};
+```
