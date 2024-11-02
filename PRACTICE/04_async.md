@@ -5,19 +5,11 @@ Q1:
 console.log("Start");
 
 setTimeout(() => {
-  console.log("Timeout 1");
+  console.log("Timeout");
 }, 0);
 
 Promise.resolve().then(() => {
-  console.log("Promise 1");
-});
-
-setTimeout(() => {
-  console.log("Timeout 2");
-}, 10);
-
-Promise.resolve().then(() => {
-  console.log("Promise 2");
+  console.log("Promise");
 });
 
 console.log("End");
@@ -27,13 +19,36 @@ A1:
 ```js
 Start
 End
-Promise 1
-Promise 2
-Timeout 1
-Timeout 2
+Promise
+Timeout
 ```
 
 Q2:
+```js
+const asyncFunc = async () => "asyncFunc";
+
+const promise = new Promise((res) => {
+    console.log("promise");
+}).then(() => console.log("then"));
+
+console.log("log 1");
+
+queueMicrotask(() => console.log("queueMicrotask"));
+
+Promise.all([asyncFunc(), promise])
+  .then(() => console.log("all"));
+
+console.log("log 2");
+```
+A2:
+```js
+"promise"
+"log 1"
+"log 2"
+"queueMicrotask"
+```
+
+Q3:
 - implement using `async/await`
 - implement using `Promise`
 - add error handling
@@ -52,7 +67,7 @@ fetchAndProcessUsers()
 // ...
 ```
 
-A2_a solution with `async/await`:
+A3_a solution with `async/await`:
 ```js
 async function fetchAndProcessUsers() {
   try {
@@ -78,7 +93,7 @@ function displayUsers(users) {
 }
 ```
 
-A2_b solution with `Promises`:
+A3_b solution with `Promises`:
 ```js
 function fetchAndProcessUsers() {
   return fetch('https://jsonplaceholder.typicode.com/users')
