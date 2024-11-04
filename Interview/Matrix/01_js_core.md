@@ -33,16 +33,17 @@ Core objects like `Object`, `Array`, `String`, `Date`, `Promise`, `Map`
 Backticks (`) for string interpolation  
 
 8. Modules  
-ES6 Modules: import, export  
+ES6 Modules: `import`, `export`  
 
 9. Asynchronous Programming  
 Promises: `.then()`, `.catch()`  
 `async/await`  
 
 10. Iterators and Generators  
-Custom Iterators with `[Symbol.iterator]`, Generators (`function*`)  
+Custom Iterators with `[Symbol.iterator]`  
+Generators (`function*`)  
 
-11. Miscellaneous  
+12. Miscellaneous  
 Destructuring: `const { key } = object` `const [first] = array`  
 Spread/Rest Operator: `{ ...obj }` and `[...array]`  
 Optional Chaining: `object?.property`  
