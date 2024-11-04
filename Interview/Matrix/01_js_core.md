@@ -45,6 +45,5 @@ Generators (`function*`)
 
 12. Miscellaneous  
 Destructuring: `const { key } = object` `const [first] = array`  
-Spread/Rest Operator: `{ ...obj }` and `[...array]`  
 Optional Chaining: `object?.property`  
 Nullish Coalescing: `??`  
