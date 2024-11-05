@@ -77,3 +77,30 @@ Prototype Methods on Object Instances
 - `Object.prototype.valueOf()`: Returns the primitive value of the specified object.
 - `Object.prototype.toLocaleString()`: Returns a localized string representation of the object.
 - `Object.prototype.propertyIsEnumerable(prop)`: Checks if a property is enumerable.
+
+## Examples
+
+Using `Object.create` to Set Prototype and Define Properties:
+```js
+// Define the prototype object
+const person = {
+  greet() {
+    return `Hello, my name is ${this.name}`;
+  }
+};
+
+// Create a new object using 'person' as the prototype
+const employee = Object.create(person, {
+  name: { value: "Alice", writable: true, enumerable: true },
+  position: { value: "Developer", writable: false, enumerable: true }
+});
+
+console.log(employee.greet()); // Output: "Hello, my name is Alice"
+console.log(employee.position); // Output: "Developer"
+
+// Checking prototype inheritance
+console.log(Object.getPrototypeOf(employee) === person); // true
+
+employee.position = "Manager";
+console.log(employee.position); // Output: "Developer" (unchanged)
+```
