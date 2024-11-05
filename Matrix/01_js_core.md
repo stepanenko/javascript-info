@@ -16,7 +16,7 @@ Spread/Rest (`...`)
 3. Control Structures  
 Conditionals: `if`, `else`, `switch`  
 Loops: `for`, `while`, `for...of`  
-Error Handling: `try`, `catch`, `inally`  
+Error Handling: `try`, `catch`, `finally`  
 
 4. Functions  
 Declarations: `function`, arrow functions (`=>`)  
