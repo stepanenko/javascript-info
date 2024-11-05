@@ -25,14 +25,6 @@ class Person {
 
 The `__proto__` or `Object.getPrototypeOf()` gives access to an object’s prototype, enabling shared properties and methods.
 
-### Built-In Object Methods:
-
-- `Object.keys()`: Returns an array of the object’s own property names.
-- `Object.values()`: Returns an array of the object’s own values.
-- `Object.entries()`: Returns an array of [key, value] pairs.
-- `Object.assign()`: Copies properties from one or more source objects to a target object.
-- `Object.freeze()` and `Object.seal()`: Restrict modifications to an object.
-
 ### Special Properties and Symbols:
 
 - **Symbols**: Used for unique property keys, especially in libraries, to prevent key collisions.
@@ -42,3 +34,46 @@ The `__proto__` or `Object.getPrototypeOf()` gives access to an object’s proto
 
 - `for...in` - for own and inherited properties)
 - `Object.keys()`, `Object.entries()` - for own properties only
+
+### Built-In Object Methods:
+
+Object Creation and Inspection:
+
+- `Object.create(proto, [propertiesObject])`: Creates a new object with the specified prototype and optional properties.
+- `Object.assign(target, ...sources)`: Copies properties from source objects to the target object.
+- `Object.keys(obj)`: Returns an array of a given object's own property names (keys).
+- `Object.values(obj)`: Returns an array of a given object's own property values.
+- `Object.entries(obj)`: Returns an array of a given object's own key-value pairs as `[key, value]`.
+
+Object Comparison
+
+- `Object.is(value1, value2)`: Determines whether two values are the same (handles `NaN` and `-0` cases correctly).
+
+Prototype and Inheritance
+
+- `Object.getPrototypeOf(obj)`: Returns the prototype of the specified object.
+- `Object.setPrototypeOf(obj, prototype)`: Sets the prototype (i.e., the internal `[[Prototype]]`) of the specified object.
+- `Object.prototype.hasOwnProperty(prop)`: Checks if the object has a property as its own (not inherited).
+
+Property Descriptors and Configuration
+
+- `Object.getOwnPropertyDescriptor(obj, prop):` Returns the property descriptor for a specific property on an object.
+- `Object.getOwnPropertyDescriptors(obj)`: Returns all property descriptors of an object.
+- `Object.defineProperty(obj, prop, descriptor)`: Adds or modifies a property directly on an object.
+- `Object.defineProperties(obj, props)`: Adds or modifies multiple properties on an object.
+
+Object Freezing and Sealing
+
+- `Object.freeze(obj)`: Freezes an object, preventing new properties, modifications, and deletions.
+- `Object.isFrozen(obj)`: Checks if an object is frozen.
+- `Object.seal(obj)`: Seals an object, preventing new properties and deletions, but allowing modifications of existing properties.
+- `Object.isSealed(obj)`: Checks if an object is sealed.
+- `Object.preventExtensions(obj)`: Prevents new properties from being added to an object.
+- `Object.isExtensible(obj)`: Checks if an object can have new properties added.
+
+Prototype Methods on Object Instances
+
+- `Object.prototype.toString()`: Returns a string representation of the object.
+- `Object.prototype.valueOf()`: Returns the primitive value of the specified object.
+- `Object.prototype.toLocaleString()`: Returns a localized string representation of the object.
+- `Object.prototype.propertyIsEnumerable(prop)`: Checks if a property is enumerable.
