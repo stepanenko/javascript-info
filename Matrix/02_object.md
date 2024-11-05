@@ -32,8 +32,8 @@ The `__proto__` or `Object.getPrototypeOf()` gives access to an object’s proto
 
 ### Iterating Over Objects:
 
-- `for...in` - for own and inherited properties)
-- `Object.keys()`, `Object.entries()` - for own properties only
+- `for...in` - for own and inherited properties
+- `Object.keys()`, `Object.values(obj)`, `Object.entries()` - for own properties only
 
 ### Built-In Object Methods:
 
