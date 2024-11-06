@@ -54,3 +54,8 @@ const defaults = { color: "blue", size: "M" };
 const userPrefs = { size: "L", price: 100 };
 const settings = Object.assign({}, defaults, userPrefs);
 console.log(settings); // { color: "blue", size: "L", price: 100 }
+
+// Limitations
+// - Only Copies Enumerable Own Properties: Properties that are non-enumerable or inherited from the prototype chain are not copied.
+// - Not a Deep Clone: Object.assign does not recursively copy nested objects.
+// For deep cloning, consider other methods, such as structured cloning (structuredClone), JSON serialization, or using libraries like Lodash.
