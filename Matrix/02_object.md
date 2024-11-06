@@ -113,3 +113,4 @@ for (let key in employee) {
   console.log(key); // Outputs "name" and "position"
 }
 ```
+Using `Object.assign(target, ...sources)` to copy properties from one or more source objects to a target object:
