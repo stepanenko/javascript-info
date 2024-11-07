@@ -7,7 +7,7 @@ The context of a function is the value of this inside the function.
 - In the global scope, it refers to the global object (window).
 - As a method of an object, it refers to that object.
 - In a constructor, it refers to the new instance.
-- In an arrow function, it inherits the surrounding context.
+- In an arrow function, it ignores the scope and refers to the next context.
 - Event handlers typically bind this to the event target.
 
 ---
