@@ -11,3 +11,15 @@ function showContext() {
 }
 showContext();
 ```
+
+### 2. Object Method Context
+When a function is called as a method of an object, this refers to the object that called the method:
+```js
+const user = {
+  name: "Jack",
+  getName() {
+    console.log(this.name); // "Jack"
+  }
+};
+user.getwName();
+```
