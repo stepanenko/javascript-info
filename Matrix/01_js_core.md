@@ -29,21 +29,18 @@ Classes: `class`, `extends`
 6. Built-In Objects  
 Core objects like `Object`, `Array`, `String`, `Date`, `Promise`, `Map`, `Set`  
 
-7. Template Literals  
-Backticks (`) for string interpolation  
-
-8. Modules  
+7. Modules  
 ES6 Modules: `import`, `export`  
 
-9. Asynchronous Programming  
+8. Asynchronous Programming  
 Promises: `.then()`, `.catch()`  
 `async/await`  
 
-10. Iterators and Generators  
+9. Iterators and Generators  
 Custom Iterators with `[Symbol.iterator]`  
 Generators (`function*`)  
 
-12. Miscellaneous  
+10. Miscellaneous  
 Destructuring: `const { key } = object` `const [first] = array`  
 Optional Chaining: `object?.property`  
 Nullish Coalescing: `??`  
