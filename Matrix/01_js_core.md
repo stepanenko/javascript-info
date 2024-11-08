@@ -15,7 +15,7 @@ Spread/Rest (`...`)
 
 3. Control Structures  
 Conditionals: `if`, `else`, `switch`  
-Loops: `for`, `while`, `for...of`  
+Loops: `for`, `while`, `for...of`, `for...in`  
 Error Handling: `try`, `catch`, `finally`  
 
 4. Functions  
@@ -27,7 +27,7 @@ Object Literals: `{ key: value }`
 Classes: `class`, `extends`  
 
 6. Built-In Objects  
-Core objects like `Object`, `Array`, `String`, `Date`, `Promise`, `Map`  
+Core objects like `Object`, `Array`, `String`, `Date`, `Promise`, `Map`, `Set`  
 
 7. Template Literals  
 Backticks (`) for string interpolation  
