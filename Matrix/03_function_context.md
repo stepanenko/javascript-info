@@ -35,7 +35,7 @@ console.log(person.name); // "Tom"
 ```
 
 ### 4. Arrow Function Context
-Arrow functions don’t have their own `this` context; instead, they inherit `this` from the surrounding lexical scope.  
+Arrow functions don’t have their own `this` context. Instead, they refer to `this` from the surrounding lexical scope.  
 This is useful for ensuring that `this` remains the same inside nested functions.
 ```js
 const user = {
@@ -47,3 +47,12 @@ const user = {
 user.showName(); // undefined
 ```
 
+### 5. Explicit Context Binding
+You can manually set the function context with methods like `.call()`, `.apply()`, or `.bind()`.
+```js
+function showName() {
+  console.log(this.name);
+}
+const user = { name: "Sarah" };
+showName.call(user); // "Sarah"
+```
