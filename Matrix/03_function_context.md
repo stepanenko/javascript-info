@@ -23,3 +23,27 @@ const user = {
 };
 user.getwName();
 ```
+
+### 3. Constructor Function Context
+When a function is used as a constructor (called with `new`), `this` refers to the newly created instance of the object.
+```js
+function Person(name) {
+  this.name = name;
+}
+const person = new Person("Tom");
+console.log(person.name); // "Tom"
+```
+
+### 4. Arrow Function Context
+Arrow functions don’t have their own `this` context; instead, they inherit `this` from the surrounding lexical scope.  
+This is useful for ensuring that `this` remains the same inside nested functions.
+```js
+const user = {
+  name: "Jack",
+  showName: () => {
+    console.log(this.name);
+  }
+};
+user.showName(); // undefined
+```
+
