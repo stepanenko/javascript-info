@@ -37,3 +37,6 @@ function setupListener() {
 }
 setupListener(); // After 1 second, logs: "Hello from closure!"
 ```
+This is a closure because `setTimeout`'s function keeps a reference to the scope of `setupListener` even after `setupListener` has finished executing.
+
+---
