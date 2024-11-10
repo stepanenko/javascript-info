@@ -41,15 +41,22 @@ A3:
 `==` Loose Equality: Checks for equality of values after performing type coercion if necessary  
 `===` Strict Equality: Checks for equality of both value and type without any type conversion
 
-Q4: How to check if something is of type `object`?  
-A4:  
+Q4:
+```js
+const a = { id: 1 };
+const b = { id: 1 };
+a === b; // ?
+```
+
+Q5: How to check if something is of type `object`?  
+A5:  
 ```js
 const obj = {};
 console.log(typeof obj === 'object' && obj !== null); // true
 ```
 
-Q5: How to check if something is of type `array`?  
-A5:  
+Q6: How to check if something is of type `array`?  
+A6:  
 ```js
 const arr = [1, 2, 3];
 console.log(Array.isArray(arr)); // true
