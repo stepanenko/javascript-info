@@ -25,6 +25,7 @@ greetBob(); // Output: Hello, Bob!
 
 ---
 **Closures** don't require a function to be returned specifically. A **closure** is created as soon as an inner function accesses a variable from its outer scope, even if that inner function is simply passed around.
+
 ### Example 2: Passing a Function as a Callback (Not Returning)
 ```js
 function setupListener() {
@@ -40,3 +41,15 @@ setupListener(); // After 1 second, logs: "Hello from closure!"
 This is a closure because `setTimeout`'s function keeps a reference to the scope of `setupListener` even after `setupListener` has finished executing.
 
 ---
+### Example 3: Event Handler Closure (Function Passed, Not Returned)
+```js
+function createButton() {
+  const buttonText = "Click me!";
+
+  document.getElementById("myButton").addEventListener("click", function() {
+    console.log(buttonText);  // This function accesses `buttonText` from `createButton`'s scope
+  });
+}
+createButton(); // logs: "Click me!"
+```
+The function passed to `addEventListener` forms a closure over `buttonText`. Even though the function isn't returned, it still retains access to `buttonText` whenever the button is clicked.
