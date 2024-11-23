@@ -53,3 +53,22 @@ function createButton() {
 createButton(); // logs: "Click me!"
 ```
 The function passed to `addEventListener` forms a closure over `buttonText`. Even though the function isn't returned, it still retains access to `buttonText` whenever the button is clicked.
+
+---
+### Example 4: Assigning a Function to a Variable (Closure Without Returning)
+```js
+function outerFunction() {
+  const outerVar = "I am still here!";
+  const innerFunction = function() { // innerFunction closes over outerVar
+    console.log(outerVar);
+  };
+
+  someGlobalVariable = innerFunction; // Assigns innerFunction to a global variable
+}
+
+let someGlobalVariable;
+outerFunction();
+
+someGlobalVariable(); // Logs: "I am still here!"
+```
+When `innerFunction` is assigned to the global variable `someGlobalVariable`, it still retains access to `outerVar` through closure, even though it wasn’t returned directly from `outerFunction`.
