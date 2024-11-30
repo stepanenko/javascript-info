@@ -59,7 +59,7 @@ Example: `cat|dog` matches "cat" or "dog".
 
 ## Flags
 
-Modify the behavior of regex (added after the pattern, like /pattern/flags):
+Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 
 `i` Case-insensitive matching  
 `g` Global matching (find all matches)  
