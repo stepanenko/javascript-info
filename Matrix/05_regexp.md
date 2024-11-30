@@ -44,3 +44,23 @@ Example: `\.` matches a literal dot
 `\W` Matches any non-word character  
 `\s` Matches any whitespace (space, tab, newline)  
 `\S` Matches any non-whitespace character  
+
+## Groups and Capturing
+
+Use parentheses `()` to group parts of the regex and capture matches:
+
+Example: `(ab)+` matches "ab", "abab", etc.
+
+## Alternation (`|`)
+
+Acts as an OR operator:
+
+Example: `cat|dog` matches "cat" or "dog".
+
+## Flags
+
+Modify the behavior of regex (added after the pattern, like /pattern/flags):
+
+`i` Case-insensitive matching  
+`g` Global matching (find all matches)  
+`m` Multiline matching  
