@@ -73,13 +73,6 @@ const regex = /\d{3}-\d{3}-\d{4}/;
 console.log(regex.test("123-456-7890")); // true
 ```
 
-### Extract email addresses:
-```js
-const regex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
-const text = "Contact us at support@example.com.";
-console.log(text.match(regex)); // ["support@example.com"]
-```
-
 ### Check if a string starts with "Hello":
 ```js
 console.log(regex.test("Hello World")); // true
@@ -90,6 +83,13 @@ console.log(regex.test("Hello World")); // true
 const regex = /\d/g;
 const result = "Order 1234".replace(regex, "#");
 console.log(result); // "Order ####"
+```
+
+### Extract email addresses:
+```js
+const regex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
+const text = "Contact us at support@example.com.";
+console.log(text.match(regex)); // ["support@example.com"]
 ```
 
 ### Validate an Email Address:
