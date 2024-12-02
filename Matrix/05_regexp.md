@@ -91,3 +91,10 @@ const regex = /\d/g;
 const result = "Order 1234".replace(regex, "#");
 console.log(result); // "Order ####"
 ```
+
+### Validate an Email Address:
+```js
+const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+console.log(regex.test("test@example.com")); // true
+console.log(regex.test("invalid-email"));   // false
+```
