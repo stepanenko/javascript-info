@@ -6,7 +6,6 @@ They are commonly used for searching, validation, and string manipulation.
 ## Literal Characters
 Match exact characters in the pattern: `hello` matches the string `"hello"`
 
-
 ## Metacharacters
 Special characters with specific meanings:
 
@@ -18,11 +17,13 @@ Special characters with specific meanings:
 `?` Matches 0 or 1 occurrence of the preceding element  
 
 ## Character Sets
-Match any one of the characters inside square brackets:
+Match any one of the characters inside `[]` square brackets:
 
-`[abc]` Matches "a", "b", or "c"  
-`[a-z]` Matches any lowercase letter  
-`[^a-z]` Matches any character except lowercase letters  
+`[abc]` matches "a", "b", or "c"  
+`[a-z]` matches any lowercase letter  
+`[^a-z]` matches any character except lowercase letters (`^` not)  
+`[a-zA-Z0-9]` matches any alphanumeric character (combined sets)  
+`[.+*]` matches "+", ".", or "*"  
 
 ## Quantifiers
 Define how many times a pattern should occur:
@@ -64,6 +65,8 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 `i` Case-insensitive matching  
 `g` Global matching (find all matches)  
 `m` Multiline matching  
+
+---
 
 # Examples
 
