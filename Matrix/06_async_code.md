@@ -46,3 +46,10 @@ async function fetchData() {
 
 Handles asynchronous operations (e.g., timers, HTTP requests) using the call stack, web APIs, and callback queue.  
 Checks if the call stack is empty and then transfer tasks from the message queue to the call stack for execution.
+
+## Common Asynchronous Operations
+
+- API calls (`fetch`, `XMLHttpRequest`)
+- File reading/writing (Node.js)
+- Timers (`setTimeout`, `setInterval`)
+- DOM events (click, keypress)
