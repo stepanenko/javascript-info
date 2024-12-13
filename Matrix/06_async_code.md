@@ -52,4 +52,4 @@ Checks if the call stack is empty and then transfer tasks from the message queue
 - API calls (`fetch`, `XMLHttpRequest`)
 - File reading/writing (Node.js)
 - Timers (`setTimeout`, `setInterval`)
-- DOM events (click, keypress)
+- DOM events (`click`, `keypress`)
