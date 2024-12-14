@@ -1,6 +1,20 @@
 # Callbacks
 
-to be added...
+A **callback** is a function passed as an argument to another function and executed after a certain event or task has completed. This mechanism allows for asynchronous programming, enabling the execution of code without blocking the main thread.
+
+### Key Characteristics of Callbacks
+- Asynchronous Execution: Callbacks are often used in asynchronous operations, such as fetching data from a server or handling user events, allowing the program to continue running while waiting for a task to complete.
+- Function as Argument: A callback is simply a function that you provide to another function, which then calls it at an appropriate time.
+
+## Examples of Callbacks
+Callback used to execute code after a delay:
+```javascript
+function greet() {
+    console.log("Hello after 2 seconds!");
+}
+
+setTimeout(greet, 2000); // Calls greet after 2 seconds
+```
 
 # Promises
 
@@ -14,7 +28,7 @@ Summary of Promise Methods:
 - `Promise.reject()` Returns a rejected promise.
 - `Promise.prototype.finally()` Runs after a promise is settled (either resolved or rejected), often used for cleanup.
 
-## Examples
+## Examples of Promises
 Promise that resolves in 1 second  
 ```js
 const myResolvedPromise = new Promise((resolve) => {
