@@ -7,13 +7,19 @@ A **callback** is a function passed as an argument to another function and execu
 - Function as Argument: A callback is simply a function that you provide to another function, which then calls it at an appropriate time.
 
 ## Examples of Callbacks
-Callback used to execute code after a delay:
+- Callback used to execute code after a delay:
 ```javascript
 function greet() {
     console.log("Hello after 2 seconds!");
 }
 
 setTimeout(greet, 2000); // Calls greet after 2 seconds
+```
+- Callback in array methods:
+```js
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(num => num * 2); // Callback function doubles each number
+console.log(doubled); // Output: [2, 4, 6, 8]
 ```
 
 # Promises
