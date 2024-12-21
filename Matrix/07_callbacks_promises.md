@@ -21,6 +21,23 @@ const numbers = [1, 2, 3, 4];
 const doubled = numbers.map(num => num * 2); // Callback function doubles each number
 console.log(doubled); // Output: [2, 4, 6, 8]
 ```
+- Event Handling
+```js
+document.getElementById("myButton").addEventListener("click", () => {
+    console.log("Button was clicked!");
+});
+```
+- Custom Callback Function
+```js
+function processUserInput(callback) {
+    const name = "Alice";
+    callback(name);
+}
+
+processUserInput((name) => {
+    console.log(`Hello, ${name}!`);
+});
+```
 
 # Promises
 
