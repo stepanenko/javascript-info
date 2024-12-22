@@ -1,1 +1,25 @@
 # Event handling, bubbling & delegation
+
+## Event handler
+**Event handler** is a function that gets executed when a specific event occurs. These handlers are attached to HTML elements and are responsible for executing code in response to user actions.
+
+## Event listeners
+**Event listeners** are functions that wait for an event to occur on a specific element. They are added using methods like `addEventListener()`, which allows multiple handlers for the same event type on the same element.
+
+```js
+const button = document.getElementById('myButton');
+button.addEventListener('click', function(event) {
+    alert('Button clicked!');
+});
+```
+
+`removeEventListener(event, handler)` - removes an event handler that was previously attached using `addEventListener()`. This is important for performance and memory management.
+
+## Event Object
+
+When an event occurs, JavaScript creates an event object that contains information about the event. This object is automatically passed to the event handler function and includes properties such as:
+- `event.type`: The type of event (e.g., "click").
+- `event.target`: The element that triggered the event.
+- `event.currentTarget`: The element to which the event listener is attached.
+- `event.preventDefault()`: Prevents the default action associated with the event (e.g., stopping form submission).
+- `event.stopPropagation()`: Stops the event from bubbling up to parent elements.
