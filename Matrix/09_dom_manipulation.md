@@ -1,8 +1,7 @@
 # DOM manipulation
 
-DOM manipulation refers to the process of interacting with and changing the structure, content, or style of a web page's Document Object Model (DOM) using JavaScript.
-The DOM is a tree-like representation of a web page's structure, where each node represents an HTML element, attribute, or text content.
-
+DOM manipulation means dynamically interacting with and modifying the structure, style, and content of web pages.  
+The DOM is a tree-like representation of a web page's structure.
 Here are the common methods for DOM manipulation:
 
 - Selecting Elements:
