@@ -23,3 +23,8 @@ When an event occurs, JavaScript creates an event object that contains informati
 - `event.currentTarget`: The element to which the event listener is attached.
 - `event.preventDefault()`: Prevents the default action associated with the event (e.g., stopping form submission).
 - `event.stopPropagation()`: Stops the event from bubbling up to parent elements.
+
+### Notice
+
+- Manage event bubbling: Be aware of how events bubble up through the DOM. Use `stopPropagation()` if you want to prevent parent elements from receiving the same event.
+- Prevent default behavior when necessary: Use `preventDefault()` in cases where you want to override default browser actions (like preventing a form from submitting).
