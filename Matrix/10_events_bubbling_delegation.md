@@ -28,3 +28,17 @@ When an event occurs, JavaScript creates an event object that contains informati
 
 - Manage event bubbling: Be aware of how events bubble up through the DOM. Use `stopPropagation()` if you want to prevent parent elements from receiving the same event.
 - Prevent default behavior when necessary: Use `preventDefault()` in cases where you want to override default browser actions (like preventing a form from submitting).
+
+### Example
+
+```html
+<button id="myButton">Click me!</button>
+<script>
+    const button = document.getElementById('myButton');
+    button.addEventListener('click', function(event) {
+        alert('Button was clicked!');
+        console.log('Event type:', event.type);
+        console.log('Target element:', event.target);
+    });
+</script>
+```
