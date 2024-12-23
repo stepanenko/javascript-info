@@ -42,3 +42,7 @@ When an event occurs, JavaScript creates an event object that contains informati
     });
 </script>
 ```
+
+## Event Bubbling
+
+Event bubbling is a way that events (like clicks or key presses) move through the elements in an HTML document. When an event happens in a specific element (like a button), it first affects that element and then moves up to its parent elements, triggering any event listeners attached to those parents. This process is called “bubbling” because it starts at the bottom (the innermost element) and bubbles up to the top (the outer elements).
