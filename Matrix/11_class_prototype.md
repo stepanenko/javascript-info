@@ -70,3 +70,21 @@ const person = new Person("Alice");
 console.log(person.name); // Outputs: Alice
 person.name = "Bob"; // Sets a new name
 ```
+
+# Prototype
+
+Every JavaScript object has an internal property called `[[Prototype]]`, which can be accessed via the `__proto__` property. This prototype is another object from which the original object inherits properties and methods.
+The prototype itself can have its own prototype, forming a prototype chain. This chain allows for property and method lookups to traverse up through parent objects until reaching `Object.prototype`, which is the root of all objects in JavaScript.
+
+## `Object.create(proto)`
+```js
+const personPrototype = {
+    greet() {
+        console.log(`Hello, my name is ${this.name}!`);
+    }
+};
+
+const alice = Object.create(personPrototype);
+alice.name = "Alice";
+alice.greet(); // Outputs: Hello, my name is Alice!
+```
