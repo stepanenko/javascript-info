@@ -77,6 +77,7 @@ Every JavaScript object has an internal property called `[[Prototype]]`, which c
 The prototype itself can have its own prototype, forming a prototype chain. This chain allows for property and method lookups to traverse up through parent objects until reaching `Object.prototype`, which is the root of all objects in JavaScript.
 
 ## `Object.create(proto)`
+Use `Object.create()` for creating objects with specific prototypes:
 ```js
 const personPrototype = {
     greet() {
@@ -90,7 +91,7 @@ alice.greet(); // Outputs: Hello, my name is Alice!
 ```
 
 ## Constructor Functions
-When a function is called with the `new` keyword, a new object is created, and its prototype is set to the constructor's `prototype` property:
+When a function is called with the `new` keyword, a new object is created, and its prototype is set to the constructor's `prototype` property. Defining methods on an object's prototype rather than within the constructor saves memory because all instances share the same method reference instead of each instance having its own copy. So defining shared methods on prototypes to optimize memory usage:
 ```js
 function Person(name) {
     this.name = name;
@@ -102,4 +103,29 @@ Person.prototype.greet = function() {
 
 const bob = new Person("Bob");
 bob.greet(); // Outputs: Hello, my name is Bob!
+```
+
+## Inheritance
+
+Prototypal inheritance allows one object to inherit properties and methods from another. This can be achieved by setting an object's prototype to another object or constructor's prototype:
+
+```js
+function Animal(name) {
+    this.name = name;
+}
+
+Animal.prototype.speak = function() {
+    console.log(`${this.name} makes a noise.`);
+};
+
+function Dog(name) {
+    Animal.call(this, name); // Call parent constructor
+}
+
+// Set Dog's prototype to Animal's prototype
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+const dog = new Dog("Rex");
+dog.speak(); // Outputs: Rex makes a noise.
 ```
