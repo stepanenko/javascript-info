@@ -91,7 +91,8 @@ alice.greet(); // Outputs: Hello, my name is Alice!
 ```
 
 ## Constructor Functions
-When a function is called with the `new` keyword, a new object is created, and its prototype is set to the constructor's `prototype` property. Defining methods on an object's prototype rather than within the constructor saves memory because all instances share the same method reference instead of each instance having its own copy. So defining shared methods on prototypes to optimize memory usage:
+When a function is called with the `new` keyword, a new object is created, and its prototype is set to the constructor's `prototype` property. Defining methods on an object's prototype rather than within the constructor saves memory because all instances share the same method reference instead of each instance having its own copy.  
+So define shared methods on prototypes to optimize memory usage:
 ```js
 function Person(name) {
     this.name = name;
