@@ -88,3 +88,18 @@ const alice = Object.create(personPrototype);
 alice.name = "Alice";
 alice.greet(); // Outputs: Hello, my name is Alice!
 ```
+
+## Constructor Functions
+When a function is called with the `new` keyword, a new object is created, and its prototype is set to the constructor's `prototype` property:
+```js
+function Person(name) {
+    this.name = name;
+}
+
+Person.prototype.greet = function() {
+    console.log(`Hello, my name is ${this.name}!`);
+};
+
+const bob = new Person("Bob");
+bob.greet(); // Outputs: Hello, my name is Bob!
+```
