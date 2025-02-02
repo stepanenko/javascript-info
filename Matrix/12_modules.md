@@ -41,3 +41,29 @@ require(['myModule'], function(myModule) {
     myModule.greet(); // Outputs: Hello from AMD!
 });
 ```
+
+## Universal Module Definition (UMD)
+
+UMD combines features of both CommonJS and AMD. UMD checks for the presence of either CommonJS or AMD loaders and defines the module accordingly. If neither is found, it attaches the module to the global object.
+
+Example:
+```js
+(function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['dependency'], factory);
+    } else if (typeof exports === 'object') {
+        // Node.js
+        module.exports = factory(require('dependency'));
+    } else {
+        // Global variable
+        root.myModule = factory(root.dependency);
+    }
+}(this, function(dependency) {
+    return {
+        greet: function() {
+            console.log('Hello from UMD!');
+        }
+    };
+}));
+```
