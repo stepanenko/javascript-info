@@ -17,6 +17,21 @@
 - `clear()`: Removes all values from the set.
 - `size`: Returns the number of values in the set.
 
+```js
+const uniqueNumbers = new Set([1, 2, 2, 3, 4, 4, 5]);
+console.log(uniqueNumbers.size); // Outputs: 5
+```
+
+### Iteration
+```js
+const colors = new Set(['red', 'green', 'blue']);
+for (const color of colors) {
+    console.log(color);
+}
+// Using forEach
+colors.forEach(color => console.log(color));
+```
+---
 ## Map
 
 `Map` is a collection of keyed data items, just like an `Object`.  
