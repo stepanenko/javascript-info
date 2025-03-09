@@ -1,4 +1,4 @@
-# Set, WeakSet, Map, WeakMap
+# Set, Map, WeakSet, WeakMap
 
 ## Set
 
@@ -70,3 +70,50 @@ alert(map.size);  // 3
 `map.keys()` – returns an iterable for keys,  
 `map.values()` – returns an iterable for values,  
 `map.entries()` – returns an iterable for entries [key, value], it’s used by default in `for...of`.  
+
+---
+
+## WeakMap and WeakSet
+
+JavaScript engine keeps a value in memory while it is “reachable” and can potentially be used:
+```js
+let john = { name: "John" }; // the object can be accessed, john is the reference to it
+john = null; // overwrite the reference
+// the object will be removed from memory
+```
+If we put an object into an array, then while the array is alive, the object will be alive as well, even if there are no other references to it:
+```js
+let john = { name: "John" };
+let array = [john];
+john = null; // overwrite the reference
+
+// the object stored inside the array won't be garbage-collected
+array[0] // { name: "John" }
+```
+If we use an object as the key in a regular `Map`, then while the `Map` exists, that object exists as well. It occupies memory and may not be garbage collected:
+```js
+let john = { name: "John" };
+let map = new Map();
+map.set(john, "...");
+john = null; // overwrite the reference
+// john is stored inside the map, we can get it by using map.keys()
+```
+
+## WeakMap
+The first difference between `Map` and `WeakMap` is that keys must be objects, not primitive values.  
+If we use an object as the key in it, and there are no other references to that object – it will be removed from memory (and from the map) automatically:
+```js
+let john = { name: "John" };
+let weakMap = new WeakMap();
+weakMap.set(john, "...");
+john = null; // overwrite the reference
+// john is removed from memory!
+```
+`WeakMap` does not support iteration and methods `keys()`, `values()`, `entries()`, so there's no way to get all keys or values from it.
+
+`WeakMap` has only the following methods:
+
+- `weakMap.set(key, value)`
+- `weakMap.get(key)`
+- `weakMap.delete(key)`
+- `weakMap.has(key)`
