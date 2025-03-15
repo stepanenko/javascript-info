@@ -18,7 +18,7 @@ More: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
 
 ## WebAssembly and JavaScript
 
-WebAssembly integrates with existing JavaScript frameworks that enhances performance for computation-heavy tasks.
+WebAssembly is a different language from JavaScript, but it is not intended as a replacement. Instead, it is designed to complement and work alongside JavaScript, allowing web developers to take advantage of both languages' strong points. WebAssembly integrates well with existing JavaScript frameworks that enhances performance for computation-heavy tasks.
 
 ### Key Integration Points
 
