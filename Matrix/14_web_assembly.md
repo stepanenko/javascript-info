@@ -39,3 +39,28 @@ Since WebAssembly cannot directly interact with the DOM or other browser APIs, J
 WebAssembly modules can be shared across Web Workers without recompilation, enabling multithreaded applications in conjunction with JavaScript frameworks.
 
 You don't even have to know how to create WebAssembly code to take advantage of it. WebAssembly modules can be imported into a web (or Node.js) app, exposing WebAssembly functions for use via JavaScript. JavaScript frameworks could make use of WebAssembly to confer massive performance advantages and new features while still making functionality easily available to web developers.
+
+Since JavaScript has complete control over how WebAssembly code is downloaded, compiled and run, JavaScript developers could even think of WebAssembly as just a JavaScript feature for efficiently generating high-performance functions.
+
+In the future, WebAssembly modules will be loadable just like ES modules (using <script type='module'>), meaning that JavaScript will be able to fetch, compile, and import a WebAssembly module as easily as an ES module.
+
+### Examples:
+
+```js
+const wasmBinary = new Uint8Array([
+    0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00, 0x01, 0x07, 0x01,
+    0x60, 0x02, 0x7f, 0x7f, 0x01, 0x7f, 0x03, 0x02, 0x01, 0x00, 0x07,
+    0x07, 0x01, 0x03, 0x61, 0x64, 0x64, 0x00, 0x00, 0x0a, 0x09, 0x01,
+    0x07, 0x00, 0x20, 0x00, 0x20, 0x01, 0x6a, 0x0b
+]);
+
+let add; // Will hold our WebAssembly function
+
+// Initialize WebAssembly module
+WebAssembly.instantiate(wasmBinary)
+    .then(obj => {
+      add = obj.instance.exports.add;
+    });
+
+add(5, 7);  // 12
+```
