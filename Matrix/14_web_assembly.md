@@ -64,3 +64,11 @@ WebAssembly.instantiate(wasmBinary)
 
 add(5, 7);  // 12
 ```
+
+## Using WebAssembly
+
+There are four main entry points:
+- Porting a C/C++ application with Emscripten
+- Writing or generating WebAssembly directly at the assembly level
+- Writing a Rust application and targeting WebAssembly as its output
+- Using AssemblyScript which looks similar to TypeScript and compiles to WebAssembly binary
