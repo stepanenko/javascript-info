@@ -30,17 +30,20 @@ Classes: `class`, `extends`
 Core objects like `Object`, `Array`, `String`, `Date`, `Promise`, `Map`, `Set`  
 
 7. Modules  
-ES6 Modules: `import`, `export`  
+ES6 Modules: `import`, `export`
+CommonJS: `require`, `module.exports`  
 
-8. Asynchronous Programming  
-Promises: `.then()`, `.catch()`  
+9. Asynchronous Programming  
+Promises: `.then()`, `.catch()`, `Promise.all()`, `Promise.race()`  
 `async/await`  
 
-9. Iterators and Generators  
+10. Iterators and Generators  
 Custom Iterators with `[Symbol.iterator]`  
 Generators (`function*`)  
 
-10. Miscellaneous  
+11. Miscellaneous  
 Destructuring: `const { key } = object` `const [first] = array`  
 Optional Chaining: `object?.property`  
 Nullish Coalescing: `??`  
+Block Scope vs Function Scope: `let`, `const` vs `var`  
+Lexical scoping: Closures
