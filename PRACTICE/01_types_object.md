@@ -1,6 +1,6 @@
 # JS CORE
 
-## 1. Types  
+## Types  
 - **Primitive**: `string`, `number`, `boolean`, `null` (represents no value), `undefined` (uninitialized or missing value), `bigInt` (for large integers), `Symbol` (for unique identifiers)
 - **Non-Primitive**: Object: `{}`, `[]`, `function() {}` (callable object)
 
@@ -62,8 +62,8 @@ Answer:
 const arr = [1, 2, 3];
 console.log(Array.isArray(arr)); // true
 ```
-
-## 2. Objects  
+---
+## Objects  
 - Non-Static (Instance-based): `Object`, `Array`, `Function`, `Date`, `RegExp`, `Error`, `Set`, `Map`, `WeakSet`, `WeakMap`, `Promise`, `Int8Array`, `Uint8Array`, `ArrayBuffer`, `DataView`, `Proxy`
   - Require instantiation using constructors or literals to create individual instances.
   - Each instance has its own properties and methods (e.g., arrays, functions, and dates).
