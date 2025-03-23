@@ -4,10 +4,10 @@
 - **Primitive**: `string`, `number`, `boolean`, `null` (represents no value), `undefined` (uninitialized or missing value), `bigInt` (for large integers), `Symbol` (for unique identifiers)
 - **Non-Primitive**: Object: `{}`, `[]`, `function() {}` (callable object)
 
-Q1: How to check a type of a value?  
-A1: `typeof` operator
+### 1. How do you check a type of a value?  
+Answer: `typeof` operator
 
-Q2: What will be printed?
+### 2. What will be printed?
 ```js
 1) tуpeоf NaN
 2) tуpeоf []
@@ -20,7 +20,7 @@ Q2: What will be printed?
 9) 0.1 + 0.2 === 0.3
 10) 1 < 2 < 3
 ```
-A2:
+Answer:
 ```js
 1) "number"
 2) "object"
@@ -32,31 +32,32 @@ A2:
 8) true
 9) false // floating-point precision issues - 0.1 and 0.2 can't be represented exactly in binary floating-point
 10) true
-// 1) 1 < 2 is evaluated, which is true
-// 2) true < 3 is evaluated. In this comparison, true is coerced to 1 (since true is treated as 1 in numeric contexts)
-// 3) 1 < 3 is evaluated, which is indeed true
+  // 1. 1 < 2 is evaluated, which is true
+  // 2. true < 3 is evaluated. In this comparison, true is coerced to 1 (since true is treated as 1 in numeric contexts)
+  // 3. 1 < 3 is evaluated, which is indeed true
 ```
-Q3: What is the difference between `==` and `===`?  
-A3:  
+### 3. What is the difference between `==` and `===`?  
+Answer:  
 `==` Loose Equality: Checks for equality of values after performing type coercion if necessary  
 `===` Strict Equality: Checks for equality of both value and type without any type conversion
 
-Q4:
+### 4. Comparing objects. Are the following objects equal?
 ```js
 const a = { id: 1 };
 const b = { id: 1 };
 a === b; // ?
 ```
+Answer: `false`
 
-Q5: How to check if something is of type `object`?  
-A5:  
+### 5. How do you check if something is of type `object`?  
+Answer:  
 ```js
 const obj = {};
 console.log(typeof obj === 'object' && obj !== null); // true
 ```
 
-Q6: How to check if something is of type `array`?  
-A6:  
+### 6. How do you check if something is of type `array`?  
+Answer:  
 ```js
 const arr = [1, 2, 3];
 console.log(Array.isArray(arr)); // true
@@ -84,6 +85,7 @@ const set = new Set([1, 2, 3]);  // Set instance
 Math.max(1, 2, 3);         // No need to instantiate Math
 JSON.parse('{"a": 1}');    // No need to instantiate JSON
 ```
+
 Summary:
 - Non-static objects need to be created with constructors and produce new instances.
 - Static objects provide utility methods directly and are globally accessible without instantiation.
