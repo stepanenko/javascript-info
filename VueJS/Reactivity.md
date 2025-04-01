@@ -1,10 +1,27 @@
 ## Reactivity in VueJS
 
+The example code that shows reactivity issue and not working functionality as a result:
+```ts
+export class MyComponent {
+  private openCards: Set<string> = new Set();
 
+  public toggleStep(cardId: string): void {
+    if (this.openCards.has(cardId)) {
+      this.openCards.delete(cardId);
+    } else {
+      this.openCards.add(cardId);
+    }
+  }
+
+  public isCardOpen(cardId: string): boolean {
+    return this.openCards.has(cardId);
+  }
+}
+```
 
 The `Set` approach doesn't work because Vue's reactivity system doesn't track changes made to `Set` methods like `add()` and `delete()`.
 
-Vue can detect changes to:
+### Vue can detect changes to:
 
 - Array methods that mutate the array (push, pop, shift, unshift, splice)
 - Object property assignments
@@ -35,7 +52,7 @@ export class MyComponent {
 
 While `Set` operations are more efficient (O(1) vs O(n) for array operations), the lack of built-in reactivity support makes arrays a more practical choice in Vue components unless you implement a reactive wrapper.
 
-Key points:
+### Key points:
 
 - Sets have better performance for lookup/add/delete
 - Arrays have native Vue reactivity support
