@@ -60,58 +60,50 @@ While `Set` operations are more efficient (O(1) vs O(n) for array operations), t
 - Arrays are more commonly used in Vue
 - The performance difference is negligible for small collections
 
-Given these tradeoffs, using an array is probably the better choice here for maintainability and simplicity.
+Given these tradeoffs, using an array is probably the better choice here for maintainability and simplicity:
 
-### Fix using `Vue.set()`
+### Fix 1 - Using array
+```ts
+export class MyComponent {
+  // Track open state in a reactive property
+  private openCardsArray: string[] = [];
+
+  public toggleCard(cardId: string): void {
+    const index = this.openCardsArray.indexOf(cardId);
+    if (index > -1) {
+      // Remove card if found
+      this.openCardsArray.splice(index, 1);
+    } else {
+      // Add card if not found
+      this.openCardsArray.push(cardId);
+    }
+  }
+
+  public isCardOpen(cardId: string): boolean {
+    return this.openCardsArray.includes(cardId);
+  }
+}
+```
+
+### Fix 2 - Using object and `Vue.set()`
 
 ```ts
 export class MyComponent {
   private openCards: Record<string, boolean> = {};
 
-  public toggleStep(cardId: string): void {
+  public toggleCard(cardId: string): void {
     // Use Vue.set to ensure reactivity
     Vue.set(this.openCards, cardId, !this.openCards[cardId]);
   }
 
-  public isStepOpen(cardId: string): boolean {
+  public isCardOpen(cardId: string): boolean {
     return !!this.openCards[cardId];
   }
 }
 ```
 
-### Key points:
+### Key changes:
 
-The issue might be related to Vue's reactivity system not detecting nested property changes. Let's modify the code to ensure Vue picks up the changes by using Vue's reactivity system properly:
-
-````typescript
-@inject
-@needs(SectionHeader)
-export class GroupSection {
-  private openSteps: Record<string, boolean> = {};
-
-  constructor(readonly currentApplicationStore: CurrentApplicationStore) {}
-
-  public attached() {
-    // Initialize all steps closed
-    this.stepList?.forEach(step => {
-      Vue.set(this.openSteps, step.Id, false);
-    });
-  }
-
-  public toggleStep(stepId: string): void {
-    // Use Vue.set to ensure reactivity
-    Vue.set(this.openSteps, stepId, !this.openSteps[stepId]);
-  }
-
-  public isStepOpen(stepId: string): boolean {
-    return !!this.openSteps[stepId];
-  }
-
-  // ...existing code...
-}
-````
-
-Key changes:
 - Using `Vue.set()` to add reactive properties
 - This ensures Vue's reactivity system properly tracks nested object changes
 - Changed from array to the object-based approach for efficiency
