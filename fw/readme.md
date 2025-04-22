@@ -1,6 +1,8 @@
-# fw (Framework)
+# fw
 
 A lightweight, class-based framework for Vue 2 applications that provides dependency injection, routing, and configuration management.
+
+Source: https://github.com/derekpitt/fw
 
 ## Features
 
