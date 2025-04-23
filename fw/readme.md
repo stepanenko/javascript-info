@@ -73,3 +73,11 @@ Load configuration from JSON files:
 ```typescript
 await fw.withConfig(ConfigClass, 'config.json');
 ```
+
+### License
+
+ISC
+
+### Author
+
+Derek Pittsinger
