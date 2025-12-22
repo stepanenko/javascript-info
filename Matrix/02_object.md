@@ -113,6 +113,7 @@ for (let key in employee) {
   console.log(key); // Outputs "name" and "position"
 }
 ```
+---
 
 - Using `Object.assign(target, ...sources)` to copy properties from one or more source objects to a target object:
 ```js
@@ -125,11 +126,11 @@ Object.assign(target, source1, source2);
 console.log(target); // Output: { a: 1, b: 4, c: 6, d: 7 }
 ```
 Limitations:  
-- Only Copies Enumerable Own Properties: Properties that are non-enumerable or inherited from the prototype chain are not copied.
-- Not a Deep Clone: `Object.assign` does not recursively copy nested objects.
+1) Only Copies Enumerable Own Properties: Properties that are non-enumerable or inherited from the prototype chain are not copied.
+2) Not a Deep Clone: `Object.assign` does not recursively copy nested objects.
 For deep cloning, consider other methods, such as structured cloning (`structuredClone`), `JSON` serialization, or using libraries like Lodash.
 
-
+---
 - Using `Object.is()`. While it behaves almost exactly like the strict equality operator (`===`), it was introduced in ES6 to fix two specific "quirks" in JavaScript’s math logic.
 
 `NaN === NaN` is `false`. `Object.is()` correctly identifies them as the same.
