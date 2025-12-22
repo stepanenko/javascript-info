@@ -128,3 +128,10 @@ Limitations:
 - Only Copies Enumerable Own Properties: Properties that are non-enumerable or inherited from the prototype chain are not copied.
 - Not a Deep Clone: `Object.assign` does not recursively copy nested objects.
 For deep cloning, consider other methods, such as structured cloning (`structuredClone`), `JSON` serialization, or using libraries like Lodash.
+
+
+- Using `Object.is()`. While it behaves almost exactly like the strict equality operator (`===`), it was introduced in ES6 to fix two specific "quirks" in JavaScript’s math logic.
+
+`NaN === NaN` is `false`. `Object.is()` correctly identifies them as the same.
+
+`+0 === -0` is `true`. `Object.is()` treats them as different values.
