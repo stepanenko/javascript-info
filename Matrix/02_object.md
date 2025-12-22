@@ -80,7 +80,7 @@ Prototype Methods on Object Instances
 
 ## Examples
 
-- Using `Object.create()` to Set Prototype and Define Properties:
+- Using **`Object.create()`** to Set Prototype and Define Properties:
 ```js
 // Define the prototype object
 const person = {
@@ -115,7 +115,7 @@ for (let key in employee) {
 ```
 ---
 
-- Using `Object.assign(target, ...sources)` to copy properties from one or more source objects to a target object:
+- Using **`Object.assign(target, ...sources)`** to copy properties from one or more source objects to a target object:
 ```js
 const target = { a: 1, b: 2 };
 const source1 = { b: 4, c: 5 };
@@ -131,8 +131,20 @@ Limitations:
 For deep cloning, consider other methods, such as structured cloning (`structuredClone`), `JSON` serialization, or using libraries like Lodash.
 
 ---
-- Using `Object.is()`. While it behaves almost exactly like the strict equality operator (`===`), it was introduced in ES6 to fix two specific "quirks" in JavaScript’s math logic.
+- Using **`Object.is()`**. While it behaves almost exactly like the strict equality operator (`===`), it was introduced in ES6 to fix two specific "quirks" in JavaScript’s math logic.
 
 `NaN === NaN` is `false`. `Object.is()` correctly identifies them as the same.
 
 `+0 === -0` is `true`. `Object.is()` treats them as different values.
+
+```js
+const a = { item: "apple" };
+const b = { item: "apple" };
+const c = a;
+
+Object.is(a, b); // false (different references)
+Object.is(a, c); // true  (same reference)
+```
+**For 99% of your code, stick with `===`. It is the industry standard and slightly faster.**
+
+`NaN` is the only value in JS that does not equal itself
