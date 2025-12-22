@@ -136,7 +136,21 @@ For deep cloning, consider other methods, such as structured cloning (`structure
 `NaN === NaN` is `false`, whereas `Object.is()` correctly identifies them as the same.
 
 `+0 === -0` is `true`, whereas `Object.is()` treats them as different values.
+```js
+const zero = -0;
 
+console.log(zero === 0);           // true (Standard equality hides the sign)
+console.log(Object.is(zero, -0));  // true (The reliable check)
+console.log(Object.is(zero, 0));   // false
+
+// The "Infinity Trick"
+function isNegativeZero(n) {
+  return n === 0 && (1 / n === -Infinity);
+}
+
+-5 * 0 // results in -0
+0 / -5 // results in -0
+```
 ```js
 const a = { item: "apple" };
 const b = { item: "apple" };
