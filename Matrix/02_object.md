@@ -178,6 +178,7 @@ const newUser = { ...user, ...data };
 console.log(newUser._name); // "" (The original _name remained empty)
 console.log(newUser.name);  // "alice" (It just created a plain property 'name')
 ```
+`Object.assign()` uses **[[Set]]**: It looks at the `target` object and says, "Does a property called name already exist?" Since it does (as a setter), it executes that function. It behaves like `user.name = "alice"`.
 
 - **Handling of Read-only Properties**
 
