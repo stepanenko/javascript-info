@@ -154,13 +154,40 @@ console.log(original); // { a: 1 }
 - **Setters vs. Definition**
 
 If the target object has a setter for a property, `Object.assign()` will trigger that setter function.  
-Spread simply defines a new property on the new object, ignoring any setters that might have existed on a prototype.  
+Spread simply defines a new property on the new object, ignoring any setters that might have existed on a prototype:
+```js
+const user = {
+  _name: "",
+  // This setter will trigger whenever someone tries to set 'name'
+  set name(value) {
+    console.log(`Setter triggered! Setting name to: ${value}`);
+    this._name = value.toUpperCase(); // We'll force it to uppercase
+  }
+};
+
+const data = { name: "alice" };
+
+// --- 1. Using Object.assign() ---
+console.log("--- Object.assign ---");
+Object.assign(user, data); 
+// Log: "Setter triggered! Setting name to: alice"
+console.log(user._name); // "ALICE" (The setter logic worked)
+
+// --- 2. Using Spread Operator ---
+console.log("--- Spread Operator ---");
+const newUser = { ...user, ...data };
+// No "Setter triggered" log will appear!
+console.log(newUser._name); // "" (The original _name remained empty)
+console.log(newUser.name);  // "alice" (It just created a plain property 'name')
+```
 
 - **Handling of Read-only Properties**
 
 If the target object has a read-only property (defined via `Object.defineProperty` or `Object.create` with `writable: false`):  
 `Object.assign()` will throw a `TypeError` because it is trying to assign a value to a non-writable property.  
 Spread will succeed because it is creating a brand-new object where that property hasn't been defined as read-only yet.
+
+Use Spread for 95% of your work. It is cleaner, more concise, and follows the "immutability" pattern.
 
 ---
 4. Using **`Object.is()`**. While it behaves almost exactly like the strict equality operator (`===`), it was introduced in ES6 to fix two specific "quirks" in JavaScript’s math logic.
