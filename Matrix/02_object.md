@@ -131,7 +131,39 @@ Limitations:
 For deep cloning, consider other methods, such as structured cloning (`structuredClone`), `JSON` serialization, or using libraries like Lodash.
 
 ---
-3. Using **`Object.is()`**. While it behaves almost exactly like the strict equality operator (`===`), it was introduced in ES6 to fix two specific "quirks" in JavaScript’s math logic.
+3. Difference between `Object.assign(target, ...sources)` and spread operator (`...`)
+
+While they often produce the same result for simple tasks, they differ in how they handle setters, prototypes, and mutability.
+
+- **Mutability** (The Biggest Practical Difference):
+
+```js
+const target = { a: 1 };
+const source = { b: 2 };
+
+// Mutates 'target'
+Object.assign(target, source); 
+console.log(target); // { a: 1, b: 2 }
+
+// Does NOT mutate 'original'
+const original = { a: 1 };
+const copy = { ...original, b: 2 };
+console.log(original); // { a: 1 }
+```
+
+- **Setters vs. Definition**
+
+If the target object has a setter for a property, `Object.assign()` will trigger that setter function.  
+Spread simply defines a new property on the new object, ignoring any setters that might have existed on a prototype.  
+
+- **Handling of Read-only Properties**
+
+If the target object has a read-only property (defined via `Object.defineProperty` or `Object.create` with `writable: false`):  
+`Object.assign()` will throw a `TypeError` because it is trying to assign a value to a non-writable property.  
+Spread will succeed because it is creating a brand-new object where that property hasn't been defined as read-only yet.
+
+---
+4. Using **`Object.is()`**. While it behaves almost exactly like the strict equality operator (`===`), it was introduced in ES6 to fix two specific "quirks" in JavaScript’s math logic.
 
 `NaN === NaN` is `false`, whereas `Object.is()` correctly identifies them as the same.
 
