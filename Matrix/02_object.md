@@ -167,14 +167,12 @@ const user = {
 
 const data = { name: "alice" };
 
-// --- 1. Using Object.assign() ---
-console.log("--- Object.assign ---");
+// 1. Using Object.assign()
 Object.assign(user, data); 
 // Log: "Setter triggered! Setting name to: alice"
 console.log(user._name); // "ALICE" (The setter logic worked)
 
-// --- 2. Using Spread Operator ---
-console.log("--- Spread Operator ---");
+// 2. Using Spread Operator
 const newUser = { ...user, ...data };
 // No "Setter triggered" log will appear!
 console.log(newUser._name); // "" (The original _name remained empty)
