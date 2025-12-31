@@ -46,6 +46,7 @@ const user = {
 };
 user.showName(); // undefined
 ```
+Above `this` refers to the global object (which is `window` in a browser or `{} / global` in Node.js).
 
 ### 5. Explicit Context Binding
 You can manually set the function context with methods like `.call()`, `.apply()`, or `.bind()`.
