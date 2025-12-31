@@ -37,8 +37,31 @@ setTimeout(boundShowName, 1000); // "Jack"
 
 Way 3: Arrow Functions as Properties
 
-If you define the method as an arrow function inside the object, it will solve the callback problem, but only if the object itself is defined in a scope where this is what you want (like inside a Class constructor).
+Use Class Fields to assign an arrow function as a property. Because the class constructor runs when you create an instance, the arrow function "captures" the correct `this` (the specific instance) and holds onto it forever.
 
 ```js
-...
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+
+  // Way 3: Arrow function as a class property
+  // This is "auto-bound" to the instance
+  showName = () => {
+    console.log(this.name);
+  }
+}
+
+const jack = new User("Jack");
+
+// Even when detached and used as a callback, it WORKS!
+setTimeout(jack.showName, 1000); 
+// Log after 1 second: "Jack"
 ```
+When you use the `methodName = () => {}` syntax inside a class:
+
+- JavaScript actually moves that function inside the constructor.
+
+- Because it's an arrow function defined inside the constructor, its `this` is lexically bound to the new object being created (`jack`).
+
+- Unlike regular methods, this function does not live on the `User.prototype`, it is a unique property sitting directly on every instance of the class.
