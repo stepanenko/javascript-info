@@ -48,6 +48,14 @@ user.showName(); // undefined
 ```
 Above `this` refers to the global object (which is `window` in a browser or `{} / global` in Node.js).
 
+Unlike regular functions, arrow functions "inherit" `this` from the scope where they were defined, not where they are called.
+
+- The Definition Scope: You defined `showName` inside an object literal. However, an object literal does not create a new scope.
+
+- The Outer Scope: Because the object doesn't have a scope, the arrow function looks one level higher to the Global/Module scope.
+
+- The Result: At the global level, `this` points to the global object. Since there is likely no global variable named `name`, it returns `undefined`.
+
 ### 5. Explicit Context Binding
 You can manually set the function context with methods like `.call()`, `.apply()`, or `.bind()`.
 ```js
