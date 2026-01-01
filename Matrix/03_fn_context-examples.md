@@ -11,8 +11,7 @@ const user = {
   }
 };
 
-setTimeout(user.showName, 1000); 
-// Log after 1 second: undefined
+setTimeout(user.showName, 1000);  // Logs "undefined" after 1 second
 ```
 Inside of `setTimeout`, the call looks something like this: `callback()`. Because there is no "dot" (no `user.`), the function is called as a standalone function. In standalone calls, `this` defaults to the **Global Object** (or `undefined` in strict mode).
 
@@ -20,23 +19,25 @@ Inside of `setTimeout`, the call looks something like this: `callback()`. Becaus
 
 #### Way 1: Use a Wrapper Function (The Modern Way)
 
-Pass a small "middleman" function that calls the method correctly when the time comes. In the wrapper version, `setTimeout` doesn't call `showName`, it calls the anonymous arrow function you provided. Inside that arrow function, you are explicitly writing `user.showName()`. The object to the left of the dot (the "receiver") becomes `this` for that specific call.  
-**Closure**: The arrow function "closes over" the `user` variable, keeping it accessible even after the current script finishes executing (the arrow function "remembers" the scope it was created in, and you explicitly call `user.showName()` with the dot).
-
 ```js
 setTimeout(() => {
   user.showName();
 }, 1000); // "Jack"
 ```
 
+Pass a small "middleman" function that calls the method correctly when the time comes. In the wrapper version, `setTimeout` doesn't call `showName`, it calls the anonymous arrow function you provided. Inside that arrow function, you are explicitly writing `user.showName()` - the object to the left of the dot (the "receiver") becomes `this` for that specific call.
+
+**Closure**: The arrow function "closes over" the `user` variable, keeping it accessible even after the current script finishes executing (the arrow function "remembers" the scope it was created in, and you explicitly call `user.showName()` with the dot).
+
 ---
 #### Way 2: The `.bind()` Method
 
-The `bind` method creates a new function that is "hard-wired" to a specific object. No matter how it's called, `this` will always be `user`.
 ```js
 const boundShowName = user.showName.bind(user);
 setTimeout(boundShowName, 1000); // "Jack"
 ```
+
+The `bind` method creates a new function that is "hard-wired" to a specific object. No matter how it's called, `this` will always be `user`.
 
 ---
 #### Way 3: Arrow Functions as Properties
