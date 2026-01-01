@@ -8,22 +8,22 @@ Function context refers to the value of `this` within a function.
 If a function is called without an object (like a regular function), `this` refers to the global object (`window` in browsers, `global` in Node.js). In strict mode, `this` will be `undefined` in a standalone function.
 ```js
 function showContext() {
-  console.log(this); // window (in a browser)
+  console.log(this);
 }
-showContext();
+showContext(); // window / global / undefined
 ```
 
 ### 2. Object Method Context
 
-When a function is called as a method of an object, this refers to the object that called the method:
+When a function is called as a method of an object, `this` refers to the object that called the method:
 ```js
 const user = {
   name: "Jack",
   getName() {
-    console.log(this.name); // "Jack"
+    console.log(this.name);
   }
 };
-user.getwName();
+user.getwName(); // "Jack"
 ```
 
 ### 3. Constructor Function Context
@@ -54,7 +54,7 @@ Above `this` refers to the global object (which is `window` in a browser or `{} 
 
 Unlike regular functions, arrow functions "inherit" `this` from the scope where they were defined, not where they are called.
 
-- The Definition Scope: You defined `showName` inside an object literal. However, an object literal does not create a new scope. A set of curly braces `{}` used to create an object does not create a new "this" context. Only functions and classes do that.
+- The Definition Scope: You defined `showName` inside an object literal. However, an object literal does not create a new scope - a set of curly braces `{}` used to create an object does not create a new "this" context, only functions and classes do that.
 
 - The Outer Scope: Because the object doesn't have a scope, the arrow function looks one level higher to the Global/Module scope.
 
