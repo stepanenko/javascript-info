@@ -14,18 +14,22 @@ const user = {
 setTimeout(user.showName, 1000); 
 // Log after 1 second: undefined
 ```
-What happened? Inside the engine of `setTimeout`, the call looks something like this: `callback()`. Because there is no "dot" (no `user.`), the function is called as a standalone function. In standalone calls, `this` defaults to the **Global Object** (or `undefined` in strict mode).
+Inside of `setTimeout`, the call looks something like this: `callback()`. Because there is no "dot" (no `user.`), the function is called as a standalone function. In standalone calls, `this` defaults to the **Global Object** (or `undefined` in strict mode).
 
 ### How to Fix It (3 Ways)
 
 #### Way 1: Use a Wrapper Function (The Modern Way)
 
-By wrapping the call in an arrow function, the arrow function "remembers" the scope it was created in, and you explicitly call `user.showName()` with the dot.
+Pass a small "middleman" function that calls the method correctly when the time comes. In the wrapper version, `setTimeout` doesn't call `showName`, it calls the anonymous arrow function you provided. Inside that arrow function, you are explicitly writing `user.showName()`. The object to the left of the dot (the "receiver") becomes `this` for that specific call.  
+**Closure**: The arrow function "closes over" the `user` variable, keeping it accessible even after the current script finishes executing (the arrow function "remembers" the scope it was created in, and you explicitly call `user.showName()` with the dot).
 
 ```js
-setTimeout(() => user.showName(), 1000); // "Jack"
+setTimeout(() => {
+  user.showName();
+}, 1000); // "Jack"
 ```
 
+---
 #### Way 2: The `.bind()` Method
 
 The `bind` method creates a new function that is "hard-wired" to a specific object. No matter how it's called, `this` will always be `user`.
@@ -34,6 +38,7 @@ const boundShowName = user.showName.bind(user);
 setTimeout(boundShowName, 1000); // "Jack"
 ```
 
+---
 #### Way 3: Arrow Functions as Properties
 
 Use Class Fields to assign an arrow function as a property. Because the class constructor runs when you create an instance, the arrow function "captures" the correct `this` (the specific instance) and holds onto it forever.
