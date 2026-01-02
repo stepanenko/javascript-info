@@ -1,12 +1,15 @@
 # Scope and Closure
 
 **Scope** defines where variables and functions are accessible in your code.  
-JavaScript has **global**, **function**, and **block scope** (introduced with `let` and `const`).  
+JavaScript has **global**, **function**, and **block scope** (introduced with `let` and `const`).
 
-### Definition 1:  
+### Definition 1:
+A closure is formed whenever a function is defined inside another function and accesses variables from the outer function's scope.
+
+### Definition 2:
 **Closure** is a feature where an inner function remembers the variables in its outer function’s scope, even after the outer function has finished executing. When a function is returned or passed around, it retains access to the variables of the scope in which it was created.
 
-### Definition 2:  
+### Definition 3:
 **Closure** is a feature where a function retains access to its lexical scope (the surrounding state) even when the function is executed outside that scope. This means that the function "remembers" the environment in which it was created.
 
 While returning a function is a common way to create a closure, passing a function around (e.g., as a callback or assigning it to another variable) also creates closures. In both cases, the function retains access to the variables from its original scope.
@@ -32,13 +35,15 @@ function setupListener() {
   const message = "Hello from closure!";
 
   // The function passed to setTimeout forms a closure over `message`
-  setTimeout(function() {
+  setTimeout(() => { // or function() { ...
     console.log(message);  // The inner function accesses `message` from `setupListener`'s scope
   }, 1000);
 }
 setupListener(); // Logs: "Hello from closure!" after 1 second
 ```
 This is a closure because `setTimeout`'s function keeps a reference to the scope of `setupListener` even after `setupListener` has finished executing.
+
+Even though the `setupListener` function finishes executing almost instantly, the internal `message` variable is not destroyed. The arrow function inside `setTimeout` "closes over" its surrounding environment, creating a "backpack" of variables that it carries with it until it is eventually called.
 
 ---
 ### Example 3: Event Handler Closure (function passed, not returned)
