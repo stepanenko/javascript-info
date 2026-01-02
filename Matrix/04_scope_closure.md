@@ -11,7 +11,7 @@ JavaScript has **global**, **function**, and **block scope** (introduced with `l
 
 While returning a function is a common way to create a closure, passing a function around (e.g., as a callback or assigning it to another variable) also creates closures. In both cases, the function retains access to the variables from its original scope.
 
-### Example 1: Returning a Function (Common Closure Scenario)
+### Example 1: Returning a Function (common Closure scenario)
 ```js
 function createGreeting(name) {
   return function() {
@@ -19,14 +19,14 @@ function createGreeting(name) {
   };
 }
 const greetBob = createGreeting("Bob");
-greetBob(); // Output: Hello, Bob!
-// Even after createGreeting has finished executing, greetAlice can access name.
+greetBob(); // Logs: Hello, Bob!
 ```
+Even after `createGreeting` has finished executing, `greetAlice` can access `name`.
 
 ---
 **Closures** don't require a function to be returned specifically. A **closure** is created as soon as an inner function accesses a variable from its outer scope, even if that inner function is simply passed around.
 
-### Example 2: Passing a Function as a Callback (Not Returning)
+### Example 2: Passing a Function as a Callback (not returning)
 ```js
 function setupListener() {
   const message = "Hello from closure!";
@@ -36,12 +36,12 @@ function setupListener() {
     console.log(message);  // The inner function accesses `message` from `setupListener`'s scope
   }, 1000);
 }
-setupListener(); // After 1 second, logs: "Hello from closure!"
+setupListener(); // Logs: "Hello from closure!" after 1 second
 ```
 This is a closure because `setTimeout`'s function keeps a reference to the scope of `setupListener` even after `setupListener` has finished executing.
 
 ---
-### Example 3: Event Handler Closure (Function Passed, Not Returned)
+### Example 3: Event Handler Closure (function passed, not returned)
 ```js
 function createButton() {
   const buttonText = "Click me!";
@@ -50,20 +50,20 @@ function createButton() {
     console.log(buttonText);  // This function accesses `buttonText` from `createButton`'s scope
   });
 }
-createButton(); // logs: "Click me!"
+createButton(); // Logs: "Click me!"
 ```
 The function passed to `addEventListener` forms a closure over `buttonText`. Even though the function isn't returned, it still retains access to `buttonText` whenever the button is clicked.
 
 ---
-### Example 4: Assigning a Function to a Variable (Closure Without Returning)
+### Example 4: Assigning a Function to a Variable (Closure without returning)
 ```js
 function outerFunction() {
   const outerVar = "I am still here!";
-  const innerFunction = function() { // innerFunction closes over outerVar
+  const innerFunction = function() { // `innerFunction` closes over `outerVar`
     console.log(outerVar);
   };
 
-  someGlobalVariable = innerFunction; // Assigns innerFunction to a global variable
+  someGlobalVariable = innerFunction; // Assigns `innerFunction` to a global variable
 }
 
 let someGlobalVariable;
