@@ -45,6 +45,7 @@ Example: `\.` matches a literal dot
 `\W` Matches any non-word character  
 `\s` Matches any whitespace (space, tab, newline)  
 `\S` Matches any non-whitespace character  
+`\b` Word boundary - marks the start and the end of a word
 
 ## Groups and Capturing
 
@@ -101,6 +102,7 @@ const text = "Contact us at support@example.com.";
 
 console.log(text.match(regex)); // ["support@example.com"]
 ```
+`\b` - word boundary, it ensures that the email isn't part of a larger string of characters (like myemail@test.com123). It marks the start and the end.
 
 ### Validate an Email Address:
 ```js
