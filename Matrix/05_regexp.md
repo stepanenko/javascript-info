@@ -46,6 +46,7 @@ Example: `\.` matches a literal dot
 `\s` Matches any whitespace (space, tab, newline)  
 `\S` Matches any non-whitespace character  
 `\b` Word boundary - marks the start and the end of a word
+`\B` Non-Word Boundary - find a pattern that is "buried" inside another word
 
 ## Groups and Capturing
 
@@ -104,9 +105,45 @@ console.log(text.match(regex)); // ["support@example.com"]
 ```
 `\b` - word boundary, it ensures that the email isn't part of a larger string of characters (like myemail@test.com123). It marks the start and the end.
 
+### The "Whole Word" Search:
+```js
+const text = "The planet's plan was written on the airplane.";
+
+const noBoundary = /plan/g;
+console.log(text.match(noBoundary)); 
+// Output: ["plan", "plan", "plan"] (Matches inside planet and airplane)
+
+const withBoundary = /\bplan\b/g;
+console.log(text.match(withBoundary)); 
+// Output: ["plan"] (Only matches the standalone word)
+```
+
+### Matching a Prefix vs. a Suffix:
+
+You can place the boundary at just one end of the pattern to find words that start or end with specific characters.
+
+- Starts with "cat": `\bcat`
+
+    - Matches: "category", "catnip"
+
+    - Does NOT match: "concacatenate"
+
+- Ends with "ing": `ing\b`
+
+    - Matches: "running", "singing"
+
+    - Does NOT match: "kingdom" (because the 'd' follows the 'g')
+
+### Find a pattern that is "buried" inside another word:
+```js
+const regex = /\Bplan\B/; 
+// This would match "exPLANation" but NOT "plan" or "planet".
+```
+
 ### Validate an Email Address:
 ```js
 const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 console.log(regex.test("test@example.com")); // true
 console.log(regex.test("invalid-email"));   // false
 ```
