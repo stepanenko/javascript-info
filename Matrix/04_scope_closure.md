@@ -41,9 +41,7 @@ function setupListener() {
 }
 setupListener(); // Logs: "Hello from closure!" after 1 second
 ```
-This is a closure because `setTimeout`'s function keeps a reference to the scope of `setupListener` even after `setupListener` has finished executing.
-
-Even though the `setupListener` function finishes executing almost instantly, the internal `message` variable is not destroyed. The arrow function inside `setTimeout` "closes over" its surrounding environment, creating a "backpack" of variables that it carries with it until it is eventually called.
+This is a closure because `setTimeout`'s function keeps a reference to the scope of `setupListener` even after `setupListener` has finished executing, therefore the internal `message` variable is not destroyed. The arrow function inside `setTimeout` "closes over" its surrounding environment, creating a "backpack" of variables that it carries with it until it is eventually called.
 
 ---
 ### Example 3: Event Handler Closure (function passed, not returned)
