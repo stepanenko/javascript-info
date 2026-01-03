@@ -73,17 +73,23 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 ### Match a phone number pattern:
 ```js
 const regex = /\d{3}-\d{3}-\d{4}/;
+
 console.log(regex.test("123-456-7890")); // true
 ```
 
 ### Check if a string starts with "Hello":
 ```js
+const regex = /^Hello/;
+
 console.log(regex.test("Hello World")); // true
+console.log(regex.test("Saying Hello")); // false (it's not at the start)
+console.log(regex.test("hello world")); // false (RegEx is case-sensitive by default)
 ```
 
 ### Replace digits in a string:
 ```js
 const regex = /\d/g;
+
 const result = "Order 1234".replace(regex, "#");
 console.log(result); // "Order ####"
 ```
@@ -92,6 +98,7 @@ console.log(result); // "Order ####"
 ```js
 const regex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
 const text = "Contact us at support@example.com.";
+
 console.log(text.match(regex)); // ["support@example.com"]
 ```
 
