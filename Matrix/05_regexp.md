@@ -45,7 +45,7 @@ Example: `\.` matches a literal dot
 `\W` Matches any non-word character  
 `\s` Matches any whitespace (space, tab, newline)  
 `\S` Matches any non-whitespace character  
-`\b` Word boundary - marks the start and the end of a word
+`\b` Word boundary - marks the start and the end of a word  
 `\B` Non-Word Boundary - find a pattern that is "buried" inside another word
 
 ## Groups and Capturing
