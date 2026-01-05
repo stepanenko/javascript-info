@@ -37,7 +37,8 @@ Use `\` to escape metacharacters if you want to match them literally:
 
 Example: `\.` matches a literal dot
 
-## Predefined Character Classes
+## Character Classes
+Shorthand symbols that represent a specific group of characters. The capitalization is key: the lowercase version matches a specific group, and the uppercase version is the "negation" (matches everything except that group).
 
 `\d` Matches any digit (0-9)  
 `\D` Matches any non-digit  
@@ -146,4 +147,28 @@ const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 console.log(regex.test("test@example.com")); // true
 console.log(regex.test("invalid-email"));   // false
+```
+
+### Digits `\d` and `\D`:
+```js
+const phone = "Call: 555-0199";
+
+console.log(phone.match(/\d/g));  // ["5", "5", "5", "0", "1", "9", "9"]
+console.log(phone.match(/\D/g));  // ["C", "a", "l", "l", ":", " ", "-"]
+```
+
+### Word Characters `\w` and `\W`:
+```js
+const username = "Jack_99!";
+
+console.log(username.match(/\w/g)); // ["J", "a", "c", "k", "_", "9", "9"]
+console.log(username.match(/\W/g)); // ["!"]
+```
+
+### Whitespace `\s` and `\S`:
+```js
+const greeting = "Hi there\nJack";
+
+console.log(greeting.match(/\s/g)); // [" ", "\n"]
+console.log(greeting.match(/\S/g)); // ["H", "i", "t", "h", "e", "r", "e", "J", "a", "c", "k"]
 ```
