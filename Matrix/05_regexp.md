@@ -7,7 +7,7 @@ They are commonly used for searching, validation, and string manipulation.
 Match exact characters in the pattern: `hello` matches the string `"hello"`
 
 ## Metacharacters
-Special characters with specific meanings:
+Metacharacters are characters with special meanings in RegEx that allow you to define patterns rather than just literal text. Think of them as the "operators" of the RegEx language:
 
 `.` Matches any single character (except newline)  
 `^` Matches the start of a string  
