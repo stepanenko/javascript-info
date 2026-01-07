@@ -98,7 +98,7 @@ console.log(regex.test(text)); // true
 ```
 
 ### Ensure the string contains only your pattern and nothing else:
-The "Exact Match" Pattern: when you combine both `^` and `$`: 
+The "Exact Match" Pattern - when you combine both `^` and `$`: 
 ```js
 const onlyCat = /^cat$/;
 
