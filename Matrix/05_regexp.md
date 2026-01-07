@@ -89,13 +89,22 @@ console.log(regex.test("Saying Hello")); // false (it's not at the start)
 console.log(regex.test("hello world")); // false (RegEx is case-sensitive by default)
 ```
 
-### Checks if string ends with a question mark
-
+### Checks if string ends with a question mark:
 ```js
 const text = "Is this real?";
 
 const regex = /\?$/;
 console.log(regex.test(text)); // true
+```
+
+### Ensure the string contains only your pattern and nothing else:
+The "Exact Match" Pattern: when you combine both `^` and `$`: 
+```js
+const onlyCat = /^cat$/;
+
+console.log(onlyCat.test("cat"));         // true
+console.log(onlyCat.test("catnip"));      // false (doesn't end at 't')
+console.log(onlyCat.test("the cat"));     // false (doesn't start at 'c')
 ```
 
 ### Replace digits in a string:
@@ -154,24 +163,24 @@ const regex = /\Bplan\B/;
 ```js
 const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-console.log(regex.test("test@example.com")); // true
-console.log(regex.test("invalid-email"));   // false
+console.log(regex.test("test@example.com"));  // true
+console.log(regex.test("invalid-email"));     // false
 ```
 
 ### Digits `\d` and `\D`:
 ```js
 const phone = "Call: 555-0199";
 
-console.log(phone.match(/\d/g));  // ["5", "5", "5", "0", "1", "9", "9"]
-console.log(phone.match(/\D/g));  // ["C", "a", "l", "l", ":", " ", "-"]
+console.log(phone.match(/\d/g));   // ["5", "5", "5", "0", "1", "9", "9"]
+console.log(phone.match(/\D/g));   // ["C", "a", "l", "l", ":", " ", "-"]
 ```
 
 ### Word Characters `\w` and `\W`:
 ```js
 const username = "Jack_99!";
 
-console.log(username.match(/\w/g)); // ["J", "a", "c", "k", "_", "9", "9"]
-console.log(username.match(/\W/g)); // ["!"]
+console.log(username.match(/\w/g));   // ["J", "a", "c", "k", "_", "9", "9"]
+console.log(username.match(/\W/g));   // ["!"]
 ```
 
 ### Whitespace `\s` and `\S`:
