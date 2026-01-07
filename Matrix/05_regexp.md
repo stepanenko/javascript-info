@@ -89,6 +89,15 @@ console.log(regex.test("Saying Hello")); // false (it's not at the start)
 console.log(regex.test("hello world")); // false (RegEx is case-sensitive by default)
 ```
 
+### Checks if string ends with a question mark
+
+```js
+const text = "Is this real?";
+
+const regex = /\?$/;
+console.log(regex.test(text)); // true
+```
+
 ### Replace digits in a string:
 ```js
 const regex = /\d/g;
