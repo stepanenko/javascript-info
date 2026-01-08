@@ -140,18 +140,29 @@ console.log(text.match(withBoundary));
 ### Matching a Prefix vs. a Suffix:
 
 You can place the boundary at just one end of the pattern to find words that start or end with specific characters.
+```js
+// 1 starts with "cat"
+const prefixRegex = /\bcat/g;
 
-- Starts with "cat": `\bcat`
+const text1 = "category";     // Match
+const text2 = "catnip";       // Match
+const text3 = "concatenate";  // No Match
 
-    - Matches: "category", "catnip"
+console.log(prefixRegex.test(text1)); // true
+console.log(prefixRegex.test(text2)); // true
+console.log(prefixRegex.test(text3)); // false (cat is inside the word)
 
-    - Does NOT match: "concacatenate"
+// 2 ends with "ing"
+const suffixRegex = /ing\b/g;
 
-- Ends with "ing": `ing\b`
+const word1 = "running"; // Match
+const word2 = "singing"; // Match
+const word3 = "kingdom"; // No Match
 
-    - Matches: "running", "singing"
-
-    - Does NOT match: "kingdom" (because the 'd' follows the 'g')
+console.log(suffixRegex.test(word1)); // true
+console.log(suffixRegex.test(word2)); // true
+console.log(suffixRegex.test(word3)); // false (g is followed by d, not a boundary)
+```
 
 ### Find a pattern that is "buried" inside another word:
 ```js
