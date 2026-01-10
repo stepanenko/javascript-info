@@ -1,10 +1,11 @@
 # Asynchronous code
 
-Asynchronous programming in JavaScript is a crucial concept that allows the execution of code without blocking the main execution thread. This capability is particularly important for handling operations that can take time, such as network requests, file operations, or any long-running tasks.
+Asynchronous code is executed without blocking the main execution thread.  
+It is important for handling operations that can take time, such as network requests, file operations, or any long-running tasks.
 
 ## Single-threaded
 
-JS executes code in a single thread using the **Event Loop** to handle asynchronous operations.
+In JS, asynchronous operations are handled by the **Event Loop**.
 
 ## Callbacks
 
