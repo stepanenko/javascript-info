@@ -1,10 +1,7 @@
 # Asynchronous code
 
 Asynchronous code is executed without blocking the main execution thread.  
-It is important for handling operations that can take time, such as network requests, file operations, or any long-running tasks.
-
-## Single-threaded
-
+It is important for handling operations that can take time, such as network requests, file operations, or any long-running tasks.  
 In JS, asynchronous operations are handled by the **Event Loop**.
 
 ## Callbacks
