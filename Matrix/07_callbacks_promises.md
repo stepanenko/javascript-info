@@ -1,6 +1,9 @@
 # Callbacks
 
-A **callback** is a function passed as an argument to another function and executed after a certain event or task has completed. This mechanism allows for asynchronous programming, enabling the execution of code without blocking the main thread.
+A **callback** is just a function you pass to another function to be called later.
+
+**Callbacks** are passed as an arguments to another functions and executed after a certain event or task has completed.  
+This mechanism allows for asynchronous programming, enabling the execution of code without blocking the main thread.
 
 ### Key Characteristics of Callbacks
 - Asynchronous Execution: Callbacks are often used in asynchronous operations, such as fetching data from a server or handling user events, allowing the program to continue running while waiting for a task to complete.
