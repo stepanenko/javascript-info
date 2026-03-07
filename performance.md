@@ -13,7 +13,7 @@ Date.now():
 ```
 - Simple method
 - Returns milliseconds since Unix epoch
-- Less precise than performance.now()
+- Less precise than `performance.now()`
 - Widely supported
 
 ```js
@@ -33,6 +33,6 @@ process.hrtime():
 
 ### Pro Tips:
 
-- For most web browser scenarios, use performance.now()
-- For Node.js, use process.hrtime()
+- For most web browser scenarios, use `performance.now()`
+- For Node.js, use `process.hrtime()`
 - The wrapper function is a convenient way to time any function's execution
