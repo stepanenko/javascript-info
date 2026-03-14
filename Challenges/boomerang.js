@@ -15,9 +15,9 @@ function countBoomerangs(arr) {
   return result.length;
 }
 
-// Given sol 1:
+// Given solution 1:
 function countBoomerangs2(arr) {
-  //\\//   1 + true = 2,   1 + false = 1,  true + true = 2,  true + false = 1   \\//\\
+  // 1 + true = 2,  1 + false = 1,  true + true = 2,  true + false = 1
   return arr.reduce((acc, el, index) => acc + (el === arr[index + 2] && el !== arr[index + 1]), 0);
 }
 
