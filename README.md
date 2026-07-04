@@ -1,11 +1,11 @@
 
 # JavaScript
 
-### Guides:
-- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-
 ### Books:
 - [Books](https://github.com/stepanenko/javascript-info/blob/master/BOOKS.md)
+
+### Style Guides:
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
 ### JS Notes:
 - An asynchronous function is a function that operates asynchronously via the event loop, using an implicit Promise to return its result.
