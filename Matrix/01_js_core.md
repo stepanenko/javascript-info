@@ -1,6 +1,6 @@
 # JS Core
 
-“JavaScript core” generally implies the foundational JavaScript language features, separate from environment-specific capabilities.
+**“JavaScript core”** generally implies the foundational JavaScript language features, separate from environment-specific capabilities.
 
 1. Data Types  
 Primitive: `undefined`, `null`, `boolean`, `number`, `bigint`, `string`, `symbol`  
