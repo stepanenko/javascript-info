@@ -39,7 +39,7 @@ The `__proto__` or `Object.getPrototypeOf()` gives access to an object’s proto
 
 Object Creation and Inspection:
 
-- `Object.create(proto, [propertiesObject])`: Creates a new object with the specified prototype and optional properties.
+- `Object.create(proto, [propertiesObject])`: Creates a new object with the specified prototype and, optionally, own properties defined via a descriptor object.
 - `Object.assign(target, ...sources)`: Copies properties from source objects to the target object.
 - `Object.keys(obj)`: Returns an array of a given object's own property names (keys).
 - `Object.values(obj)`: Returns an array of a given object's own property values.
