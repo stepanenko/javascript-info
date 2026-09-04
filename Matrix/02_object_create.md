@@ -173,11 +173,11 @@ const original2 = Object.create(SomeProto, {
 });
 ```
 
-Then cloning it the "naive" way (`{ ...original2 }`) would drop the non-enumerable id entirely and flatten `computed` into a plain number. The `Object.create` + `getOwnPropertyDescriptors` approach preserves all of that faithfully — same prototype, same hidden properties, same getters — just on a new, independent object.
+Then cloning it the "naive" way (`{ ...original2 }`) would drop the non-enumerable `id` entirely and flatten `computed` into a plain number. The `Object.create` + `getOwnPropertyDescriptors` approach preserves all of that faithfully — same prototype, same hidden properties, same getters — just on a new, independent object.
 
 #### One caveat
 
-It's still a shallow clone: if a property's value is an object/array, both original and clone share a reference to that same nested object. Nested structures aren't deep-copied.
+It's still a **shallow** clone: if a property's value is an object/array, both `original` and `clone` share a reference to that same nested object. Nested structures aren't deep-copied.
 
 ### Quick note
 - Descriptor properties (`value`, `writable`, `enumerable`, `configurable`, or `get`/`set`) default to `false`/`undefined` if not specified, **not** to the values you might expect from plain assignment — so always be explicit if you want a normal, writable/enumerable property.
