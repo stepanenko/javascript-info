@@ -2,8 +2,7 @@
 
 Creates a new object with the specified prototype and, optionally, own properties defined via a descriptor object.
 
-## Basic usage — just a prototype
-
+- ### Basic usage — just a prototype
 ```javascript
 const animal = {
   speak() {
@@ -18,8 +17,7 @@ console.log(dog.speak()); // "Rex makes a sound."
 console.log(Object.getPrototypeOf(dog) === animal); // true
 ```
 
-## With `null` prototype (no inherited properties, not even `toString`)
-
+- ### With `null` prototype (no inherited properties, not even `toString`)
 ```javascript
 const bareObject = Object.create(null);
 console.log(bareObject.toString); // undefined
@@ -30,10 +28,9 @@ bareObject.foo = "bar";
 console.log(bareObject.foo); // "bar"
 ```
 
-## With a `propertiesObject` (second argument)
+- ### With a `propertiesObject` (second argument)
 
 The second argument uses the same descriptor format as `Object.defineProperties`.
-
 ```javascript
 const person = Object.create(Object.prototype, {
   name: {
@@ -55,8 +52,7 @@ person.age = 99;          // silently fails (or throws in strict mode)
 console.log(person.age);  // 30
 ```
 
-## Using getters/setters in the descriptor
-
+- ### Using getters/setters in the descriptor
 ```javascript
 const temperature = Object.create(Object.prototype, {
   celsius: {
@@ -82,8 +78,7 @@ temperature.fahrenheit = 32;
 console.log(temperature.celsius); // 0
 ```
 
-## Classical inheritance pattern (pre-ES6 class style)
-
+- ### Classical inheritance pattern (pre-ES6 class style)
 ```javascript
 function Shape(name) {
   this.name = name;
@@ -117,8 +112,7 @@ console.log(c.area().toFixed(2)); // "78.54"
 console.log(c instanceof Shape);  // true
 ```
 
-## Cloning an object's "shape" (shallow, own enumerable + non-enumerable props)
-
+- ### True shallow clone
 ```javascript
 const original = { a: 1, b: 2 };
 const clone = Object.create(
@@ -129,7 +123,17 @@ const clone = Object.create(
 console.log(clone); // { a: 1, b: 2 }
 console.log(clone !== original); // true, it's a new object
 ```
+The goal here is a true shallow clone — not just copying values, but copying the exact same prototype and the exact same property characteristics (writable, enumerable, configurable, getters/setters and all).
 
-### Quick notes
-- Omitting `propertiesObject` (or passing `undefined`) is fine — only the prototype is set.
+Why not just `{ ...original }` or `Object.assign({}, original)`?
+
+Those approaches only copy enumerable own properties as plain values. They lose:
+- Any custom prototype (`{ ...obj }` always gives you a plain `Object.prototype` clone)
+- Non-enumerable properties
+- Getter/setter functions (they copy the current computed value of a getter, not the getter itself)
+- `writable`/`configurable` flags
+
+So if `original` had a read-only property or a getter, a spread/`Object.assign` clone would silently turn it into an ordinary writable value. That's a loss of fidelity.
+
+### Quick note
 - Descriptor properties (`value`, `writable`, `enumerable`, `configurable`, or `get`/`set`) default to `false`/`undefined` if not specified, **not** to the values you might expect from plain assignment — so always be explicit if you want a normal, writable/enumerable property.
