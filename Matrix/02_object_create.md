@@ -26,6 +26,9 @@ console.log(Object.getPrototypeOf(bareObject)); // null
 // Useful as a "pure" dictionary/map with no prototype-chain surprises
 bareObject.foo = "bar";
 console.log(bareObject.foo); // "bar"
+
+bareObject.__proto__ = null; // also removes prototype
+Object.setPrototypeOf(bareObject, null); // also removes prototype
 ```
 
 - ### With a `propertiesObject` (second argument)
