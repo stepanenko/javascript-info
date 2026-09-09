@@ -119,6 +119,45 @@ Think of it like passing around a phone number vs. a person who owns it. `user.s
 
 Fixes:
 ```js
-setTimeout(() => user.showName(), 100); // arrow wraps the call
-setTimeout(user.showName.bind(user), 100); // explicit bind
+// 1. Arrow wrapper — captures `user` via closure, calls it properly with dot access
+setTimeout(() => user.showName(), 100);
+
+// 2. Explicit bind — permanently locks `this` to user
+setTimeout(user.showName.bind(user), 100);
+const fn = user.showName.bind(user);
+fn(); // "Jack"
+
+// 3. Arrow function as a class field (auto-bound per instance)
+class User {
+  name = "Jack";
+
+  // Arrow function class field — NOT a prototype method
+  showName = () => {
+    console.log(this.name);
+  };
+}
+
+const user = new User();
+
+const fn = user.showName;
+fn(); // "Jack" ✅ — works even when detached!
+
+setTimeout(user.showName, 100); // "Jack" ✅ — works too!
+```
+**Why this works**
+
+Class fields are initialized per instance, inside the constructor, at the time `new User()` runs. When the arrow function is created, it's created inside the constructor call — and at that moment, `this` refers to the newly constructed instance.
+
+Since arrow functions capture `this` lexically (from their enclosing scope at creation time), the arrow permanently "locks in" that instance's `this` via closure — regardless of how `showName` is later called or passed around.
+
+It's roughly equivalent to doing this manually in the constructor:
+```js
+class User {
+  constructor() {
+    this.name = "Jack";
+    this.showName = () => {
+      console.log(this.name); // closes over the constructor's `this`
+    };
+  }
+}
 ```
