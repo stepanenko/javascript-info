@@ -54,7 +54,7 @@ Above `this` refers to the global object (which is `window` in a browser or `{} 
 
 Unlike regular functions, arrow functions "inherit" `this` from the scope where they were defined, not where they are called.
 
-- The Definition Scope: You defined `showName` inside an object literal. However, an object literal does not create a new scope - a set of curly braces `{}` used to create an object does not create a new "this" context, only functions and classes do that.
+- The Definition Scope: You defined `showName` inside an object literal. However, an object literal does not create a new scope - a set of curly braces `{}` used to create an object does not create a new `this` context, **only functions and classes** do that.
 
 - The Outer Scope: Because the object doesn't have a scope, the arrow function looks one level higher to the Global/Module scope.
 
