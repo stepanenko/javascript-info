@@ -161,3 +161,29 @@ class User {
   }
 }
 ```
+### Trade-offs vs. regular methods
+
+**Regular method (prototype):**
+```js
+class User {
+  name = "Jack";
+  showName() { console.log(this.name); } // on User.prototype
+}
+```
+- Shared across all instances (memory efficient)
+- Must be manually bound if detached (.bind(this) in constructor, or bind at call site)
+
+**Arrow field (instance property):**
+```js
+class User {
+  name = "Jack";
+  showName = () => console.log(this.name); // own property per instance
+}
+```
+- A new function is created for every instance (slightly more memory if you have thousands of instances)
+- Auto-bound — safe to pass as a callback anywhere (`onClick={user.showName}`, `setTimeout(user.showName)`, etc.)
+- Not on the prototype, so `Object.getPrototypeOf(user).showName` is `undefined` — it won't show up in prototype-based introspection, and subclasses can't easily override it with `super.showName()`
+
+**Rule of thumb:** 
+- use arrow class fields for methods you know will be passed around as callbacks (event handlers, `setTimeout`, promise callbacks);
+- use regular prototype methods for internal methods called via `this.method()` where you control the call site.
