@@ -60,6 +60,8 @@ Unlike regular functions, arrow functions "inherit" `this` from the scope where 
 
 - at the global level, `this` points to the global object. Since there is likely no global variable named `name`, it returns `undefined`.
 
+So, Arrow functions — no own binding, inherits `this` from enclosing scope, and can't be changed by `call`/`apply`/`bind`/`new`.
+
 **Rule of thumb**: use regular functions (or method shorthand) for object methods that need this; use arrow functions when you want to preserve the outer this (e.g., inside callbacks).
 
 ### 5. Explicit Context Binding
@@ -71,4 +73,48 @@ function showName() {
 }
 const user = { name: "Sarah" };
 showName.call(user); // "Sarah"
+```
+
+### 6. Losing `this` when passing methods around
+
+Very common bugs:
+```js
+const user = {
+  name: "Jack",
+  showName() { console.log(this.name); }
+};
+
+// bug 1
+const fn = user.showName;
+fn(); // undefined — lost the "user" context
+
+// bug 2
+setTimeout(user.showName, 100); // also undefined, same problem
+```
+
+Bug 1: `fn(); // undefined`
+
+When you write `const fn = user.showName`, you're just copying a reference to the function into `fn`. The function itself has no memory of "I came from `user`." It's just a standalone function now.
+
+So when you call `fn()`, the call site is just `fn()` — no object before the dot. That means default binding kicks in:
+
+  - Strict mode (or modules, or classes): `this` is `undefined`
+  - Sloppy mode: `this` is the global object (`window` in browsers)
+
+Bug 2: `setTimeout(user.showName, 100); // also undefined`
+
+This looks different but is exactly the same bug in disguise. `user.showName` here evaluates to a plain function reference — you're passing the function itself as an argument to `setTimeout`, the same way you did with `const fn = user.showName`.
+
+Internally, `setTimeout` will later call that function on its own, roughly like:
+```js
+callback(); // not user.callback()
+```
+There's no `user.` in front of the call, so again, default binding applies, and `this` isn't `user`.
+
+The `.` at the call site is what matters — `setTimeout` doesn't know or care that the function came from `user`; it just has a bare reference to a function and calls it plainly.
+
+Fixes:
+```js
+setTimeout(() => user.showName(), 100); // arrow wraps the call
+setTimeout(user.showName.bind(user), 100); // explicit bind
 ```
