@@ -4,13 +4,14 @@
 JavaScript has **global**, **function**, and **block scope** (introduced with `let` and `const`).
 
 ### Definition 1:
-A closure is formed whenever a function is defined inside another function and accesses variables from the outer function's scope.
+- A **closure** is formed whenever a function is defined inside another function and accesses variables from the outer function's scope.
+- A **closure** is created as soon as an inner function accesses a variable from its outer scope, even if that inner function is simply passed around.
 
 ### Definition 2:
-**Closure** is a feature where an inner function remembers the variables in its outer function’s scope, even after the outer function has finished executing. When a function is returned or passed around, it retains access to the variables of the scope in which it was created.
+- **Closure** is a feature where an inner function remembers the variables in its outer function’s scope, even after the outer function has finished executing. When a function is returned or passed around, it retains access to the variables of the scope in which it was created.
 
 ### Definition 3:
-**Closure** is a feature where a function retains access to its lexical scope (the surrounding state) even when the function is executed outside that scope. This means that the function "remembers" the environment in which it was created.
+- **Closure** is a feature where a function retains access to its lexical scope (the surrounding state) even when the function is executed outside that scope. This means that the function "remembers" the environment in which it was created.
 
 While returning a function is a common way to create a closure, passing a function around (e.g., as a callback or assigning it to another variable) also creates closures. In both cases, the function retains access to the variables from its original scope.
 
