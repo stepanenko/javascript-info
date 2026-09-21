@@ -15,6 +15,8 @@ JavaScript has **global**, **function**, and **block scope** (introduced with `l
 
 While returning a function is a common way to create a closure, passing a function around (e.g., as a callback or assigning it to another variable) also creates closures. In both cases, the function retains access to the variables from its original scope.
 
+---
+
 ### Example 1: Returning a Function (common Closure scenario)
 ```js
 function createGreeting(name) {
@@ -28,7 +30,7 @@ greetBob(); // Logs: Hello, Bob!
 Even after `createGreeting` has finished executing, `greetAlice` can access `name`.
 
 ---
-**Closures** don't require a function to be returned specifically. A **closure** is created as soon as an inner function accesses a variable from its outer scope, even if that inner function is simply passed around.
+**Closures** don't require a function to be returned specifically. A **closure** is created as soon as an inner function accesses a variable from its outer scope, even if that inner function is simply passed around:
 
 ### Example 2: Passing a Function as a Callback (not returning)
 ```js
