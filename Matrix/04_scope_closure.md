@@ -78,3 +78,24 @@ outerFunction();
 someGlobalVariable(); // Logs: "I am still here!"
 ```
 When `innerFunction` is assigned to the global variable `someGlobalVariable`, it still retains access to `outerVar` through closure, even though it wasn’t returned directly from `outerFunction`.
+
+### Example 4.1: Assigning a Function to a Variable (Closure without returning)
+```js
+function outerFunction() {
+  const outerVar = "I am still here!";
+  someGlobalVariable = function() { // `innerFunction` closes over `outerVar`
+    console.log(outerVar);
+  };
+}
+
+let someGlobalVariable;
+outerFunction();
+
+someGlobalVariable();
+```
+In both cases:
+
+1. The function object created is a closure that captures `outerVar` from its enclosing lexical scope.
+2. That same function object ends up being referenced by the global `someGlobalVariable`.
+3. Once `outerFunction()` finishes, `outerVar` stays alive in memory because the closure (now reachable via `someGlobalVariable`) still references it.
+4. Calling `someGlobalVariable()` afterward accesses `outerVar` through that **closure**.
