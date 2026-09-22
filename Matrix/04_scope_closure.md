@@ -83,7 +83,7 @@ When `innerFunction` is assigned to the global variable `someGlobalVariable`, it
 ```js
 function outerFunction() {
   const outerVar = "I am still here!";
-  someGlobalVariable = function() { // `innerFunction` closes over `outerVar`
+  someGlobalVariable = function() {
     console.log(outerVar);
   };
 }
