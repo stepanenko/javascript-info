@@ -99,3 +99,19 @@ In both cases:
 2. That same function object ends up being referenced by the global `someGlobalVariable`.
 3. Once `outerFunction()` finishes, `outerVar` stays alive in memory because the closure (now reachable via `someGlobalVariable`) still references it.
 4. Calling `someGlobalVariable()` afterward accesses `outerVar` through that **closure**.
+
+### 5: Making a Counter
+```js
+function counter() {
+  let count = 0;
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    get: () => count
+  };
+}
+
+const c = counter();
+c.increment(); c.increment();
+console.log(c.get()); // 2
+```
