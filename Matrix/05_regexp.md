@@ -3,6 +3,8 @@
 Regular expressions (regex) are patterns used to match character combinations in strings.  
 They are commonly used for searching, validation, and string manipulation.
 
+https://regex101.com/ - popular, feature-rich online tool used for writing, testing, debugging, translating, and sharing regular expressions
+
 ## Literal Characters
 Match exact characters in the pattern: `hello` matches the string `"hello"`
 
