@@ -74,6 +74,20 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 ---
 
 # Examples
+`.` any single character (except newline)
+```js
+/c.t/.test("cat");      // true  (. matches "a")
+/c.t/.test("c9t");      // true  (. matches "9")
+/c.t/.test("ct");       // false (nothing between c and t)
+/c.t/.test("caat");     // false (. matches only ONE character)
+
+"a.b".match(/a.b/);     // matches "a.b"
+"a-b".match(/a.b/);     // also matches, since . matches "-"
+"a-b".match(/a\.b/);    // null, because \. means a literal dot
+
+/a.b/.test("a\nb");     // false (newline not matched)
+/a.b/s.test("a\nb");    // true  (the s flag lets . match newlines)
+```
 
 ### Match a phone number pattern:
 ```js
