@@ -100,6 +100,18 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 /[^abc]/.test("d");   // true; inside [...], ^ means "NOT", a different meaning
 ```
 
+`$` end of string
+```js
+/world$/.test("hello world");   // true
+/world$/.test("world peace");   // false
+
+/^\d+$/.test("123");    // true  (whole string is digits)
+/^\d+$/.test("123abc"); // false (the anchors force a full match)
+/\d+/.test("123abc");   // true  (without anchors, partial matches pass)
+
+"a\nb".match(/\w$/gm);  // ["a", "b"] (with m, $ matches at each line end)
+```
+
 ### Match a phone number pattern:
 ```js
 const regex = /\d{3}-\d{3}-\d{4}/;
