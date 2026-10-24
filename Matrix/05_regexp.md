@@ -89,6 +89,17 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 /a.b/s.test("a\nb");    // true  (the s flag lets . match newlines)
 ```
 
+`^` Matches the start of a string  
+```js
+/^hello/.test("hello world");   // true
+/^hello/.test("say hello");     // false (hello isn't at the start)
+
+"line1\nline2".match(/^line\d/g);    // ["line1"] (only the string start)
+"line1\nline2".match(/^line\d/gm);   // ["line1", "line2"] (m flag: each line start)
+
+/[^abc]/.test("d");   // true; inside [...], ^ means "NOT", a different meaning
+```
+
 ### Match a phone number pattern:
 ```js
 const regex = /\d{3}-\d{3}-\d{4}/;
