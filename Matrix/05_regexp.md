@@ -17,6 +17,7 @@ Metacharacters are characters with special meanings in RegEx that allow you to d
 `*` Matches 0 or more occurrences of the preceding element  
 `+` Matches 1 or more occurrences of the preceding element  
 `?` Matches 0 or 1 occurrence of the preceding element  
+Note that `?` has a second job: placed after another quantifier (`*?`, `+?`, `??`), it makes that quantifier lazy.
 
 ## Character Sets
 Match any one of the characters inside `[]` square brackets:
@@ -125,7 +126,7 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 "x".match(/\d*/);         // [""] it matches an empty string, so * never "fails"
 ```
 
-`+` zero or more
+`+` one or more
 ```js
 /ab+c/.test("ac");       // false (needs at least one b)
 /ab+c/.test("abc");      // true
@@ -134,6 +135,20 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 "a1b22c333".match(/\d+/g);   // ["1", "22", "333"]
 "  too   many   spaces ".replace(/\s+/g, " ");   // " too many spaces "
 ```
+
+`?` zero or one (optional)
+```js
+/colou?r/.test("color");    // true
+/colou?r/.test("colour");   // true
+/colou?r/.test("colouur");  // false
+
+/https?:\/\//.test("http://x.com");    // true
+/https?:\/\//.test("https://x.com");   // true
+
+/^-?\d+$/.test("42");     // true  (optional minus sign)
+/^-?\d+$/.test("-42");    // true
+```
+Note that `?` has a second job: placed after another quantifier (`*?`, `+?`, `??`), it makes that quantifier lazy, as in the `<.*?>` example above.
 
 ### Match a phone number pattern:
 ```js
