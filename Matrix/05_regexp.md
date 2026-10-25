@@ -112,6 +112,19 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 "a\nb".match(/\w$/gm);  // ["a", "b"] (with m, $ matches at each line end)
 ```
 
+`*` zero or more
+```js
+/ab*c/.test("ac");       // true  (zero b's)
+/ab*c/.test("abc");      // true  (one b)
+/ab*c/.test("abbbbc");   // true  (many b's)
+/ab*c/.test("adc");      // false
+
+"<<a>>".match(/<.*>/);    // ["<<a>>"] greedy: grabs as much as possible
+"<<a>>".match(/<.*?>/);   // ["<<a>"]  lazy: grabs as little as possible
+
+"x".match(/\d*/);         // [""] it matches an empty string, so * never "fails"
+```
+
 ### Match a phone number pattern:
 ```js
 const regex = /\d{3}-\d{3}-\d{4}/;
