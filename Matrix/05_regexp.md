@@ -125,6 +125,16 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 "x".match(/\d*/);         // [""] it matches an empty string, so * never "fails"
 ```
 
+`+` zero or more
+```js
+/ab+c/.test("ac");       // false (needs at least one b)
+/ab+c/.test("abc");      // true
+/ab+c/.test("abbbbc");   // true
+
+"a1b22c333".match(/\d+/g);   // ["1", "22", "333"]
+"  too   many   spaces ".replace(/\s+/g, " ");   // " too many spaces "
+```
+
 ### Match a phone number pattern:
 ```js
 const regex = /\d{3}-\d{3}-\d{4}/;
