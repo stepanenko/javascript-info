@@ -113,7 +113,7 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 "a\nb".match(/\w$/gm);  // ["a", "b"] (with m, $ matches at each line end)
 ```
 
-`*` zero or more
+`*` zero or more occurrences of the preceding element
 ```js
 /ab*c/.test("ac");       // true  (zero b's)
 /ab*c/.test("abc");      // true  (one b)
@@ -126,7 +126,7 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 "x".match(/\d*/);         // [""] it matches an empty string, so * never "fails"
 ```
 
-`+` one or more
+`+` one or more occurrences of the preceding element
 ```js
 /ab+c/.test("ac");       // false (needs at least one b)
 /ab+c/.test("abc");      // true
@@ -136,7 +136,7 @@ Modify the behavior of regex (added after the pattern, like `/pattern/flags`):
 "  too   many   spaces ".replace(/\s+/g, " ");   // " too many spaces "
 ```
 
-`?` zero or one (optional)
+`?` zero or one (optional) occurrences of the preceding element
 ```js
 /colou?r/.test("color");    // true
 /colou?r/.test("colour");   // true
